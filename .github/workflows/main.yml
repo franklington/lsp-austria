@@ -1,0 +1,21 @@
+on: push
+name: 🚀 Deploy website on push
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    # Show how to print unmasked GitHub secrets to the console
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.2.0
+      with:
+        # ftp server
+        server: e20548-ftp.services.easyname.eu
+        username:  ${{ secrets.FTPUSERNAME }}
+        password: ${{ secrets.FTPPASSWORD }}
+        port: 21
+        local-dir: ./
+        server-dir: ./
