@@ -1,0 +1,22 @@
+{
+  "name": "lsp-austria",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franklington/lsp-austria.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/franklington/lsp-austria/issues"
+  },
+  "homepage": "https://github.com/franklington/lsp-austria#readme",
+  "devDependencies": {
+    "sass": "^1.62.0"
+  },
+  "scripts": {
+    "dev": "sass --watch --update --style=expanded main.scss:main.css",
+    "prod": "sass --no-source-map --style=compressed main.scss:main.css"
+  }
+}
