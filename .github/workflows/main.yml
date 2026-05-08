@@ -2,41 +2,32 @@ on:
   push:
     branches:
       - main
-name: 🚀 Deploy website on push
+name: 🚀 Deploy to Cloudflare Pages
 jobs:
-  web-deploy:
+  deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v4
-    
+
     - name: 📦 Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '20'
-    
+
     - name: 📥 Install dependencies
       run: npm ci
-    
+
     - name: 🎨 Compile SCSS
       run: npm run prod
-    
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.3.5
+
+    - name: 📂 Deploy to Cloudflare Pages
+      uses: cloudflare/wrangler-action@v3
       with:
-        server: e20548-ftp.services.easyname.eu
-        username: ${{ secrets.FTPUSERNAME }}
-        password: ${{ secrets.FTPPASSWORD }}
-        port: 21
-        local-dir: ./
-        server-dir: ./
-        exclude: |
-          **/.git*
-          **/.git*/**
-          **/node_modules/**
-          **/.vscode/**
-          **/package*.json
-          **/main.scss
-          **/main.css.map
-          **/README.md
+        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        command: pages deploy . --project-name=lsp-austria --commit-dirty=true
