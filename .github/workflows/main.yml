@@ -25,9 +25,15 @@ jobs:
     - name: 🎨 Compile SCSS
       run: npm run prod
 
+    - name: � Collect deploy files
+      run: |
+        mkdir dist
+        cp *.html *.css *.svg _redirects dist/
+        cp -r favicons dist/
+
     - name: 📂 Deploy to Cloudflare Pages
       uses: cloudflare/wrangler-action@v3
       with:
         apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        command: pages deploy . --project-name=lsp-austria --commit-dirty=true
+        command: pages deploy dist --project-name=lsp-austria --commit-dirty=true
