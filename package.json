@@ -20,6 +20,7 @@
   "scripts": {
     "dev": "concurrently \"sass --watch --update --style=expanded main.scss:main.css\" \"http-server -p 8080 -o\"",
     "prod": "sass --no-source-map --style=compressed main.scss:main.css",
+    "build": "sass --no-source-map --style=compressed main.scss:main.css && mkdir -p dist && cp index.html impressum.html datenschutz.html main.css logo.svg _redirects dist/ && cp -r favicons dist/",
     "serve": "http-server -p 8080 -o"
   }
 }
