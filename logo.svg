@@ -7,22 +7,6 @@
 	.st1{fill:none;stroke:#ffffff;stroke-width:1.4173;stroke-miterlimit:10;}
 	.st2{fill:none;stroke:#ffffff;stroke-width:1.4173;stroke-linejoin:round;stroke-miterlimit:10;}
 	.st3{fill:#ffffff;}
-	        @media (prefers-color-scheme: dark) {
-            .st3 {
-                fill: #252525;
-            }
-			.st1, .st2 {
-                stroke: #252525;
-            }
-        }
-		@media (prefers-color-scheme: light) {
-            .st3 {
-                fill: #fffff;
-            }
-			.st1, .st2 {
-                stroke: #fffff;
-            }
-        }
 </style>
 <g>
 	<g>
