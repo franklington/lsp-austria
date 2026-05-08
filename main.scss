@@ -574,9 +574,28 @@ h1 {
         line-height: var(--line-height-relaxed);
         color: var(--text-secondary);
     }
-    
-    button {
-        margin-top: var(--spacing-sm);
+}
+
+.map-consent-buttons {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.map-navigate {
+    display: none;
+    justify-content: flex-end;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: var(--bg-card);
+    border-top: 1px solid var(--border-subtle);
+
+    .btn-sm {
+        font-size: var(--font-size-xs);
+        padding: 0.4rem 0.9rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
     }
 }
 

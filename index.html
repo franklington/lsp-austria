@@ -237,11 +237,23 @@
                             <path d="M17.469,0A17.469,17.469,0,0,1,34.938,17.469c0,11.915-16.51,29.968-17.469,29.968S.1,30.426,0,17.469A17.469,17.469,0,0,1,17.469,0Z"/>
                             <circle cx="17.5" cy="17" r="6" fill="#fff"/>
                         </svg>
-                        <h3>Google Maps laden</h3>
-                        <p>Um die Karte anzuzeigen, müssen Sie der Verwendung von Google Maps zustimmen. Dabei werden Daten an Google übertragen.</p>
-                        <button onclick="loadMap()" class="btn btn-primary">Karte laden & Datenschutz akzeptieren</button>
+                        <h3>Karte anzeigen</h3>
+                        <p>Um die Karte anzuzeigen, müssen Sie der Verwendung von OpenStreetMap zustimmen. Dabei wird Ihre IP-Adresse an OpenStreetMap übertragen.</p>
+                        <div class="map-consent-buttons">
+                            <button onclick="loadMap()" class="btn btn-primary">Karte laden & zustimmen</button>
+                            <a href="https://maps.apple.com/?address=Bahnhofstra%C3%9Fe+46,+4810+Gmunden&ll=47.925358,13.787584&q=LSP+Gmunden" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+                                Route starten
+                            </a>
+                        </div>
                     </div>
                     <div id="map-container" style="display: none;"></div>
+                    <div id="map-navigate" style="display: none;" class="map-navigate">
+                        <a href="https://maps.apple.com/?address=Bahnhofstra%C3%9Fe+46,+4810+Gmunden&ll=47.925358,13.787584&q=LSP+Gmunden" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+                            Route starten
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -351,6 +363,7 @@
             }, 100);
             
             mapConsent.style.display = 'none';
+            document.getElementById('map-navigate').style.display = 'flex';
         }
 
         // Check consent on page load
