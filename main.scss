@@ -152,7 +152,7 @@ a {
         width: 100%;
         height: auto;
         display: block;
-        filter: brightness(1.1);
+        filter: brightness(10.0);
         transition: filter var(--transition-base);
     }
     
@@ -164,7 +164,7 @@ a {
     }
     
     &:hover img {
-        filter: brightness(1.2);
+        filter: brightness(12.0);
     }
     
     @media (max-width: 768px) {
