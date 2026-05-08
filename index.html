@@ -1,79 +1,344 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>LSP - Versicherung Vorsorge Vermögen</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="main.css?v=1">
-        <meta name="theme-color" content="#333333">
-        <link rel="icon" href="Favicon.svg">
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LSP Gmunden - Versicherung & Vorsorge | KFZ, Hausrat & Zulassung</title>
+    <meta name="description" content="LSP Gmunden: Ihr Versicherungspartner für KFZ, Hausrat, Lebensversicherung und KFZ-Zulassung. ☎ 07612/67646-0 | Bahnhofstraße 46">
+    <meta name="keywords" content="LSP Gmunden, Versicherung Gmunden, KFZ Versicherung, Zulassungsstelle, Hausratversicherung, Lebensversicherung">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="LSP Gmunden - Versicherung & Vorsorge">
+    <meta property="og:description" content="Ihr Versicherungspartner in Gmunden für KFZ, Vorsorge und Zulassung">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="de_AT">
+    
+    <!-- Favicons -->
+    <link rel="icon" href="Favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <meta name="theme-color" content="#0F0F0F">
+    
+    <!-- Schema.org Local Business markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "InsuranceAgency",
+      "name": "LSP Gmunden",
+      "description": "Versicherungsagentur in Gmunden für KFZ, Hausrat, Lebensversicherung und KFZ-Zulassung",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Bahnhofstraße 46",
+        "addressLocality": "Gmunden",
+        "postalCode": "4810",
+        "addressCountry": "AT"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 47.925358,
+        "longitude": 13.787584
+      },
+      "telephone": "+43761267646-0",
+      "email": "agentur.lsp@allianz.at",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+          "opens": "07:30",
+          "closes": "12:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+          "opens": "13:30",
+          "closes": "16:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Friday",
+          "opens": "07:30",
+          "closes": "13:00"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "247"
+      },
+      "url": "https://lsp-gmunden.at"
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="logo.svg" alt="LSP Logo" width="120" height="32">
+                </div>
+                <nav class="nav" aria-label="Hauptnavigation">
+                    <a href="#services" class="nav-link">Leistungen</a>
+                    <a href="#contact" class="nav-link">Kontakt</a>
+                    <a href="tel:+43761267646-0" class="btn btn-primary">07612/67646-0</a>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
-        <link rel="manifest" href="/favicons/site.webmanifest">
-        <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5">
-        <link rel="shortcut icon" href="/favicons/favicon.ico">
-        <meta name="msapplication-TileColor" content="#da532c">
-        <meta name="msapplication-config" content="/favicons/browserconfig.xml">
-        <meta name="theme-color" content="#333333">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Versicherung & Vorsorge in Gmunden</h1>
+                <p class="hero-subtitle">Persönliche Beratung für KFZ, Vorsorge und alle Versicherungsthemen. Ihr verlässlicher Partner in der Region.</p>
+                <div class="hero-cta">
+                    <a href="tel:+43761267646-0" class="btn btn-large btn-primary">Jetzt anrufen</a>
+                    <a href="#contact" class="btn btn-large btn-secondary">Termin vereinbaren</a>
+                </div>
+                <div class="hero-rating">
+                    <div class="rating-stars" aria-label="4.8 von 5 Sternen">★★★★★</div>
+                    <span class="rating-text">4.8/5 - 247 Bewertungen</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-            <grid>
-                <logo>
-                    <svg id="logo_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 503.13 141.12"><defs><style>.cls-1,.cls-3,.cls-4{fill:none;}.cls-2{clip-path:url(#clip-path);}.cls-3,.cls-4{stroke:#fff;stroke-width:1.42px;}.cls-3{stroke-miterlimit:10;}.cls-4{stroke-linejoin:round;}.cls-5{fill:#fff;}</style><clipPath id="clip-path" transform="translate(-930.53)"><polygon class="cls-1" points="1162.54 32.77 1186.24 32.77 1176.94 52.69 1153.24 52.69 1162.54 32.77"/></clipPath></defs><g class="cls-2"><line class="cls-3" x1="234" y1="30.66" x2="223.07" y2="54.07"/><line class="cls-4" x1="238.39" y1="30.55" x2="227.34" y2="54.21"/><line class="cls-4" x1="242.78" y1="30.44" x2="231.61" y2="54.36"/><line class="cls-4" x1="247.17" y1="30.33" x2="235.89" y2="54.5"/><line class="cls-4" x1="251.56" y1="30.22" x2="240.16" y2="54.65"/><line class="cls-4" x1="255.95" y1="30.11" x2="244.43" y2="54.79"/></g><path class="cls-5" d="M1356.16,36.75c0,9.74-6.65,17.27-15.06,17.27h-70.4V86.35h-24.8V33.21h80.15c2.65,0,4.87-3.1,4.87-6.64,0-3.1-2.22-5.76-4.87-5.76h-91.22L1244.13,0h94.31c9.75,0,17.72,7.53,17.72,16.83ZM1186.57,52.69h14.17c4.87,0,8,2.66,8,6.2s-2.66,6.2-6.65,6.2h-87.23l-9.3,21.26H1222c7.53,0,12-6.2,12-13.29V47.82c0-10.18-5.31-15-15.94-15h-22.14Zm-43.4,0h-23c-8.86,0-15.06-4.87-15.06-12.4V12.4c0-7.09,6.64-12.4,14.61-12.4h112l-9.3,20.81H1135.2c-2.66,0-4.87,2.66-4.87,5.76,0,3.54,2.21,6.2,4.87,6.2h17.27Zm-50,33.66h-57.57c-12.4,0-23.91-10.19-23.91-22.59V0h23.91l.89,54.46c0,6.2,5.75,11.07,13.28,11.07h52.69Z" transform="translate(-930.53)"/><path class="cls-5" d="M930.53,118h4l4.19,12.7h.06l4-12.7h3.78l-5.92,16.54h-4.1Z" transform="translate(-930.53)"/><path class="cls-5" d="M952.26,127.24a6.37,6.37,0,0,0,.27,1.85,4.44,4.44,0,0,0,.82,1.57,3.94,3.94,0,0,0,1.37,1.07,4.48,4.48,0,0,0,2,.4,4.38,4.38,0,0,0,2.58-.69,4,4,0,0,0,1.46-2.06h3.45a6.76,6.76,0,0,1-1,2.4,6.86,6.86,0,0,1-1.7,1.78,7.16,7.16,0,0,1-2.22,1.08,8.8,8.8,0,0,1-2.58.37,8.67,8.67,0,0,1-3.45-.64,7.14,7.14,0,0,1-2.55-1.79,7.67,7.67,0,0,1-1.56-2.75,11,11,0,0,1-.53-3.52,10.07,10.07,0,0,1,.56-3.35,8.6,8.6,0,0,1,1.6-2.78,7.54,7.54,0,0,1,5.84-2.61,7.32,7.32,0,0,1,3.5.82,7.54,7.54,0,0,1,2.58,2.16,8.71,8.71,0,0,1,1.49,3.09,9.43,9.43,0,0,1,.24,3.6Zm8.51-2.4a6,6,0,0,0-.37-1.67,4.39,4.39,0,0,0-.83-1.39,4.1,4.1,0,0,0-1.28-1,3.7,3.7,0,0,0-1.68-.37,4.34,4.34,0,0,0-1.75.34,3.84,3.84,0,0,0-1.34.93,4.63,4.63,0,0,0-.9,1.39,4.9,4.9,0,0,0-.36,1.73Z" transform="translate(-930.53)"/><path class="cls-5" d="M967.84,118h3.42v3.2h.07a3.73,3.73,0,0,1,.62-1.31,6.18,6.18,0,0,1,1.12-1.17,5.75,5.75,0,0,1,1.46-.85,4.42,4.42,0,0,1,1.63-.32,8.39,8.39,0,0,1,.88,0l.5.07v3.52c-.26,0-.52-.08-.79-.11a5.19,5.19,0,0,0-.78,0,4.16,4.16,0,0,0-1.75.37,4,4,0,0,0-1.42,1.08,5.59,5.59,0,0,0-1,1.78,7.78,7.78,0,0,0-.35,2.43v7.87h-3.65Z" transform="translate(-930.53)"/><path class="cls-5" d="M982.5,129.25a2.72,2.72,0,0,0,1.21,2.24,4.78,4.78,0,0,0,2.53.64,10.61,10.61,0,0,0,1.17-.08,4.82,4.82,0,0,0,1.23-.3,2.29,2.29,0,0,0,.94-.66,1.56,1.56,0,0,0,.34-1.13,1.62,1.62,0,0,0-.51-1.16,3.51,3.51,0,0,0-1.23-.72,12.49,12.49,0,0,0-1.72-.46l-2-.42a19.58,19.58,0,0,1-2-.54,6.41,6.41,0,0,1-1.69-.86,4.07,4.07,0,0,1-1.2-1.4,4.4,4.4,0,0,1-.45-2.09,3.75,3.75,0,0,1,.66-2.26,4.9,4.9,0,0,1,1.66-1.47,7.34,7.34,0,0,1,2.24-.78,13.15,13.15,0,0,1,2.35-.23,10.82,10.82,0,0,1,2.45.27,7,7,0,0,1,2.11.88,5.18,5.18,0,0,1,2.35,3.94h-3.8a2.28,2.28,0,0,0-1.2-1.76,5,5,0,0,0-2.16-.45,6.67,6.67,0,0,0-.92.07,4,4,0,0,0-1,.24,1.89,1.89,0,0,0-.78.51,1.24,1.24,0,0,0-.32.88,1.39,1.39,0,0,0,.46,1.09,3.82,3.82,0,0,0,1.22.68,12.27,12.27,0,0,0,1.71.47l2,.41a18.31,18.31,0,0,1,2,.55,6.24,6.24,0,0,1,1.71.86,4,4,0,0,1,1.21,1.38,4.14,4.14,0,0,1,.47,2,4.49,4.49,0,0,1-.67,2.49,5.38,5.38,0,0,1-1.75,1.67,8,8,0,0,1-2.38.92,12,12,0,0,1-5.49-.06,6.78,6.78,0,0,1-2.3-1.07,5.2,5.2,0,0,1-1.54-1.79,5.78,5.78,0,0,1-.59-2.55Z" transform="translate(-930.53)"/><path class="cls-5" d="M997.09,111.72h3.65v3.45h-3.65Zm0,6.3h3.65v16.54h-3.65Z" transform="translate(-930.53)"/><path class="cls-5" d="M1016.51,123.56a3.41,3.41,0,0,0-1.23-2.32,4,4,0,0,0-2.54-.79,5.32,5.32,0,0,0-1.51.24,3.58,3.58,0,0,0-1.47.9,5,5,0,0,0-1.12,1.82,8.67,8.67,0,0,0-.45,3.06,9,9,0,0,0,.24,2.05,5.62,5.62,0,0,0,.77,1.82,4.33,4.33,0,0,0,1.36,1.3,3.9,3.9,0,0,0,2,.49,3.7,3.7,0,0,0,2.64-1,4.62,4.62,0,0,0,1.29-2.78h3.65a8,8,0,0,1-2.45,4.94,7.46,7.46,0,0,1-5.13,1.71,8.58,8.58,0,0,1-3.44-.65,7.2,7.2,0,0,1-2.51-1.8,7.51,7.51,0,0,1-1.56-2.7,10.65,10.65,0,0,1-.52-3.39,11.64,11.64,0,0,1,.51-3.49,8,8,0,0,1,1.53-2.83,7.24,7.24,0,0,1,2.55-1.89,8.55,8.55,0,0,1,3.57-.69,9.73,9.73,0,0,1,2.73.37,7.25,7.25,0,0,1,2.31,1.1,5.77,5.77,0,0,1,1.64,1.86,6.24,6.24,0,0,1,.77,2.66Z" transform="translate(-930.53)"/><path class="cls-5" d="M1023.78,111.72h3.65v8.48h.06a5.35,5.35,0,0,1,2-1.88,5.89,5.89,0,0,1,3-.75,6.2,6.2,0,0,1,4.29,1.41,5.41,5.41,0,0,1,1.56,4.22v11.36h-3.64v-10.4a4.49,4.49,0,0,0-.84-2.83,3,3,0,0,0-2.39-.88,3.89,3.89,0,0,0-1.67.34,3.5,3.5,0,0,0-1.25.93,4.22,4.22,0,0,0-.8,1.39,5,5,0,0,0-.28,1.69v9.76h-3.65Z" transform="translate(-930.53)"/><path class="cls-5" d="M1045.63,127.24a6.37,6.37,0,0,0,.27,1.85,4.79,4.79,0,0,0,.82,1.57,3.89,3.89,0,0,0,1.38,1.07,4.46,4.46,0,0,0,2,.4,4.38,4.38,0,0,0,2.58-.69,4,4,0,0,0,1.45-2.06h3.46a6.76,6.76,0,0,1-1,2.4,7,7,0,0,1-1.7,1.78,7.16,7.16,0,0,1-2.22,1.08,9.46,9.46,0,0,1-6-.27,7,7,0,0,1-2.54-1.79,7.69,7.69,0,0,1-1.57-2.75,11.25,11.25,0,0,1-.53-3.52,10.07,10.07,0,0,1,.56-3.35,8.79,8.79,0,0,1,1.6-2.78,7.77,7.77,0,0,1,2.52-1.9,7.59,7.59,0,0,1,3.32-.71,7.36,7.36,0,0,1,3.51.82,7.6,7.6,0,0,1,2.57,2.16,8.54,8.54,0,0,1,1.49,3.09,9.43,9.43,0,0,1,.24,3.6Zm8.51-2.4a5.93,5.93,0,0,0-.36-1.67,4.41,4.41,0,0,0-.84-1.39,4,4,0,0,0-1.28-1,3.7,3.7,0,0,0-1.68-.37,4.29,4.29,0,0,0-1.74.34,3.84,3.84,0,0,0-1.34.93,4.27,4.27,0,0,0-.9,1.39,4.9,4.9,0,0,0-.37,1.73Z" transform="translate(-930.53)"/><path class="cls-5" d="M1061.22,118h3.42v3.2h.06a3.76,3.76,0,0,1,.63-1.31,5.89,5.89,0,0,1,1.12-1.17,5.69,5.69,0,0,1,1.45-.85,4.47,4.47,0,0,1,1.64-.32,8.53,8.53,0,0,1,.88,0l.49.07v3.52c-.25,0-.52-.08-.78-.11a5.32,5.32,0,0,0-.79,0,4.09,4.09,0,0,0-1.74.37,3.9,3.9,0,0,0-1.42,1.08,5.23,5.23,0,0,0-1,1.78,7.49,7.49,0,0,0-.36,2.43v7.87h-3.64Z" transform="translate(-930.53)"/><path class="cls-5" d="M1087.65,134.56h-3.59v-2.3H1084a5.06,5.06,0,0,1-2,2,5.46,5.46,0,0,1-2.7.75q-3.27,0-4.72-1.61a7.06,7.06,0,0,1-1.46-4.88V118h3.65v10.14a4.49,4.49,0,0,0,.83,3.08,3,3,0,0,0,2.34.89,4.74,4.74,0,0,0,1.92-.35,3.37,3.37,0,0,0,1.24-.94,3.67,3.67,0,0,0,.69-1.43,7.26,7.26,0,0,0,.21-1.79V118h3.65Z" transform="translate(-930.53)"/><path class="cls-5" d="M1092.13,118h3.45v2.43l.07.07a6.07,6.07,0,0,1,2.17-2.16,5.75,5.75,0,0,1,3-.79,6.2,6.2,0,0,1,4.29,1.41,5.41,5.41,0,0,1,1.57,4.22v11.36H1103v-10.4a4.49,4.49,0,0,0-.83-2.83,3.07,3.07,0,0,0-2.4-.88,3.89,3.89,0,0,0-1.67.34,3.59,3.59,0,0,0-1.25.93,4.4,4.4,0,0,0-.8,1.39,5,5,0,0,0-.28,1.69v9.76h-3.65Z" transform="translate(-930.53)"/><path class="cls-5" d="M1126.43,133.7q0,3.75-2.09,5.58a8.87,8.87,0,0,1-6,1.84,12.64,12.64,0,0,1-2.51-.25,7.31,7.31,0,0,1-2.3-.87,5.46,5.46,0,0,1-1.75-1.6,4.89,4.89,0,0,1-.83-2.43h3.65a3.06,3.06,0,0,0,.54,1.25,2.84,2.84,0,0,0,.91.75,3.53,3.53,0,0,0,1.17.35,9.8,9.8,0,0,0,1.35.08,4.27,4.27,0,0,0,3.23-1.08,4.43,4.43,0,0,0,1-3.14v-2.53h-.06a5.62,5.62,0,0,1-5,2.91,7.58,7.58,0,0,1-3.38-.68,6.51,6.51,0,0,1-2.3-1.89,7.91,7.91,0,0,1-1.33-2.77,13,13,0,0,1-.41-3.36,9.8,9.8,0,0,1,.51-3.17,8.1,8.1,0,0,1,1.47-2.64,7.15,7.15,0,0,1,2.35-1.81,7.28,7.28,0,0,1,3.15-.67,6.29,6.29,0,0,1,2.88.66,4.44,4.44,0,0,1,2,2.06h.06V118h3.65Zm-8.09-2a4,4,0,0,0,2.06-.49,4.09,4.09,0,0,0,1.37-1.31,5.71,5.71,0,0,0,.77-1.86,9.27,9.27,0,0,0,.24-2.1,8.14,8.14,0,0,0-.25-2,5.23,5.23,0,0,0-.79-1.76,3.75,3.75,0,0,0-1.37-1.22,4.31,4.31,0,0,0-2-.45,3.82,3.82,0,0,0-2,.51,4.09,4.09,0,0,0-1.35,1.33,5.78,5.78,0,0,0-.73,1.86,9.71,9.71,0,0,0-.23,2.06,7.89,7.89,0,0,0,.26,2A5.67,5.67,0,0,0,1115,130a4.22,4.22,0,0,0,1.35,1.24A3.81,3.81,0,0,0,1118.34,131.68Z" transform="translate(-930.53)"/><path class="cls-5" d="M1131,130.24h4.45v4.32H1131Z" transform="translate(-930.53)"/><path class="cls-5" d="M1138.65,118h4l4.19,12.7h.07l4-12.7h3.78l-5.92,16.54h-4.1Z" transform="translate(-930.53)"/><path class="cls-5" d="M1165.12,135a9.16,9.16,0,0,1-3.54-.65,7.54,7.54,0,0,1-2.62-1.81,7.67,7.67,0,0,1-1.63-2.75,10.44,10.44,0,0,1-.56-3.52,10.3,10.3,0,0,1,.56-3.49,7.46,7.46,0,0,1,4.25-4.56,9.8,9.8,0,0,1,7.07,0,7.44,7.44,0,0,1,4.26,4.56,10.56,10.56,0,0,1,.56,3.49,10.69,10.69,0,0,1-.56,3.52,7.82,7.82,0,0,1-1.63,2.75,7.58,7.58,0,0,1-2.63,1.81A9.11,9.11,0,0,1,1165.12,135Zm0-2.88a4.2,4.2,0,0,0,2.11-.51,4.4,4.4,0,0,0,1.47-1.34,5.74,5.74,0,0,0,.85-1.88,8.38,8.38,0,0,0,.27-2.12,8.56,8.56,0,0,0-.27-2.12,5.6,5.6,0,0,0-.85-1.87,4.48,4.48,0,0,0-1.47-1.33,4.62,4.62,0,0,0-4.22,0,4.62,4.62,0,0,0-1.48,1.33,5.79,5.79,0,0,0-.84,1.87,8.13,8.13,0,0,0-.28,2.12,8,8,0,0,0,.28,2.12,5.94,5.94,0,0,0,.84,1.88,4.53,4.53,0,0,0,1.48,1.34A4.17,4.17,0,0,0,1165.12,132.13Z" transform="translate(-930.53)"/><path class="cls-5" d="M1177.15,118h3.42v3.2h.07a3.56,3.56,0,0,1,.62-1.31,5.89,5.89,0,0,1,1.12-1.17,5.59,5.59,0,0,1,1.46-.85,4.38,4.38,0,0,1,1.63-.32,8.53,8.53,0,0,1,.88,0l.5.07v3.52c-.26,0-.52-.08-.79-.11a5.27,5.27,0,0,0-.78,0,4.16,4.16,0,0,0-1.75.37,3.9,3.9,0,0,0-1.42,1.08,5.23,5.23,0,0,0-1,1.78,7.5,7.5,0,0,0-.35,2.43v7.87h-3.65Z" transform="translate(-930.53)"/><path class="cls-5" d="M1191.8,129.25a2.75,2.75,0,0,0,1.22,2.24,4.76,4.76,0,0,0,2.53.64,10.61,10.61,0,0,0,1.17-.08,5,5,0,0,0,1.23-.3,2.29,2.29,0,0,0,.94-.66,1.56,1.56,0,0,0,.34-1.13,1.62,1.62,0,0,0-.51-1.16,3.47,3.47,0,0,0-1.24-.72,12.33,12.33,0,0,0-1.71-.46l-2-.42a19.58,19.58,0,0,1-2-.54,6.26,6.26,0,0,1-1.69-.86,4.07,4.07,0,0,1-1.2-1.4,4.4,4.4,0,0,1-.45-2.09,3.75,3.75,0,0,1,.66-2.26,4.9,4.9,0,0,1,1.66-1.47,7.34,7.34,0,0,1,2.24-.78,13.06,13.06,0,0,1,2.35-.23,10.89,10.89,0,0,1,2.45.27,7,7,0,0,1,2.11.88,5.18,5.18,0,0,1,2.35,3.94h-3.81a2.29,2.29,0,0,0-1.19-1.76,5,5,0,0,0-2.16-.45,6.56,6.56,0,0,0-.92.07,4,4,0,0,0-1,.24,1.89,1.89,0,0,0-.78.51,1.19,1.19,0,0,0-.32.88,1.39,1.39,0,0,0,.46,1.09,3.82,3.82,0,0,0,1.22.68,12.27,12.27,0,0,0,1.71.47l2,.41a18.13,18.13,0,0,1,2,.55,6.16,6.16,0,0,1,1.72.86,4,4,0,0,1,1.68,3.43,4.49,4.49,0,0,1-.67,2.49,5.38,5.38,0,0,1-1.75,1.67,8,8,0,0,1-2.38.92,11.64,11.64,0,0,1-2.6.29,11.44,11.44,0,0,1-2.89-.35,6.78,6.78,0,0,1-2.3-1.07,5.09,5.09,0,0,1-1.54-1.79,5.78,5.78,0,0,1-.59-2.55Z" transform="translate(-930.53)"/><path class="cls-5" d="M1213.89,135a9.12,9.12,0,0,1-3.54-.65,7.58,7.58,0,0,1-2.63-1.81,8,8,0,0,1-1.63-2.75,10.69,10.69,0,0,1-.56-3.52,10.56,10.56,0,0,1,.56-3.49,7.79,7.79,0,0,1,1.63-2.75,7.58,7.58,0,0,1,2.63-1.81,9.8,9.8,0,0,1,7.07,0,7.58,7.58,0,0,1,2.63,1.81,7.79,7.79,0,0,1,1.63,2.75,10.56,10.56,0,0,1,.56,3.49,10.69,10.69,0,0,1-.56,3.52,8,8,0,0,1-1.63,2.75,7.58,7.58,0,0,1-2.63,1.81A9.11,9.11,0,0,1,1213.89,135Zm0-2.88a4.2,4.2,0,0,0,2.11-.51,4.5,4.5,0,0,0,1.47-1.34,6,6,0,0,0,.85-1.88,8.38,8.38,0,0,0,.27-2.12,8.56,8.56,0,0,0-.27-2.12,5.8,5.8,0,0,0-.85-1.87A4.58,4.58,0,0,0,1216,121a4.64,4.64,0,0,0-4.23,0,4.58,4.58,0,0,0-1.47,1.33,5.8,5.8,0,0,0-.85,1.87,8.56,8.56,0,0,0-.27,2.12,8.38,8.38,0,0,0,.27,2.12,6,6,0,0,0,.85,1.88,4.5,4.5,0,0,0,1.47,1.34A4.21,4.21,0,0,0,1213.89,132.13Z" transform="translate(-930.53)"/><path class="cls-5" d="M1225.92,118h3.42v3.2h.06a3.76,3.76,0,0,1,.63-1.31,5.89,5.89,0,0,1,1.12-1.17,5.69,5.69,0,0,1,1.45-.85,4.47,4.47,0,0,1,1.64-.32,8.53,8.53,0,0,1,.88,0l.49.07v3.52c-.25,0-.51-.08-.78-.11a5.32,5.32,0,0,0-.79,0,4.12,4.12,0,0,0-1.74.37,3.9,3.9,0,0,0-1.42,1.08,5.23,5.23,0,0,0-1,1.78,7.49,7.49,0,0,0-.36,2.43v7.87h-3.64Z" transform="translate(-930.53)"/><path class="cls-5" d="M1253.12,133.7q0,3.75-2.1,5.58a8.86,8.86,0,0,1-6,1.84,12.64,12.64,0,0,1-2.51-.25,7.37,7.37,0,0,1-2.31-.87,5.54,5.54,0,0,1-1.74-1.6,4.79,4.79,0,0,1-.83-2.43h3.64a2.94,2.94,0,0,0,.55,1.25,2.73,2.73,0,0,0,.91.75,3.4,3.4,0,0,0,1.17.35,9.65,9.65,0,0,0,1.34.08,4.27,4.27,0,0,0,3.23-1.08,4.39,4.39,0,0,0,1-3.14v-2.53h-.07a5.59,5.59,0,0,1-5,2.91,7.53,7.53,0,0,1-3.37-.68,6.46,6.46,0,0,1-2.31-1.89,7.9,7.9,0,0,1-1.32-2.77,13,13,0,0,1-.42-3.36,9.8,9.8,0,0,1,.51-3.17,8.1,8.1,0,0,1,1.47-2.64,7,7,0,0,1,5.51-2.48,6.35,6.35,0,0,1,2.88.66,4.46,4.46,0,0,1,2,2.06h.07V118h3.65Zm-8.1-2a3.87,3.87,0,0,0,3.44-1.8,5.94,5.94,0,0,0,.77-1.86,9.27,9.27,0,0,0,.24-2.1,8.15,8.15,0,0,0-.26-2,5.42,5.42,0,0,0-.78-1.76,3.7,3.7,0,0,0-1.38-1.22,4.26,4.26,0,0,0-2-.45,3.87,3.87,0,0,0-2,.51,4.15,4.15,0,0,0-1.34,1.33,5.8,5.8,0,0,0-.74,1.86,9.69,9.69,0,0,0-.22,2.06,7.47,7.47,0,0,0,.26,2,5.67,5.67,0,0,0,.78,1.75,4.19,4.19,0,0,0,1.34,1.24A3.83,3.83,0,0,0,1245,131.68Z" transform="translate(-930.53)"/><path class="cls-5" d="M1260.28,127.24a6.06,6.06,0,0,0,.28,1.85,4.59,4.59,0,0,0,.81,1.57,3.89,3.89,0,0,0,1.38,1.07,4.46,4.46,0,0,0,2,.4,4.38,4.38,0,0,0,2.58-.69,4,4,0,0,0,1.45-2.06h3.46a6.76,6.76,0,0,1-1,2.4,7,7,0,0,1-1.7,1.78,7.16,7.16,0,0,1-2.22,1.08,8.8,8.8,0,0,1-2.58.37,8.67,8.67,0,0,1-3.45-.64,7.05,7.05,0,0,1-2.55-1.79,7.84,7.84,0,0,1-1.57-2.75,11.25,11.25,0,0,1-.52-3.52,9.82,9.82,0,0,1,.56-3.35,8.43,8.43,0,0,1,1.6-2.78,7.54,7.54,0,0,1,5.84-2.61,7.35,7.35,0,0,1,3.5.82,7.73,7.73,0,0,1,2.58,2.16,8.69,8.69,0,0,1,1.48,3.09,9.43,9.43,0,0,1,.24,3.6Zm8.52-2.4a6.32,6.32,0,0,0-.37-1.67,4.58,4.58,0,0,0-.83-1.39,4.22,4.22,0,0,0-1.28-1,3.76,3.76,0,0,0-1.68-.37,4.3,4.3,0,0,0-1.75.34,3.84,3.84,0,0,0-1.34.93,4.44,4.44,0,0,0-.9,1.39,4.9,4.9,0,0,0-.37,1.73Z" transform="translate(-930.53)"/><path class="cls-5" d="M1276.16,130.24h4.44v4.32h-4.44Z" transform="translate(-930.53)"/><path class="cls-5" d="M1283.77,118h4l4.19,12.7h.07l4-12.7h3.77l-5.92,16.54h-4.09Z" transform="translate(-930.53)"/><path class="cls-5" d="M1305.5,127.24a6.37,6.37,0,0,0,.27,1.85,4.44,4.44,0,0,0,.82,1.57,3.94,3.94,0,0,0,1.37,1.07,4.53,4.53,0,0,0,2,.4,4.37,4.37,0,0,0,2.57-.69,4,4,0,0,0,1.46-2.06h3.45a6.76,6.76,0,0,1-1,2.4,7,7,0,0,1-1.69,1.78,7.21,7.21,0,0,1-2.23,1.08,8.78,8.78,0,0,1-2.57.37,8.68,8.68,0,0,1-3.46-.64,7,7,0,0,1-2.54-1.79,7.55,7.55,0,0,1-1.57-2.75,11.25,11.25,0,0,1-.53-3.52,10.07,10.07,0,0,1,.56-3.35,8.6,8.6,0,0,1,1.6-2.78,7.54,7.54,0,0,1,5.84-2.61,7.32,7.32,0,0,1,3.5.82,7.54,7.54,0,0,1,2.58,2.16,8.71,8.71,0,0,1,1.49,3.09,9.43,9.43,0,0,1,.24,3.6Zm8.51-2.4a5.62,5.62,0,0,0-.37-1.67,4.39,4.39,0,0,0-.83-1.39,4.1,4.1,0,0,0-1.28-1,3.7,3.7,0,0,0-1.68-.37,4.25,4.25,0,0,0-1.74.34,3.88,3.88,0,0,0-1.35.93,4.42,4.42,0,0,0-.89,1.39,4.69,4.69,0,0,0-.37,1.73Z" transform="translate(-930.53)"/><path class="cls-5" d="M1321.08,118h3.43v3.2h.06a3.76,3.76,0,0,1,.63-1.31,5.62,5.62,0,0,1,1.12-1.17,5.53,5.53,0,0,1,1.45-.85,4.42,4.42,0,0,1,1.63-.32,8.39,8.39,0,0,1,.88,0l.5.07v3.52c-.26,0-.52-.08-.78-.11a5.32,5.32,0,0,0-.79,0,4.09,4.09,0,0,0-1.74.37,3.93,3.93,0,0,0-1.43,1.08,5.59,5.59,0,0,0-1,1.78,7.78,7.78,0,0,0-.35,2.43v7.87h-3.65Z" transform="translate(-930.53)"/><path class="cls-5" d="M1333,118h3.45v2.3h.1a10.94,10.94,0,0,1,.89-1.12,4.92,4.92,0,0,1,1.08-.86,5.1,5.1,0,0,1,1.36-.56,6.69,6.69,0,0,1,1.76-.21,6.12,6.12,0,0,1,2.8.67,3.85,3.85,0,0,1,1.84,2.08,7.39,7.39,0,0,1,2.14-2,5.78,5.78,0,0,1,3-.74,6,6,0,0,1,4.08,1.28c1,.86,1.46,2.28,1.46,4.29v11.42h-3.65V124.9c0-.66,0-1.26-.07-1.81a3.75,3.75,0,0,0-.36-1.41,2.18,2.18,0,0,0-.92-.91,3.63,3.63,0,0,0-1.66-.32,3.12,3.12,0,0,0-2.69,1.15,5.56,5.56,0,0,0-.83,3.27v9.69h-3.65V123.94a4.57,4.57,0,0,0-.62-2.61,2.65,2.65,0,0,0-2.29-.88,3.39,3.39,0,0,0-1.36.29,3.35,3.35,0,0,0-1.15.83,4.06,4.06,0,0,0-.8,1.35,5.15,5.15,0,0,0-.3,1.82v9.82H1333Z" transform="translate(-930.53)"/><path class="cls-5" d="M1369.05,135a9.19,9.19,0,0,1-3.54-.65,7.54,7.54,0,0,1-2.62-1.81,7.82,7.82,0,0,1-1.63-2.75,10.69,10.69,0,0,1-.56-3.52,10.56,10.56,0,0,1,.56-3.49,7.64,7.64,0,0,1,1.63-2.75,7.54,7.54,0,0,1,2.62-1.81,9.82,9.82,0,0,1,7.08,0,7.46,7.46,0,0,1,4.25,4.56,10.3,10.3,0,0,1,.56,3.49,10.44,10.44,0,0,1-.56,3.52,7.67,7.67,0,0,1-1.63,2.75,7.54,7.54,0,0,1-2.62,1.81A9.19,9.19,0,0,1,1369.05,135Zm0-2.88a4.2,4.2,0,0,0,2.11-.51,4.4,4.4,0,0,0,1.47-1.34,5.74,5.74,0,0,0,.85-1.88,8.38,8.38,0,0,0,.27-2.12,8.56,8.56,0,0,0-.27-2.12,5.6,5.6,0,0,0-.85-1.87,4.48,4.48,0,0,0-1.47-1.33,4.62,4.62,0,0,0-4.22,0,4.48,4.48,0,0,0-1.47,1.33,5.6,5.6,0,0,0-.85,1.87,8.56,8.56,0,0,0-.27,2.12,8.38,8.38,0,0,0,.27,2.12,5.74,5.74,0,0,0,.85,1.88,4.4,4.4,0,0,0,1.47,1.34A4.2,4.2,0,0,0,1369.05,132.13Zm-4.51-16.83v-3.46h3.65v3.46Zm9.15-3.46v3.46H1370v-3.46Z" transform="translate(-930.53)"/><path class="cls-5" d="M1396.38,133.7q0,3.75-2.1,5.58a8.84,8.84,0,0,1-6,1.84,12.64,12.64,0,0,1-2.51-.25,7.46,7.46,0,0,1-2.31-.87,5.54,5.54,0,0,1-1.74-1.6,4.79,4.79,0,0,1-.83-2.43h3.65a2.71,2.71,0,0,0,1.45,2,3.4,3.4,0,0,0,1.17.35,9.75,9.75,0,0,0,1.34.08,4.29,4.29,0,0,0,3.24-1.08,4.43,4.43,0,0,0,1-3.14v-2.53h-.06a5.62,5.62,0,0,1-5,2.91,7.55,7.55,0,0,1-3.38-.68A6.34,6.34,0,0,1,1382,132a7.91,7.91,0,0,1-1.33-2.77,13,13,0,0,1-.42-3.36,9.8,9.8,0,0,1,.51-3.17,8.31,8.31,0,0,1,1.48-2.64,7.15,7.15,0,0,1,2.35-1.81,7.28,7.28,0,0,1,3.15-.67,6.29,6.29,0,0,1,2.88.66,4.48,4.48,0,0,1,2,2.06h.06V118h3.65Zm-8.1-2a3.84,3.84,0,0,0,3.44-1.8,5.94,5.94,0,0,0,.77-1.86,9.27,9.27,0,0,0,.24-2.1,8.15,8.15,0,0,0-.26-2,5.42,5.42,0,0,0-.78-1.76,3.7,3.7,0,0,0-1.38-1.22,4.26,4.26,0,0,0-2-.45,3.87,3.87,0,0,0-2,.51,4.15,4.15,0,0,0-1.34,1.33,5.8,5.8,0,0,0-.74,1.86,10.38,10.38,0,0,0-.22,2.06,7.47,7.47,0,0,0,.26,2A5.67,5.67,0,0,0,1385,130a4.19,4.19,0,0,0,1.34,1.24A3.83,3.83,0,0,0,1388.28,131.68Z" transform="translate(-930.53)"/><path class="cls-5" d="M1403.55,127.24a6.37,6.37,0,0,0,.27,1.85,4.59,4.59,0,0,0,.81,1.57,4,4,0,0,0,1.38,1.07,4.48,4.48,0,0,0,2,.4,4.38,4.38,0,0,0,2.58-.69,4,4,0,0,0,1.46-2.06h3.45a6.76,6.76,0,0,1-1,2.4,7,7,0,0,1-1.7,1.78,7.16,7.16,0,0,1-2.22,1.08,8.8,8.8,0,0,1-2.58.37,8.67,8.67,0,0,1-3.45-.64,7.05,7.05,0,0,1-2.55-1.79,7.67,7.67,0,0,1-1.56-2.75,11,11,0,0,1-.53-3.52,9.82,9.82,0,0,1,.56-3.35,8.43,8.43,0,0,1,1.6-2.78,7.54,7.54,0,0,1,5.84-2.61,7.32,7.32,0,0,1,3.5.82,7.63,7.63,0,0,1,2.58,2.16,8.71,8.71,0,0,1,1.49,3.09,9.85,9.85,0,0,1,.24,3.6Zm8.51-2.4a6.32,6.32,0,0,0-.37-1.67,4.39,4.39,0,0,0-.83-1.39,4.1,4.1,0,0,0-1.28-1,3.7,3.7,0,0,0-1.68-.37,4.34,4.34,0,0,0-1.75.34,3.84,3.84,0,0,0-1.34.93,4.63,4.63,0,0,0-.9,1.39,4.9,4.9,0,0,0-.36,1.73Z" transform="translate(-930.53)"/><path class="cls-5" d="M1419.13,118h3.46v2.43l.06.07a6,6,0,0,1,2.18-2.16,5.69,5.69,0,0,1,3-.79,6.2,6.2,0,0,1,4.29,1.41,5.41,5.41,0,0,1,1.57,4.22v11.36H1430v-10.4a4.49,4.49,0,0,0-.83-2.83,3,3,0,0,0-2.4-.88,3.89,3.89,0,0,0-1.67.34,3.47,3.47,0,0,0-1.24.93,4.05,4.05,0,0,0-.8,1.39,4.77,4.77,0,0,0-.29,1.69v9.76h-3.65Z" transform="translate(-930.53)"/></svg>
-                </logo>    
-                    
-                <headline>
-                    <h1>Wir versichern <br>
-                        die Zukunft <br>
-                        unserer Region.</h1>
-                    <p>Wir sind für Sie da wenn es schwierig wird. Gerne beraten wir <br>
-                        sie kostenlos zu Themen wie Altersvorsorge, Hausratsversicherung, <br>
-                        KFZ Versicherung und vielen mehr. <br>
-                        Kommen Sie vorbei oder rufen Sie uns an. </p>
-                </headline>
-                <location>
-                    <marker><svg xmlns="http://www.w3.org/2000/svg" width="34.938" height="47.437" viewBox="0 0 34.938 47.437">
-                        <g id="Group_1" data-name="Group 1" transform="translate(-194 -736)">
-                          <g id="Path_1" data-name="Path 1" transform="translate(194 736)" fill="none">
-                            <path d="M17.469,0A17.469,17.469,0,0,1,34.938,17.469c0,11.915-16.51,29.968-17.469,29.968S.1,30.426,0,17.469A17.469,17.469,0,0,1,17.469,0Z" stroke="none"/>
-                            <path d="M 17.4692325592041 0.9999961853027344 C 13.07014274597168 0.9999961853027344 8.934352874755859 2.713096618652344 5.823732376098633 5.823726654052734 C 2.713863372802734 8.933597564697266 1.000839233398438 13.06790542602539 1.000003814697266 17.46579360961914 C 1.021263122558594 20.20808982849121 1.828350067138672 23.37545967102051 3.398893356323242 26.88004684448242 C 4.712352752685547 29.81097793579102 6.536481857299805 32.93481826782227 8.820602416992188 36.16477966308594 C 11.06827163696289 39.34318542480469 13.19978332519531 41.8346061706543 14.59210205078125 43.36496734619141 C 15.98661041259766 44.89772415161133 16.95386123657227 45.81367874145508 17.45884895324707 46.23968124389648 C 18.72543334960938 45.12374496459961 22.43670272827148 41.11305236816406 26.15160369873047 35.76698684692383 C 28.44290161132812 32.46960830688477 30.27004241943359 29.33158683776855 31.58227157592773 26.44009780883789 C 33.14572143554688 22.99503707885742 33.93846130371094 19.97679710388184 33.93846130371094 17.4692268371582 C 33.93846130371094 13.07013702392578 32.22536087036133 8.934356689453125 29.11473274230957 5.823726654052734 C 26.00411224365234 2.713096618652344 21.86832237243652 0.9999961853027344 17.4692325592041 0.9999961853027344 M 17.4692325592041 -3.814697265625e-06 C 27.11722183227539 -3.814697265625e-06 34.93846130371094 7.821247100830078 34.93846130371094 17.4692268371582 C 34.93846130371094 29.38400840759277 18.42825317382812 47.43735885620117 17.4692325592041 47.43735885620117 C 16.51021194458008 47.43735885620117 0.09681320190429688 30.42644691467285 3.814697265625e-06 17.4692268371582 C 3.814697265625e-06 7.821247100830078 7.821243286132812 -3.814697265625e-06 17.4692325592041 -3.814697265625e-06 Z" stroke="none" fill="#838383"/>
-                          </g>
-                          <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(205 746)" fill="none" stroke="#838383" stroke-width="1">
-                            <ellipse cx="6.5" cy="6" rx="6.5" ry="6" stroke="none"/>
-                            <ellipse cx="6.5" cy="6" rx="6" ry="5.5" fill="none"/>
-                          </g>
-                        </g>
-                      </svg>
-                      </marker>
-                    <h2>Kontakt</h2>
-                </location>
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Unsere Leistungen</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 17h2m6 0h6M7 17a2 2 0 1 0 4 0m6 0a2 2 0 1 0 4 0M5 9l1.44-2.88A2 2 0 0 1 8.22 5h7.56a2 2 0 0 1 1.78 1.12L19 9m0 0h1a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-1M5 9H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h1"/>
+                        </svg>
+                    </div>
+                    <h3>KFZ & Fahrzeuge</h3>
+                    <p>Kfz-Haftpflicht, Kasko, Insassen­unfallversicherung. Optimal geschützt auf allen Straßen.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M15 7h.01M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/>
+                            <path d="M6 10h4m-4 4h12"/>
+                        </svg>
+                    </div>
+                    <h3>KFZ-Zulassung</h3>
+                    <p>Schnelle An- und Abmeldung, Kennzeichen, Umschreibungen. Für GM, KI, VB, WL.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                            <polyline points="9 22 9 12 15 12 15 22"/>
+                        </svg>
+                    </div>
+                    <h3>Wohnen & Recht</h3>
+                    <p>Hausrat, Eigenheim, Rechtsschutz. Umfassender Schutz für Ihr Zuhause.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="1" x2="12" y2="23"/>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                    </div>
+                    <h3>Sparen & Vorsorge</h3>
+                    <p>Lebensversicherung, Pensionsvorsorge,  Sparprodukte. Ihre finanzielle Zukunft.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </div>
+                    <h3>Gesundheit & Freizeit</h3>
+                    <p>Krankenversicherung, Unfallschutz, Reiseversicherung für sorglose Momente.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+                            <path d="M9 6h6M9 10h6M9 14h6M9 18h6"/>
+                        </svg>
+                    </div>
+                    <h3>Unternehmen</h3>
+                    <p>Gewerbe­versicherungen, Betriebshaftpflicht. Maßgeschneidert für Ihr Business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <card class="card_1">
-                    <h3>Gmunden</h3>
-                    <p> Bahnhofstraße 46 <br>
-                        4810 Gmunden <br>
-                        07612/62006-0<br>
-                        <a href="mailto:agentur.lsp@allianz.at">agentur.lsp@allianz.at</a> 
-                    </p>
-                    <button-container>
-                        <a class="btn" href="tel:00437612620060 ">Anrufen</a>
-                        <a class="btn" href="https://www.allianz.at/de_AT/beratung/lsp.html" target="_blank">Website</a>
-                    </button-container>
-                </card>
-            </grid>
-        
-        <script src="" async defer></script>
-    </body>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Besuchen Sie uns</h2>
+                    <div class="contact-item">
+                        <strong>Adresse</strong>
+                        <p>
+                            Bahnhofstraße 46<br>
+                            4810 Gmunden
+                        </p>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Telefon</strong>
+                        <p><a href="tel:+43761267646-0">07612/67646-0</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <strong>E-Mail</strong>
+                        <p><a href="mailto:agentur.lsp@allianz.at">agentur.lsp@allianz.at</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Öffnungszeiten</strong>
+                        <p>
+                            Mo - Do: 07:30 - 12:30 & 13:30 - 16:30<br>
+                            Fr: 07:30 - 13:00
+                        </p>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Zulassungsstelle</strong>
+                        <p>Mo - Fr: 08:00 - 12:00</p>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <div id="map-consent" class="map-consent">
+                        <svg width="40" height="55" viewBox="0 0 35 47" fill="currentColor">
+                            <path d="M17.469,0A17.469,17.469,0,0,1,34.938,17.469c0,11.915-16.51,29.968-17.469,29.968S.1,30.426,0,17.469A17.469,17.469,0,0,1,17.469,0Z"/>
+                            <circle cx="17.5" cy="17" r="6" fill="#fff"/>
+                        </svg>
+                        <h3>Google Maps laden</h3>
+                        <p>Um die Karte anzuzeigen, müssen Sie der Verwendung von Google Maps zustimmen. Dabei werden Daten an Google übertragen.</p>
+                        <button onclick="loadMap()" class="btn btn-primary">Karte laden & Datenschutz akzeptieren</button>
+                    </div>
+                    <div id="map-container" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 LSP Gmunden | Leitner • Sonntagbauer • Partner</p>
+                <div class="footer-links">
+                    <a href="/datenschutz">Datenschutz</a>
+                    <span>•</span>
+                    <a href="/impressum">Impressum</a>
+                    <span>•</span>
+                    <a href="#cookie-settings" onclick="showCookieSettings(event)">Cookie-Einstellungen</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner" style="display: none;">
+        <div class="cookie-content">
+            <h3>Cookie-Hinweis</h3>
+            <p>Diese Website verwendet Cookies und externe Dienste wie Google Maps. Mit Ihrer Zustimmung helfen Sie uns, unsere Website zu verbessern. Sie können Ihre Einwilligung jederzeit widerrufen.</p>
+            <div class="cookie-buttons">
+                <button onclick="acceptCookies()" class="btn btn-primary">Alle akzeptieren</button>
+                <button onclick="rejectCookies()" class="btn btn-secondary">Nur notwendige</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cookie Consent Management
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        function setCookie(name, value, days) {
+            const expires = new Date(Date.now() + days * 864e5).toUTCString();
+            document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=/; SameSite=Strict';
+        }
+
+        function checkConsent() {
+            const consent = getCookie('lsp_consent');
+            if (!consent) {
+                document.getElementById('cookie-banner').style.display = 'block';
+            } else if (consent === 'accepted') {
+                // Auto-load map if consent was given
+                const mapConsent = document.getElementById('map-consent');
+                if (mapConsent && getCookie('lsp_map_consent') === 'accepted') {
+                    loadMap();
+                }
+            }
+        }
+
+        function acceptCookies() {
+            setCookie('lsp_consent', 'accepted', 365);
+            setCookie('lsp_map_consent', 'accepted', 365);
+            document.getElementById('cookie-banner').style.display = 'none';
+            // Auto-load map if on page
+            const mapConsent = document.getElementById('map-consent');
+            if (mapConsent && mapConsent.style.display !== 'none') {
+                loadMap();
+            }
+        }
+
+        function rejectCookies() {
+            setCookie('lsp_consent', 'rejected', 365);
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+
+        function showCookieSettings(e) {
+            e.preventDefault();
+            document.getElementById('cookie-banner').style.display = 'block';
+        }
+
+        function loadMap() {
+            setCookie('lsp_map_consent', 'accepted', 365);
+            const mapContainer = document.getElementById('map-container');
+            const mapConsent = document.getElementById('map-consent');
+            
+            // Show map container
+            mapContainer.style.display = 'block';
+            
+            // Initialize Leaflet map
+            const map = L.map(mapContainer).setView([47.925358, 13.787584], 16);
+            
+            // Add OpenStreetMap tiles
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors',
+                maxZoom: 19
+            }).addTo(map);
+            
+            // Add marker
+            const marker = L.marker([47.925358, 13.787584]).addTo(map)
+                .bindPopup('LSP Gmunden<br>Bahnhofstraße 46<br>4810 Gmunden')
+                .openPopup();
+            
+            // Force map to resize, then re-center accounting for the open popup
+            setTimeout(() => {
+                map.invalidateSize();
+                map.setView([47.9247, 13.787584], 16);
+            }, 100);
+            
+            mapConsent.style.display = 'none';
+        }
+
+        // Check consent on page load
+        document.addEventListener('DOMContentLoaded', checkConsent);
+    </script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</body>
 </html>

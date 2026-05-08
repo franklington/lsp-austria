@@ -13,10 +13,13 @@
   },
   "homepage": "https://github.com/franklington/lsp-austria#readme",
   "devDependencies": {
+    "concurrently": "^9.0.0",
+    "http-server": "^14.1.1",
     "sass": "^1.62.0"
   },
   "scripts": {
-    "dev": "sass --watch --update --style=expanded main.scss:main.css",
-    "prod": "sass --no-source-map --style=compressed main.scss:main.css"
+    "dev": "concurrently \"sass --watch --update --style=expanded main.scss:main.css\" \"http-server -p 8080 -o\"",
+    "prod": "sass --no-source-map --style=compressed main.scss:main.css",
+    "serve": "http-server -p 8080 -o"
   }
 }
