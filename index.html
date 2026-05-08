@@ -34,9 +34,7 @@
     <link rel="manifest" href="/favicons/site.webmanifest">
     
     <!-- Preload critical resources -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
     
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
@@ -210,7 +208,7 @@
                             Bahnhofstraße 46<br>
                             4810 Gmunden
                         </p>
-                        <a href="https://maps.apple.com/?address=Bahnhofstra%C3%9Fe+46,+4810+Gmunden&ll=47.925358,13.787584&q=LSP+Gmunden" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                        <a href="https://maps.apple.com/?address=Bahnhofstra%C3%9Fe+46,+4810+Gmunden&ll=47.925358,13.787584&q=LSP+Gmunden" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="margin-top: 0.8rem;">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
                             Route starten
                         </a>
@@ -245,19 +243,11 @@
                         <p>Um die Karte anzuzeigen, müssen Sie der Verwendung von OpenStreetMap zustimmen. Dabei wird Ihre IP-Adresse an OpenStreetMap übertragen.</p>
                         <div class="map-consent-buttons">
                             <button onclick="loadMap()" class="btn btn-primary">Karte laden & zustimmen</button>
-                            <a href="https://maps.apple.com/?address=Bahnhofstra%C3%9Fe+46,+4810+Gmunden&ll=47.925358,13.787584&q=LSP+Gmunden" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-                                Route starten
-                            </a>
+
                         </div>
                     </div>
                     <div id="map-container" style="display: none;"></div>
-                    <div id="map-navigate" style="display: none;" class="map-navigate">
-                        <a href="https://maps.apple.com/?address=Bahnhofstra%C3%9Fe+46,+4810+Gmunden&ll=47.925358,13.787584&q=LSP+Gmunden" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-                            Route starten
-                        </a>
-                    </div>
+                   
                 </div>
             </div>
         </div>
@@ -272,74 +262,14 @@
                     <a href="/datenschutz">Datenschutz</a>
                     <span>•</span>
                     <a href="/impressum">Impressum</a>
-                    <span>•</span>
-                    <a href="#cookie-settings" onclick="showCookieSettings(event)">Cookie-Einstellungen</a>
+
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Cookie Banner -->
-    <div id="cookie-banner" class="cookie-banner" style="display: none;">
-        <div class="cookie-content">
-            <h3>Cookie-Hinweis</h3>
-            <p>Diese Website verwendet Cookies und externe Dienste wie Google Maps. Mit Ihrer Zustimmung helfen Sie uns, unsere Website zu verbessern. Sie können Ihre Einwilligung jederzeit widerrufen.</p>
-            <div class="cookie-buttons">
-                <button onclick="acceptCookies()" class="btn btn-primary">Alle akzeptieren</button>
-                <button onclick="rejectCookies()" class="btn btn-secondary">Nur notwendige</button>
-            </div>
-        </div>
-    </div>
-
     <script>
-        // Cookie Consent Management
-        function getCookie(name) {
-            const value = `; ${document.cookie}`;
-            const parts = value.split(`; ${name}=`);
-            if (parts.length === 2) return parts.pop().split(';').shift();
-        }
-
-        function setCookie(name, value, days) {
-            const expires = new Date(Date.now() + days * 864e5).toUTCString();
-            document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=/; SameSite=Strict';
-        }
-
-        function checkConsent() {
-            const consent = getCookie('lsp_consent');
-            if (!consent) {
-                document.getElementById('cookie-banner').style.display = 'block';
-            } else if (consent === 'accepted') {
-                // Auto-load map if consent was given
-                const mapConsent = document.getElementById('map-consent');
-                if (mapConsent && getCookie('lsp_map_consent') === 'accepted') {
-                    loadMap();
-                }
-            }
-        }
-
-        function acceptCookies() {
-            setCookie('lsp_consent', 'accepted', 365);
-            setCookie('lsp_map_consent', 'accepted', 365);
-            document.getElementById('cookie-banner').style.display = 'none';
-            // Auto-load map if on page
-            const mapConsent = document.getElementById('map-consent');
-            if (mapConsent && mapConsent.style.display !== 'none') {
-                loadMap();
-            }
-        }
-
-        function rejectCookies() {
-            setCookie('lsp_consent', 'rejected', 365);
-            document.getElementById('cookie-banner').style.display = 'none';
-        }
-
-        function showCookieSettings(e) {
-            e.preventDefault();
-            document.getElementById('cookie-banner').style.display = 'block';
-        }
-
         function loadMap() {
-            setCookie('lsp_map_consent', 'accepted', 365);
             const mapContainer = document.getElementById('map-container');
             const mapConsent = document.getElementById('map-consent');
             
@@ -370,8 +300,6 @@
             document.getElementById('map-navigate').style.display = 'flex';
         }
 
-        // Check consent on page load
-        document.addEventListener('DOMContentLoaded', checkConsent);
     </script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </body>
