@@ -382,6 +382,18 @@ h1 {
     color: var(--text-secondary);
     margin-bottom: var(--spacing-md);
     font-size: var(--font-size-sm);
+
+    a {
+        color: var(--text-secondary);
+        text-decoration: underline;
+        text-decoration-color: var(--border-color);
+        text-underline-offset: 2px;
+    }
+
+    a:hover {
+        color: var(--text-primary);
+        text-decoration-color: var(--text-secondary);
+    }
 }
 
 .trust-badges {
@@ -506,6 +518,11 @@ h1 {
     margin-top: var(--spacing-lg);
 }
 
+.segment-grid .service-card,
+.faq-list .service-card {
+    height: 100%;
+}
+
 .section-note {
     margin-top: var(--spacing-md);
     color: var(--text-muted);
@@ -534,6 +551,11 @@ h1 {
 
     p:last-child {
         margin-bottom: 0;
+    }
+
+    strong {
+        color: var(--text-primary);
+        font-weight: var(--font-weight-medium);
     }
 }
 
@@ -592,25 +614,23 @@ h1 {
     }
 }
 
+.contact-route-link {
+    margin-top: 0.8rem;
+}
+
 .contact-map {
- 
-   
     display: flex;
     flex-direction: column;
     
     #map-container {
         flex: 1;
-         overflow: hidden;
-    box-shadow: var(--shadow-inset);
+        overflow: hidden;
+        box-shadow: var(--shadow-inset);
         width: 100%;
-           background: var(--bg-card);
-               border: 1px solid var(--border-subtle);
-
-    border-radius: var(--radius-lg);
+        background: var(--bg-card);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-lg);
         filter: grayscale(100%);
-        
-        @media (max-width: 768px) {
-        }
     }
 }
 
