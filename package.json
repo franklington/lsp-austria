@@ -20,7 +20,7 @@
   "scripts": {
     "dev": "concurrently \"sass --watch --update --style=expanded main.scss:main.css\" \"http-server -p 8080 -o\"",
     "prod": "sass --no-source-map --style=compressed main.scss:main.css",
-    "build": "sass --no-source-map --style=compressed main.scss:main.css && mkdir -p dist && cp index.html leistungen.html risikothemen.html impressum.html datenschutz.html main.css logo.svg _redirects sitemap.xml robots.txt llms.txt dist/ && cp -r favicons dist/ && cp -r fonts dist/",
+    "build": "sass --no-source-map --style=compressed main.scss:main.css && mkdir -p dist && cp index.html leistungen.html risikothemen.html impressum.html datenschutz.html main.css main.js logo.svg _redirects sitemap.xml robots.txt llms.txt dist/ && cp -r favicons dist/ && cp -r fonts dist/",
     "serve": "http-server -p 8080 -o"
   },
   "dependencies": {
