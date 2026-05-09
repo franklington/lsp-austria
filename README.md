@@ -6,7 +6,7 @@ Modern, SEO-optimized landing page for LSP Austria - Allianz Insurance Agency in
 
 Professional landing page for LSP Austria featuring:
 - **Ultra-fast performance** (49ms load time, 10KB total)
-- **Full SEO optimization** with Schema.org local business markup
+- **Full SEO optimization** with Schema.org graph markup (Organization, InsuranceAgency, LocalBusiness, FAQPage, Article)
 - **Mobile-first responsive design**
 - **Accessibility compliant** (WCAG 2.1)
 - **Modern UI/UX** with smooth animations
@@ -17,7 +17,10 @@ Professional landing page for LSP Austria featuring:
 ✅ Complete service overview (KFZ, Vorsorge, Wohnen, etc.)  
 ✅ KFZ registration office information  
 ✅ Interactive contact section with hours  
-✅ Structured data for search engines  
+✅ Conversion-first hero with 2-minute advisory CTA  
+✅ Local risk topics for Gmunden/Austria (2026)  
+✅ Structured data for search and AI systems  
+✅ `llms.txt` policy for AI crawler guidance  
 ✅ One- click call & email actions
 
 ## 🛠️ Tech Stack
@@ -80,6 +83,7 @@ lsp-austria/
 ├── index.html          # Main HTML file with SEO & Schema.org
 ├── main.scss           # SCSS source styles with design system
 ├── main.css            # Compiled CSS (auto-generated)
+├── llms.txt            # AI crawler access and citation policy
 ├── Favicon.svg         # Site favicon
 ├── favicons/           # Multi-platform favicons
 ├── .github/workflows/  # GitHub Actions deployment
@@ -106,10 +110,11 @@ The site uses a modern design system with:
 
 - Meta descriptions and keywords
 - Open Graph tags for social sharing
-- Schema.org LocalBusiness markup
+- Schema.org graph markup (Organization, InsuranceAgency, LocalBusiness, FAQPage, Article)
 - Semantic HTML5 structure
 - Descriptive page title
 - Optimal keyword density
+- llms.txt for AI crawler discoverability policy
 
 ## 📝 License
 
