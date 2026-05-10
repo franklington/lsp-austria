@@ -32,6 +32,7 @@
     --bg-dark: #1A1A1A;
     --bg-elevated: #242424;
     --bg-card: #202020;
+    --bg-overlay: rgba(15, 15, 15, 0.98);
     
     // Text - High contrast with refined grays
     --text-primary: #F5F5F5;
@@ -446,7 +447,7 @@ a {
         flex-direction: column;
         align-items: stretch;
         gap: 0.35rem;
-        background: rgba(15, 15, 15, 0.98);
+        background: var(--bg-overlay);
         padding: calc(env(safe-area-inset-top, 0px) + 5rem) var(--spacing-md) calc(env(safe-area-inset-bottom, 0px) + var(--spacing-md));
         z-index: 1100;
         overflow-y: auto;

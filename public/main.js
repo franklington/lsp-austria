@@ -11,6 +11,7 @@
         const toggle = component.querySelector('[data-nav-toggle]');
         const panel = component.querySelector('[data-nav-panel]');
         if (!toggle || !panel) return;
+        let focusableElements = [];
 
         if (!panel.id) {
             panel.id = `site-nav-${index + 1}`;
@@ -19,11 +20,17 @@
         toggle.setAttribute('aria-controls', panel.id);
         toggle.setAttribute('aria-expanded', 'false');
 
+        const getFocusableElements = () => [toggle, ...Array.from(panel.querySelectorAll(focusableSelector))].filter((element) => {
+            if (!(element instanceof HTMLElement)) return false;
+            return !element.hasAttribute('hidden') && element.offsetParent !== null;
+        });
+
         const closeMenu = ({ returnFocus = false } = {}) => {
             component.classList.remove('is-open');
             toggle.setAttribute('aria-expanded', 'false');
             document.body.classList.remove('nav-open');
             panel.hidden = mobileMediaQuery.matches;
+            focusableElements = [];
             if (returnFocus) {
                 toggle.focus();
             }
@@ -34,6 +41,7 @@
             toggle.setAttribute('aria-expanded', 'true');
             panel.hidden = false;
             document.body.classList.add('nav-open');
+            focusableElements = getFocusableElements();
             const firstLink = panel.querySelector(focusableSelector);
             if (firstLink instanceof HTMLElement) {
                 firstLink.focus();
@@ -80,11 +88,9 @@
 
             if (event.key !== 'Tab') return;
 
-            const focusableElements = [toggle, ...Array.from(panel.querySelectorAll(focusableSelector))].filter((element) => {
-                if (!(element instanceof HTMLElement)) return false;
-                return !element.hasAttribute('hidden') && element.offsetParent !== null;
-            });
-
+            if (!focusableElements.length) {
+                focusableElements = getFocusableElements();
+            }
             if (!focusableElements.length) return;
 
             const first = focusableElements[0];
