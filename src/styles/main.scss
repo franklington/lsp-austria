@@ -96,10 +96,13 @@
     --radius-lg: 12px;
     --radius-xl: 16px;
     --nav-overlay-top-offset: 5rem;
-    --primary-12: rgba(99, 102, 241, 0.12);
-    --primary-08: rgba(99, 102, 241, 0.08);
-    --primary-35: rgba(99, 102, 241, 0.35);
-    --primary-25: rgba(99, 102, 241, 0.25);
+    --primary-alpha-08: rgba(99, 102, 241, 0.08);
+    --primary-alpha-12: rgba(99, 102, 241, 0.12);
+    --primary-alpha-25: rgba(99, 102, 241, 0.25);
+    --primary-alpha-35: rgba(99, 102, 241, 0.35);
+    --hero-gradient-1-size: 1200px 600px;
+    --hero-gradient-2-size: 900px 500px;
+    --hero-gradient-fade-stop: 55%;
 }
 
 // === Intro Animation ===
@@ -168,8 +171,8 @@ body {
     line-height: var(--line-height-normal);
     color: var(--text-primary);
     background:
-        radial-gradient(1200px 600px at 0% 0%, var(--primary-12), transparent 55%),
-        radial-gradient(900px 500px at 100% 100%, var(--primary-08), transparent 55%),
+        radial-gradient(var(--hero-gradient-1-size) at 0% 0%, var(--primary-alpha-12), transparent var(--hero-gradient-fade-stop)),
+        radial-gradient(var(--hero-gradient-2-size) at 100% 100%, var(--primary-alpha-08), transparent var(--hero-gradient-fade-stop)),
         var(--bg-dark);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -581,7 +584,7 @@ a {
     &:hover {
         background: var(--bg-elevated);
         color: var(--primary-light);
-        border-color: var(--primary-35);
+        border-color: var(--primary-alpha-35);
     }
 }
 
@@ -739,7 +742,7 @@ h1 {
     
     &:hover {
         background: var(--bg-elevated-70);
-        border-color: var(--primary-25);
+        border-color: var(--primary-alpha-25);
         transform: translateY(-4px);
         box-shadow: var(--shadow-large);
         opacity: 1;
