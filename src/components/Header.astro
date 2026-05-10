@@ -15,12 +15,12 @@ const isActive = (href) => {
 ---
 
 <nav
-  class={`w-full h-20 flex flex-col justify-center items-center fixed z-40 transition-all duration-300 ${!isHomepage ? 'bg-bgDark1/70 backdrop-blur-[15px]' : ''}`}
+  class={`w-full h-20 flex flex-col justify-center items-center fixed z-[1200] transition-all duration-300 ${!isHomepage ? 'bg-bgDark1/70 backdrop-blur-[15px]' : ''}`}
   id="main-nav"
   data-homepage={isHomepage ? 'true' : 'false'}
   aria-label="Main navigation"
 >
-  <div class="relative flex w-11/12 items-center justify-between xl:w-10/12 2xl:w-7xl">
+  <div class="relative z-[1201] flex w-11/12 items-center justify-between xl:w-10/12 2xl:w-7xl">
     <a href="/" aria-label="Startseite">
       <div class="flex grow basis-0 items-center justify-start gap-3">
         <img src="/logo.svg" alt="LSP Logo" width="120" height="32" />
@@ -56,9 +56,9 @@ const isActive = (href) => {
       <div class="h-0.5 w-5 bg-gray-500"></div>
     </button>
   </div>
-  <div class="fixed inset-0 top-20 z-40 hidden lg:hidden" id="mobile-menu-overlay"></div>
+  <div class="fixed inset-0 top-20 z-[1190] hidden bg-black/50 lg:hidden" id="mobile-menu-overlay"></div>
   <div
-    class="bg-bgDark1 border-bgDark3 absolute top-4 left-0 z-50 mt-16 hidden w-full flex-col items-center gap-8 border-y border-solid pt-10 pb-10 lg:hidden"
+    class="bg-bgDark1 border-bgDark3 absolute top-4 left-0 z-[1200] mt-16 hidden w-full flex-col items-center gap-8 border-y border-solid pt-10 pb-10 lg:hidden"
     id="mobile-menu"
   >
     {navLinks.map(({ label, href }) => (
@@ -79,6 +79,8 @@ const isActive = (href) => {
     const overlay = document.getElementById('mobile-menu-overlay');
     const nav = document.getElementById('main-nav');
     if (!toggle || !menu || !overlay || !nav) return;
+    if (nav.dataset.initialized === 'true') return;
+    nav.dataset.initialized = 'true';
 
     const isHomepage = nav.dataset.homepage === 'true';
     const updateNavBackground = () => {
@@ -118,6 +120,9 @@ const isActive = (href) => {
     });
 
     overlay.addEventListener('click', closeMenu);
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024) closeMenu();
+    });
 
     document.querySelectorAll('.mobile-nav-link').forEach((link) => {
       link.addEventListener('click', closeMenu);
@@ -131,5 +136,7 @@ const isActive = (href) => {
     });
   };
 
+  initNavbar();
+  document.addEventListener('DOMContentLoaded', initNavbar);
   document.addEventListener('astro:page-load', initNavbar);
 </script>
