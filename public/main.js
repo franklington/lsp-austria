@@ -35,7 +35,7 @@
         const closeSubmenus = () => {
             submenuGroups.forEach((group) => {
                 group.toggle.setAttribute('aria-expanded', 'false');
-                group.panel.hidden = mobileMediaQuery.matches;
+                group.panel.hidden = true;
             });
         };
 
