@@ -198,6 +198,8 @@ const officeHourLines = companyProfile.openingHours.officeLines;
 
   <Fragment slot="scripts">
     <script is:inline>
+      const MAP_CONSENT_MAX_AGE_SECONDS = 60 * 60 * 24 * 365;
+
       const initThemenCarousel = () => {
         const carousel = document.getElementById('themen-carousel');
         if (!carousel || carousel.dataset.initialized === 'true') return;
@@ -222,7 +224,6 @@ const officeHourLines = companyProfile.openingHours.officeLines;
         const consentButton = mapContainer.querySelector('[data-map-consent-accept]');
         const mapSrc = mapContainer.dataset.mapSrc;
         const consentCookieName = 'lsp_map_consent';
-        const oneYearInSeconds = 60 * 60 * 24 * 365;
 
         const hasConsent = document.cookie.split(';').some((cookie) => cookie.trim().startsWith(`${consentCookieName}=true`));
         const renderMap = () => {
@@ -243,7 +244,7 @@ const officeHourLines = companyProfile.openingHours.officeLines;
 
         if (consentButton instanceof HTMLElement) {
           consentButton.addEventListener('click', () => {
-            document.cookie = `${consentCookieName}=true; Max-Age=${oneYearInSeconds}; Path=/; SameSite=Lax`;
+            document.cookie = `${consentCookieName}=true; Max-Age=${MAP_CONSENT_MAX_AGE_SECONDS}; Path=/; SameSite=Lax`;
             renderMap();
           });
         }
