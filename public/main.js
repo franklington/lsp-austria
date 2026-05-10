@@ -80,7 +80,7 @@
 
             if (event.key !== 'Tab') return;
 
-            const focusableElements = Array.from(panel.querySelectorAll(focusableSelector)).filter((element) => {
+            const focusableElements = [toggle, ...Array.from(panel.querySelectorAll(focusableSelector))].filter((element) => {
                 if (!(element instanceof HTMLElement)) return false;
                 return !element.hasAttribute('hidden') && element.offsetParent !== null;
             });
