@@ -359,27 +359,6 @@ a {
 
 .submenu-toggle {
     display: none;
-    align-items: center;
-    justify-content: center;
-    width: 1.7rem;
-    height: 1.7rem;
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-sm);
-    background: var(--bg-card);
-    color: var(--text-secondary);
-    cursor: pointer;
-    transition: all var(--transition-fast);
-
-    &:hover {
-        color: var(--text-primary);
-        border-color: var(--border-elevated);
-        background: var(--bg-elevated);
-    }
-
-    span {
-        font-size: 0.8rem;
-        line-height: 1;
-    }
 }
 
 .submenu {
@@ -446,28 +425,41 @@ a {
 }
 
 @media (max-width: 640px) {
+    body.nav-open {
+        overflow: hidden;
+    }
+
     .js .nav-component {
         margin-left: auto;
+        align-items: center;
+    }
+
+    .js .nav-toggle {
         position: relative;
-        flex-direction: column;
-        align-items: flex-end;
+        z-index: 1102;
     }
 
     .js .nav {
-        position: absolute;
-        top: calc(100% + 0.5rem);
-        right: 0;
-        min-width: min(17rem, calc(100vw - 2rem));
+        position: fixed;
+        inset: 0;
         display: flex;
         flex-direction: column;
         align-items: stretch;
-        gap: 0;
-        background: var(--bg-card);
-        border: 1px solid var(--border-color);
-        border-radius: var(--radius-md);
-        box-shadow: var(--shadow-large);
-        padding: 0.35rem;
-        z-index: 1001;
+        gap: 0.35rem;
+        background: rgba(15, 15, 15, 0.98);
+        padding: calc(env(safe-area-inset-top, 0px) + 5rem) var(--spacing-md) calc(env(safe-area-inset-bottom, 0px) + var(--spacing-md));
+        z-index: 1100;
+        overflow-y: auto;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity var(--transition-base), visibility var(--transition-base);
+    }
+
+    .js .nav-component.is-open .nav {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
     }
 
     .js .nav[hidden] {
@@ -476,33 +468,38 @@ a {
 
     .js .nav-link {
         display: block;
-        padding: 0.6rem 0.75rem;
+        width: 100%;
+        padding: 0.85rem 0.75rem;
         border-radius: var(--radius-sm);
+        font-size: var(--font-size-base);
     }
 
     .js .nav-item {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.2rem;
     }
 
     .js .submenu-toggle {
-        display: inline-flex;
-        vertical-align: middle;
+        display: none;
     }
 
     .js .submenu {
         position: static;
-        display: block;
+        display: flex;
+        flex-direction: column;
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
         transform: none;
         min-width: 0;
-        border: 1px solid var(--border-subtle);
+        border: none;
         box-shadow: none;
         background: transparent;
-        padding: 0.2rem;
-        margin: 0.2rem 0 0.2rem 0.75rem;
-        gap: 0;
+        padding: 0;
+        margin: 0 0 0.4rem 0.85rem;
+        gap: 0.15rem;
     }
 
     .js .submenu[hidden] {
@@ -511,8 +508,9 @@ a {
 
     .js .submenu-link {
         display: block;
-        font-size: var(--font-size-xs);
-        padding: 0.45rem 0.55rem;
+        font-size: var(--font-size-sm);
+        padding: 0.55rem 0.65rem;
+        border-left-width: 1px;
     }
 
     .js .nav .btn {

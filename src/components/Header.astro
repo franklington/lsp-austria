@@ -21,9 +21,6 @@ const isRisikothemenActive = isPathActive('/risikothemen');
           <a href="/leistungen" class:list={['nav-link', isPathActive('/leistungen') && 'is-active']} aria-current={isPathActive('/leistungen') ? 'page' : undefined}>Leistungen</a>
           <div class="nav-item nav-item--has-submenu">
             <a href="/risikothemen" class:list={['nav-link', isRisikothemenActive && 'is-active']} aria-current={isRisikothemenActive ? 'page' : undefined}>Risikothemen 2026</a>
-            <button class="submenu-toggle" type="button" data-submenu-toggle aria-expanded="false" aria-label="Monatliche Risikothemen anzeigen">
-              <span aria-hidden="true">▾</span>
-            </button>
             <div class="submenu" aria-label="Monatliche Risikothemen" data-submenu-panel>
               {monthlyTopics.map((topic) => (
                 <a href={`/risikothemen/${topic.slug}`} class:list={['submenu-link', currentPath === `/risikothemen/${topic.slug}` && 'is-active']} aria-current={currentPath === `/risikothemen/${topic.slug}` ? 'page' : undefined}>
