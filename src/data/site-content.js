@@ -10,7 +10,7 @@ export const brandValues = [
 export const companyProfile = {
   brandName: 'LSP Gmunden',
   legalName: 'LSP Consulting GmbH',
-  legalMeta: 'LSP Consulting GmbH - Firmenbuchnummer 276035i',
+  legalMeta: 'LSP Consulting GmbH — Firmenbuchnummer 276035i',
   address: {
     street: 'Bahnhofstraße 46',
     postalCode: '4810',
@@ -36,7 +36,7 @@ export const companyProfile = {
     shareCapital: 'EUR 36.000',
     businessPurpose: 'Beratung und Vermittlung',
     managingDirectors: ['Franz Adolf Leitner', 'Thomas Sonntagbauer'],
-    shareholders: ['LEITNER Investments GmbH (65 %)', 'SONNTAGBAUER Investments GmbH (35 %)'],
+    shareholders: ['LEITNER Investments GmbH (65%)', 'SONNTAGBAUER Investments GmbH (35%)'],
     representation:
       'Die Gesellschaft wird, wenn mehrere Geschäftsführer bestellt sind, durch zwei Geschäftsführer gemeinsam oder durch einen von ihnen gemeinsam mit einem Prokuristen vertreten, sofern nicht einzelnen Geschäftsführern Alleinvertretungsbefugnis eingeräumt wird.',
     supervisoryAuthority: {

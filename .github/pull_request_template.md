@@ -1,5 +1,5 @@
 ## Summary
-- 
+- Brief description of what changed and why
 
 ## Scope
 - [ ] Startseite (`/`)
