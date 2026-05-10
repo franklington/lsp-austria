@@ -115,8 +115,9 @@ import { monthlyTopics } from '../data/monthly-topics.js';
   <section class="services" id="themen-teaser">
     <div class="container">
       <h2 class="section-title">Aktuelle Themen</h2>
-      <p class="hero-subtitle">Kurze Teaser als Karten — nach rechts wischen für weitere Artikel.</p>
-      <div class="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3">
+      <p class="hero-subtitle">Aktuelle Artikel als kompakter Karten-Überblick.</p>
+      <p id="themen-carousel-help" class="sr-only">Verwenden Sie die Pfeiltasten links und rechts, um durch die Artikel zu navigieren.</p>
+      <div id="themen-carousel" class="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3" role="region" aria-label="Artikel-Karussell" aria-describedby="themen-carousel-help" tabindex="0">
         {monthlyTopics.map((topic) => (
           <article class="card min-w-[280px] snap-start p-6 md:min-w-[320px]">
             <p class="text-secondaryText text-sm">{topic.month}</p>
@@ -178,11 +179,33 @@ import { monthlyTopics } from '../data/monthly-topics.js';
               src="https://www.openstreetmap.org/export/embed.html?bbox=13.7817%2C47.9228%2C13.7939%2C47.9285&amp;layer=mapnik&amp;marker=47.925358%2C13.787584"
             ></iframe>
           </div>
-          <div class="map-navigate" style="display:flex;">
+          <div class="map-navigate is-visible">
             <a href="https://maps.apple.com/?address=Bahnhofstra%C3%9Fe+46,+4810+Gmunden&ll=47.925358,13.787584&q=LSP+Gmunden" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Route öffnen</a>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <Fragment slot="scripts">
+    <script is:inline>
+      const initThemenCarousel = () => {
+        const carousel = document.getElementById('themen-carousel');
+        if (!carousel || carousel.dataset.initialized === 'true') return;
+        carousel.dataset.initialized = 'true';
+        carousel.addEventListener('keydown', (event) => {
+          if (event.key === 'ArrowRight') {
+            event.preventDefault();
+            carousel.scrollBy({ left: 320, behavior: 'smooth' });
+          } else if (event.key === 'ArrowLeft') {
+            event.preventDefault();
+            carousel.scrollBy({ left: -320, behavior: 'smooth' });
+          }
+        });
+      };
+
+      document.addEventListener('DOMContentLoaded', initThemenCarousel);
+      document.addEventListener('astro:page-load', initThemenCarousel);
+    </script>
+  </Fragment>
 </BaseLayout>

@@ -73,14 +73,20 @@ const isActive = (href) => {
 </nav>
 
 <script is:inline>
+  const NAV_CONTROLLERS_KEY = Symbol.for('lsp.navControllers');
+
   const initNavbar = () => {
     const toggle = document.getElementById('mobile-menu-toggle');
     const menu = document.getElementById('mobile-menu');
     const overlay = document.getElementById('mobile-menu-overlay');
     const nav = document.getElementById('main-nav');
     if (!toggle || !menu || !overlay || !nav) return;
-    if (nav.dataset.initialized === 'true') return;
-    nav.dataset.initialized = 'true';
+    const navControllers = window[NAV_CONTROLLERS_KEY] || (window[NAV_CONTROLLERS_KEY] = new WeakMap());
+    const existingController = navControllers.get(nav);
+    if (existingController) existingController.abort();
+    const controller = new AbortController();
+    navControllers.set(nav, controller);
+    const { signal } = controller;
 
     const isHomepage = nav.dataset.homepage === 'true';
     const updateNavBackground = () => {
@@ -94,7 +100,7 @@ const isActive = (href) => {
 
     if (isHomepage) {
       updateNavBackground();
-      window.addEventListener('scroll', updateNavBackground);
+      window.addEventListener('scroll', updateNavBackground, { signal });
     }
 
     const openMenu = () => {
@@ -117,15 +123,15 @@ const isActive = (href) => {
       const isOpen = menu.classList.contains('flex');
       if (isOpen) closeMenu();
       else openMenu();
-    });
+    }, { signal });
 
-    overlay.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu, { signal });
     window.addEventListener('resize', () => {
       if (window.innerWidth >= 1024) closeMenu();
-    });
+    }, { signal });
 
     document.querySelectorAll('.mobile-nav-link').forEach((link) => {
-      link.addEventListener('click', closeMenu);
+      link.addEventListener('click', closeMenu, { signal });
     });
 
     document.addEventListener('keydown', (e) => {
@@ -133,10 +139,9 @@ const isActive = (href) => {
         closeMenu();
         toggle.focus();
       }
-    });
+    }, { signal });
   };
 
-  initNavbar();
   document.addEventListener('DOMContentLoaded', initNavbar);
   document.addEventListener('astro:page-load', initNavbar);
 </script>

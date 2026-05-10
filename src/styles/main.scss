@@ -1040,6 +1040,10 @@ h1 {
     }
 }
 
+.map-navigate.is-visible {
+    display: flex;
+}
+
 // === Legal Pages ===
 .legal-page {
     padding: var(--spacing-2xl) 0 var(--spacing-2xl);
