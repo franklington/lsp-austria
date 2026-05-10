@@ -45,6 +45,36 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             "telephone": "+4376126764600",
             "email": "agentur.lsp@allianz.at",
             "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "247" }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://lsp-gmunden.at/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Wie schnell bekomme ich ein erstes Angebot?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "In der Regel erhalten Sie nach einem kurzen Erstgespräch sehr rasch eine erste Einschätzung mit den passenden Optionen."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Welche Versicherungen sind für Familien in Gmunden besonders wichtig?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Typisch sind Haushalt, Wohnen, Rechtsschutz, Gesundheit, Unfall und eine sinnvolle Vorsorge je nach Lebensphase."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Bieten Sie auch Beratung für Unternehmen und Selbstständige an?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Ja, wir beraten Unternehmen und Selbstständige zu Betriebs-, Haftpflicht-, Cyber- und Vorsorgethemen."
+                }
+              }
+            ]
           }
         ]
       }
@@ -138,6 +168,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <h3>Prämienentwicklung im Haushalt</h3>
           <p>Wie Inflation und Schadenslagen Prämien beeinflussen – und wo Optimierung möglich ist.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="faq">
+    <div class="container">
+      <h2 class="section-title">Häufige Fragen</h2>
+      <div class="faq-list">
+        <article class="service-card">
+          <h3>Wie schnell bekomme ich ein erstes Angebot?</h3>
+          <p>In der Regel erhalten Sie nach einem kurzen Erstgespräch sehr rasch eine erste Einschätzung mit den passenden Optionen.</p>
+        </article>
+        <article class="service-card">
+          <h3>Welche Versicherungen sind für Familien in Gmunden besonders wichtig?</h3>
+          <p>Typisch sind Haushalt, Wohnen, Rechtsschutz, Gesundheit, Unfall und eine sinnvolle Vorsorge je nach Lebensphase.</p>
+        </article>
+        <article class="service-card">
+          <h3>Bieten Sie auch Beratung für Unternehmen und Selbstständige an?</h3>
+          <p>Ja, wir beraten Unternehmen und Selbstständige zu Betriebs-, Haftpflicht-, Cyber- und Vorsorgethemen.</p>
+        </article>
       </div>
     </div>
   </section>

@@ -1,5 +1,9 @@
 ---
 import { monthlyTopics } from '../data/monthly-topics.js';
+
+const currentPath = Astro.url.pathname;
+const isPathActive = (path) => currentPath === path || (path !== '/' && currentPath.startsWith(`${path}/`));
+const isRisikothemenActive = isPathActive('/risikothemen');
 ---
 
 <header class="header">
@@ -14,18 +18,21 @@ import { monthlyTopics } from '../data/monthly-topics.js';
           <span class="nav-toggle-icon" aria-hidden="true"></span>
         </button>
         <nav class="nav" aria-label="Hauptnavigation" data-nav-panel>
-          <a href="/leistungen" class="nav-link">Leistungen</a>
+          <a href="/leistungen" class:list={['nav-link', isPathActive('/leistungen') && 'is-active']} aria-current={isPathActive('/leistungen') ? 'page' : undefined}>Leistungen</a>
           <div class="nav-item nav-item--has-submenu">
-            <a href="/risikothemen" class="nav-link">Risikothemen 2026</a>
-            <div class="submenu" aria-label="Monatliche Risikothemen">
+            <a href="/risikothemen" class:list={['nav-link', isRisikothemenActive && 'is-active']} aria-current={isRisikothemenActive ? 'page' : undefined}>Risikothemen 2026</a>
+            <button class="submenu-toggle" type="button" data-submenu-toggle aria-expanded="false" aria-label="Monatliche Risikothemen anzeigen">
+              <span aria-hidden="true">▾</span>
+            </button>
+            <div class="submenu" aria-label="Monatliche Risikothemen" data-submenu-panel>
               {monthlyTopics.map((topic) => (
-                <a href={`/risikothemen/${topic.slug}`} class="submenu-link">
+                <a href={`/risikothemen/${topic.slug}`} class:list={['submenu-link', currentPath === `/risikothemen/${topic.slug}` && 'is-active']} aria-current={currentPath === `/risikothemen/${topic.slug}` ? 'page' : undefined}>
                   {topic.month}: {topic.title}
                 </a>
               ))}
             </div>
           </div>
-          <a href="/#contact" class="nav-link">Kontakt</a>
+          <a href="/#contact" class:list={['nav-link', currentPath === '/' && 'is-active']} aria-current={currentPath === '/' ? 'page' : undefined}>Kontakt</a>
           <a href="tel:+43761267646-0" class="btn btn-primary">07612/67646-0</a>
         </nav>
       </div>
