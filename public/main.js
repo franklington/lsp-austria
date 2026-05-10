@@ -70,7 +70,7 @@
             }
         });
 
-        document.addEventListener('keydown', (event) => {
+        component.addEventListener('keydown', (event) => {
             if (!component.classList.contains('is-open')) return;
 
             if (event.key === 'Escape') {
