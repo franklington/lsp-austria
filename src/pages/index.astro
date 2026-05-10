@@ -5,7 +5,7 @@ import { services } from '../data/services.js';
 import { companyProfile } from '../data/site-content.js';
 import ServiceCards from '../components/ServiceCards.astro';
 
-const officeHourLines = companyProfile.openingHours.office.split('\n');
+const officeHourLines = companyProfile.openingHours.officeLines;
 ---
 
 <BaseLayout
@@ -59,7 +59,7 @@ const officeHourLines = companyProfile.openingHours.office.split('\n');
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <h1>Versicherung &amp; Vorsorge in Gmunden</h1>
+        <h1>Versicherung & Vorsorge in Gmunden</h1>
         <p class="hero-subtitle">Persönliche Beratung für KFZ, Vorsorge und alle Versicherungsthemen. Ihr verlässlicher Partner in der Region.</p>
         <div class="hero-cta">
           <a href={`tel:${companyProfile.contact.phoneHref}`} class="btn btn-large btn-primary">Jetzt anrufen</a>

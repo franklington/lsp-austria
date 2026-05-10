@@ -10,7 +10,7 @@ export const brandValues = [
 export const companyProfile = {
   brandName: 'LSP Gmunden',
   legalName: 'LSP Consulting GmbH',
-  legalMeta: 'LSP Consulting GmbH — Firmenbuchnummer 276035i',
+  legalEntitySummary: 'LSP Consulting GmbH — Firmenbuchnummer 276035i',
   address: {
     street: 'Bahnhofstraße 46',
     postalCode: '4810',
@@ -24,7 +24,7 @@ export const companyProfile = {
   },
   mapUrl: 'https://maps.apple.com/?address=Bahnhofstra%C3%9Fe+46,+4810+Gmunden&ll=47.925358,13.787584&q=LSP+Gmunden',
   openingHours: {
-    office: 'Mo - Do: 07:30 - 12:30 & 13:30 - 16:30\nFr: 07:30 - 13:00',
+    officeLines: ['Mo - Do: 07:30 - 12:30 & 13:30 - 16:30', 'Fr: 07:30 - 13:00'],
     registration: 'Mo - Fr: 08:00 - 12:00'
   },
   legal: {

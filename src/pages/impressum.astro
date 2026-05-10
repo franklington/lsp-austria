@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { companyProfile } from '../data/site-content.js';
 
-const officeHourLines = companyProfile.openingHours.office.split('\n');
+const officeHourLines = companyProfile.openingHours.officeLines;
 ---
 
 <BaseLayout
@@ -15,7 +15,7 @@ const officeHourLines = companyProfile.openingHours.office.split('\n');
     <div class="container">
       <div class="legal-content">
         <h1>Impressum</h1>
-        <p class="legal-meta">{companyProfile.legalMeta}</p>
+        <p class="legal-meta">{companyProfile.legalEntitySummary}</p>
 
         <section>
           <h2>Unternehmen</h2>
