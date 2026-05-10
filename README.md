@@ -1,6 +1,6 @@
 # lsp-austria
 
-Modern, SEO-optimized landing page for LSP Austria - Allianz Insurance Agency in Gmunden.
+Modern, SEO-optimized landing page for LSP Austria in Gmunden.
 
 ## 📋 About
 
@@ -89,7 +89,7 @@ lsp-austria/
 ## 🎨 Design System
 
 The site uses a modern design system with:
-- Allianz brand colors (#0066b2 primary)
+- Neutral monochrome brand colors
 - Responsive typography (fluid scaling)
 - Consistent spacing scale
 - Accessible color contrasts
@@ -117,11 +117,11 @@ ISC
 
 ## 👥 Contact
 
-**Allianz Agentur LSP GmbH**  
+**LSP Consulting GmbH**  
 Bahnhofstraße 46, 4810 Gmunden  
 ☎ 07612/67646-0  
-✉ agentur.lsp@allianz.at  
-🌐 https://www.allianz.at/de_AT/beratung/lsp.html
+✉ agentur@lsp-austria.at  
+🌐 https://www.evi.gv.at/f/276035i
 
 **Opening Hours:**  
 Mo - Do: 07:30 - 12:30 & 13:30 - 16:30  
