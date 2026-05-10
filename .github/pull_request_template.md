@@ -24,7 +24,7 @@
   - [ ] Salzkammergut / Gmunden
 - [ ] Generic/non-local wording flagged and corrected
 
-## Launch-Critical Pages Check
-- [ ] `/` passes design + content gates
-- [ ] `/themen` passes design + content gates
-- [ ] Legal pages pass consistency + correctness checks
+## Final Sign-off for Launch-Critical Pages
+- [ ] Homepage (`/`) approved after design + content gate review
+- [ ] Themen overview (`/themen`) approved after design + content gate review
+- [ ] Legal pages (`/impressum`, `/datenschutz`) approved for consistency and correctness

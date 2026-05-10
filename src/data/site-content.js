@@ -19,7 +19,7 @@ export const companyProfile = {
   },
   contact: {
     phoneDisplay: '07612/67646-0',
-    phoneHref: '+43761267646-0',
+    phoneHref: '+4376126764600',
     email: 'agentur@lsp-austria.at'
   },
   mapUrl: 'https://maps.apple.com/?address=Bahnhofstra%C3%9Fe+46,+4810+Gmunden&ll=47.925358,13.787584&q=LSP+Gmunden',
