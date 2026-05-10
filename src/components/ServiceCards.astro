@@ -9,11 +9,24 @@ interface Props {
 }
 
 const { items } = Astro.props;
+const iconPaths = [
+  'M3 12h18M12 3v18',
+  'M4 12a8 8 0 1 0 16 0a8 8 0 1 0 -16 0M12 8v4l2 2',
+  'M3 20h18M6 20V10l6-7l6 7v10',
+  'M12 2l3 7h7l-5.5 4.5L18 21l-6-4l-6 4l1.5-7.5L2 9h7z',
+  'M5 13l4 4L19 7',
+  'M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2'
+];
 ---
 
 <div class="services-grid">
-  {items.map((service) => (
+  {items.map((service, index) => (
     <div class="service-card">
+      <div class="service-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+          <path d={iconPaths[index % iconPaths.length]} />
+        </svg>
+      </div>
       <h3>{service.title}</h3>
       <p>{service.description}</p>
     </div>

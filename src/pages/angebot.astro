@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { companyProfile } from '../data/site-content.js';
+---
+
+<BaseLayout
+  title="Angebot per E-Mail – LSP Gmunden"
+  description="Unverbindliches Versicherungsangebot per E-Mail anfordern: schnell, klar und persönlich durch LSP Gmunden."
+  canonical="https://lsp-gmunden.at/angebot"
+>
+  <section class="services">
+    <div class="container">
+      <h1 class="section-title">Angebot per E-Mail anfordern</h1>
+      <p class="hero-subtitle">Senden Sie uns Ihre Eckdaten – wir melden uns zeitnah mit einem passenden Vorschlag. Telefonisch sind wir weiterhin unter <a href={`tel:${companyProfile.contact.phoneHref}`}>{companyProfile.contact.phoneDisplay}</a> erreichbar.</p>
+
+      <div class="offer-form-wrapper">
+        <form class="offer-form" id="offer-form">
+          <div class="offer-form-row">
+            <label>
+              Name
+              <input type="text" name="name" required autocomplete="name" />
+            </label>
+            <label>
+              E-Mail
+              <input type="email" name="email" required autocomplete="email" />
+            </label>
+          </div>
+          <div class="offer-form-row">
+            <label>
+              Telefon (optional)
+              <input type="tel" name="phone" autocomplete="tel" />
+            </label>
+            <label>
+              Thema
+              <select name="topic" required>
+                <option value="">Bitte wählen</option>
+                <option value="KFZ & Zulassung">KFZ & Zulassung</option>
+                <option value="Wohnen & Haushalt">Wohnen & Haushalt</option>
+                <option value="Vorsorge & Gesundheit">Vorsorge & Gesundheit</option>
+                <option value="Gewerbe & Betrieb">Gewerbe & Betrieb</option>
+                <option value="Sonstiges">Sonstiges</option>
+              </select>
+            </label>
+          </div>
+          <label>
+            Nachricht
+            <textarea name="message" required placeholder="Kurz beschreiben, was Sie absichern möchten."></textarea>
+          </label>
+          <label class="offer-consent">
+            <input type="checkbox" name="consent" required />
+            <span>Ich stimme zu, dass meine Angaben zur Bearbeitung meiner Anfrage verwendet werden. Hinweise unter <a href="/datenschutz">Datenschutz</a>.</span>
+          </label>
+          <div class="hero-cta">
+            <button type="submit" class="btn btn-large btn-primary">E-Mail vorbereiten</button>
+            <a class="btn btn-large btn-secondary" href={`mailto:${companyProfile.contact.email}`}>Direkt schreiben</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <Fragment slot="scripts">
+    <script is:inline>
+      const initOfferForm = () => {
+        const form = document.getElementById('offer-form');
+        if (!(form instanceof HTMLFormElement) || form.dataset.initialized === 'true') return;
+        form.dataset.initialized = 'true';
+
+        form.addEventListener('submit', (event) => {
+          event.preventDefault();
+          const data = new FormData(form);
+          const name = String(data.get('name') || '').trim();
+          const email = String(data.get('email') || '').trim();
+          const phone = String(data.get('phone') || '').trim();
+          const topic = String(data.get('topic') || '').trim();
+          const message = String(data.get('message') || '').trim();
+          const subject = `Angebotsanfrage: ${topic || 'Versicherung'}`;
+          const bodyLines = [
+            `Name: ${name}`,
+            `E-Mail: ${email}`,
+            `Telefon: ${phone || 'nicht angegeben'}`,
+            `Thema: ${topic || 'nicht angegeben'}`,
+            '',
+            'Nachricht:',
+            message
+          ];
+          const mailto = `mailto:agentur@lsp-austria.at?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+          window.location.href = mailto;
+        });
+      };
+
+      document.addEventListener('DOMContentLoaded', initOfferForm);
+      document.addEventListener('astro:page-load', initOfferForm);
+    </script>
+  </Fragment>
+</BaseLayout>

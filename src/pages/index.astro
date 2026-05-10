@@ -62,8 +62,8 @@ const officeHourLines = companyProfile.openingHours.officeLines;
         <h1>Versicherung & Vorsorge in Gmunden</h1>
         <p class="hero-subtitle">Persönliche Beratung für KFZ, Vorsorge und alle Versicherungsthemen. Ihr verlässlicher Partner in der Region.</p>
         <div class="hero-cta">
-          <a href={`tel:${companyProfile.contact.phoneHref}`} class="btn btn-large btn-primary">Jetzt anrufen</a>
-          <a href="#contact" class="btn btn-large btn-secondary">Termin vereinbaren</a>
+          <a href="/angebot" class="btn btn-large btn-primary">Angebot per E-Mail</a>
+          <a href={`tel:${companyProfile.contact.phoneHref}`} class="btn btn-large btn-secondary">Jetzt anrufen</a>
         </div>
         <div class="hero-rating">
           <div class="rating-stars" aria-label="4.8 von 5 Sternen">★★★★★</div>
@@ -76,19 +76,28 @@ const officeHourLines = companyProfile.openingHours.officeLines;
   <section class="services">
     <div class="container">
       <h2 class="section-title">So starten wir</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <h3>1. Bedarf klären</h3>
-          <p>Kurzes Erstgespräch, klare Prioritäten und ein strukturierter Überblick über Ihre Risiken.</p>
-        </div>
-        <div class="service-card">
-          <h3>2. Optionen vergleichen</h3>
-          <p>Sie erhalten nachvollziehbare Vorschläge mit verständlichen Deckungen und Kosten.</p>
-        </div>
-        <div class="service-card">
-          <h3>3. Sicher entscheiden</h3>
-          <p>Wir finalisieren gemeinsam mit persönlicher Beratung vor Ort in Gmunden.</p>
-        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M12 3v18" /></svg>
+            </div>
+            <h3>1. Bedarf klären</h3>
+            <p>Kurzes Erstgespräch, klare Prioritäten und ein strukturierter Überblick über Ihre Risiken.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6" /></svg>
+            </div>
+            <h3>2. Optionen vergleichen</h3>
+            <p>Sie erhalten nachvollziehbare Vorschläge mit verständlichen Deckungen und Kosten.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z" /></svg>
+            </div>
+            <h3>3. Sicher entscheiden</h3>
+            <p>Wir finalisieren gemeinsam mit persönlicher Beratung vor Ort in Gmunden.</p>
+          </div>
       </div>
     </div>
   </section>
@@ -99,6 +108,7 @@ const officeHourLines = companyProfile.openingHours.officeLines;
       <ServiceCards items={services} />
       <div class="hero-cta">
         <a href="/leistungen" class="btn btn-secondary">Alle Leistungen ansehen</a>
+        <a href="/angebot" class="btn btn-primary">Angebot anfragen</a>
       </div>
     </div>
   </section>
@@ -138,6 +148,7 @@ const officeHourLines = companyProfile.openingHours.officeLines;
               {companyProfile.address.postalCode} {companyProfile.address.city}
             </p>
             <a href={companyProfile.mapUrl} target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm contact-route-link">
+              <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
               Route starten
             </a>
           </div>
@@ -148,6 +159,7 @@ const officeHourLines = companyProfile.openingHours.officeLines;
           <div class="contact-item">
             <strong>E-Mail</strong>
             <p><a href={`mailto:${companyProfile.contact.email}`}>{companyProfile.contact.email}</a></p>
+            <p class="contact-route-link"><a class="btn btn-secondary btn-sm" href="/angebot">Angebot per E-Mail</a></p>
           </div>
           <div class="contact-item">
             <strong>Öffnungszeiten</strong>
@@ -171,7 +183,10 @@ const officeHourLines = companyProfile.openingHours.officeLines;
             ></iframe>
           </div>
           <div class="map-navigate is-visible">
-            <a href={companyProfile.mapUrl} target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Route öffnen</a>
+            <a href={companyProfile.mapUrl} target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+              <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19l-5 2V5l5-2m0 16l6-2m-6 2V3m6 14l5 2V3l-5-2m0 16V1"></path></svg>
+              Route öffnen
+            </a>
           </div>
         </div>
       </div>

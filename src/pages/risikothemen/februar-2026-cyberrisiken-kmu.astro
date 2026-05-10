@@ -10,22 +10,24 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <section class="services">
     <div class="container">
       <h1 class="section-title">Februar 2026: Cyberrisiken für KMU</h1>
-      <div class="faq-list">
-        <article class="service-card">
-          <h3>Typische Schäden im Mittelstand</h3>
-          <p>Ransomware, Phishing und Ausfälle führen häufig zu Umsatzeinbußen, Wiederherstellungskosten und Haftungsrisiken.</p>
-        </article>
-        <article class="service-card">
-          <h3>Was wir mit Ihnen prüfen</h3>
+      <p class="hero-subtitle">Kurze FAQ für KMU: Welche Cyber-Schäden wirklich häufig sind, welche Bausteine fehlen und wie ein pragmatischer Schutzplan aussieht.</p>
+      <div class="faq-accordion">
+        <details class="faq-item" open>
+          <summary>Welche Schäden treten am häufigsten auf?<span class="faq-icon">+</span></summary>
+          <p>Ransomware, Phishing und Systemausfälle führen oft zu Umsatzeinbußen, Wiederherstellungskosten und Haftungsrisiken.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Was prüfen wir bei der Absicherung?<span class="faq-icon">+</span></summary>
           <p>Deckung bei Betriebsunterbrechung, IT-Forensik, Krisenkommunikation, Haftpflichtbausteine und organisatorische Mindeststandards.</p>
-        </article>
-        <article class="service-card">
-          <h3>Nächster Schritt</h3>
-          <p>Wir definieren gemeinsam ein pragmatisches Schutzpaket aus Prävention und finanzieller Absicherung.</p>
-        </article>
+        </details>
+        <details class="faq-item">
+          <summary>Wie starten wir konkret?<span class="faq-icon">+</span></summary>
+          <p>Gemeinsam definieren wir ein praktikables Schutzpaket aus Prävention und finanzieller Absicherung, passend zur Unternehmensgröße.</p>
+        </details>
       </div>
       <div class="hero-cta">
-        <a href="/#contact" class="btn btn-large btn-primary">Cyber-Risiko besprechen</a>
+        <a href="/angebot" class="btn btn-large btn-primary">Angebot per E-Mail</a>
+        <a href="/#contact" class="btn btn-large btn-secondary">Cyber-Risiko besprechen</a>
       </div>
     </div>
   </section>
