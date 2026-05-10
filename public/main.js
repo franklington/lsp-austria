@@ -5,7 +5,7 @@
     document.documentElement.classList.add('js');
 
     const mobileMediaQuery = window.matchMedia('(max-width: 640px)');
-    const focusableSelector = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+    const focusableSelector = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [contenteditable], [tabindex]:not([tabindex="-1"])';
 
     navComponents.forEach((component, index) => {
         const toggle = component.querySelector('[data-nav-toggle]');
@@ -22,7 +22,9 @@
 
         const getFocusableElements = () => [toggle, ...Array.from(panel.querySelectorAll(focusableSelector))].filter((element) => {
             if (!(element instanceof HTMLElement)) return false;
-            return !element.hasAttribute('hidden') && element.offsetParent !== null;
+            if (element.hasAttribute('hidden')) return false;
+            const styles = window.getComputedStyle(element);
+            return styles.display !== 'none' && styles.visibility !== 'hidden';
         });
 
         const closeMenu = ({ returnFocus = false } = {}) => {
