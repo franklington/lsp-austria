@@ -10,7 +10,7 @@ export const brandValues = [
 export const companyProfile = {
   brandName: 'LSP Gmunden',
   legalName: 'LSP Consulting GmbH',
-  legalMeta: 'LSP Consulting GmbH — Firmenbuchnummer 276035i',
+  legalMeta: 'LSP Consulting GmbH - Firmenbuchnummer 276035i',
   address: {
     street: 'Bahnhofstraße 46',
     postalCode: '4810',

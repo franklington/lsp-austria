@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { companyProfile } from '../data/site-content.js';
+
+const officeHourLines = companyProfile.openingHours.office.split('\n');
 ---
 
 <BaseLayout
@@ -87,8 +89,8 @@ import { companyProfile } from '../data/site-content.js';
         <section>
           <h2>Öffnungszeiten</h2>
           <p>
-            Mo - Do: 07:30 - 12:30 &amp; 13:30 - 16:30<br />
-            Fr: 07:30 - 13:00<br />
+            {officeHourLines[0]}<br />
+            {officeHourLines[1]}<br />
             Zulassungsstelle: {companyProfile.openingHours.registration}
           </p>
         </section>
