@@ -1,0 +1,41 @@
+---
+import { monthlyTopics } from '../data/monthly-topics.js';
+
+const currentPath = Astro.url.pathname;
+const isPathActive = (path) => currentPath === path || (path !== '/' && currentPath.startsWith(`${path}/`));
+const isRisikothemenActive = isPathActive('/risikothemen');
+---
+
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <div class="logo">
+        <a href="/"><img src="/logo.svg" alt="LSP Logo" width="120" height="32" /></a>
+      </div>
+      <div class="nav-component" data-nav-component>
+        <button class="nav-toggle" type="button" aria-expanded="false" data-nav-toggle>
+          <span class="sr-only">Menü öffnen</span>
+          <span class="nav-toggle-icon" aria-hidden="true"></span>
+        </button>
+        <nav class="nav" aria-label="Hauptnavigation" data-nav-panel>
+          <a href="/leistungen" class:list={['nav-link', isPathActive('/leistungen') && 'is-active']} aria-current={isPathActive('/leistungen') ? 'page' : undefined}>Leistungen</a>
+          <div class="nav-item nav-item--has-submenu">
+            <a href="/risikothemen" class:list={['nav-link', isRisikothemenActive && 'is-active']} aria-current={isRisikothemenActive ? 'page' : undefined}>Risikothemen 2026</a>
+            <button class="submenu-toggle" type="button" data-submenu-toggle aria-expanded="false" aria-label="Monatliche Risikothemen anzeigen">
+              <span aria-hidden="true">▾</span>
+            </button>
+            <div class="submenu" aria-label="Monatliche Risikothemen" data-submenu-panel>
+              {monthlyTopics.map((topic) => (
+                <a href={`/risikothemen/${topic.slug}`} class:list={['submenu-link', currentPath === `/risikothemen/${topic.slug}` && 'is-active']} aria-current={currentPath === `/risikothemen/${topic.slug}` ? 'page' : undefined}>
+                  {topic.month}: {topic.title}
+                </a>
+              ))}
+            </div>
+          </div>
+          <a href="/#contact" class:list={['nav-link', currentPath === '/' && 'is-active']}>Kontakt</a>
+          <a href="tel:+43761267646-0" class="btn btn-primary">07612/67646-0</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>

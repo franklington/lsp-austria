@@ -1,12 +1,12 @@
 # lsp-austria
 
-Modern, SEO-optimized landing page for LSP Austria - Allianz Insurance Agency in Gmunden.
+Modern, SEO-optimized static Astro website for LSP Austria - Allianz Insurance Agency in Gmunden.
 
 ## 📋 About
 
 Professional landing page for LSP Austria featuring:
 - **Ultra-fast performance** (49ms load time, 10KB total)
-- **Full SEO optimization** with Schema.org local business markup
+- **Full SEO optimization** with Schema.org graph markup (Organization, InsuranceAgency, LocalBusiness, FAQPage, Article)
 - **Mobile-first responsive design**
 - **Accessibility compliant** (WCAG 2.1)
 - **Modern UI/UX** with smooth animations
@@ -17,14 +17,17 @@ Professional landing page for LSP Austria featuring:
 ✅ Complete service overview (KFZ, Vorsorge, Wohnen, etc.)  
 ✅ KFZ registration office information  
 ✅ Interactive contact section with hours  
-✅ Structured data for search engines  
+✅ Conversion-first hero with 2-minute advisory CTA  
+✅ Local risk topics for Gmunden/Austria (2026)  
+✅ Structured data for search and AI systems  
+✅ `llms.txt` policy for AI crawler guidance  
 ✅ One- click call & email actions
 
 ## 🛠️ Tech Stack
 
-- **HTML5** - Semantic markup with Schema.org
+- **Astro** - Static site generation
 - **SCSS/CSS** - Modern CSS with design system
-- **GitHub Actions** - Automated deployment via FTP
+- **Cloudflare Pages** - Static hosting and global edge delivery
 
 ## 🚀 Getting Started
 
@@ -38,11 +41,11 @@ Professional landing page for LSP Austria featuring:
 # Install dependencies
 npm install
 
-# Run development mode with live SCSS compilation
+# Run Astro development server
 npm run dev
 
-# Build for production (minified CSS)
-npm run prod
+# Build static output in dist/
+npm run build
 ```
 
 ### Development Server
@@ -53,36 +56,30 @@ For local development:
 npm run serve
 ```
 
-Then open http://localhost:8080 in your browser. The server will automatically open your default browser.
+Then open the local Astro URL shown in the terminal.
 
 ## 📦 Deployment
 
-The site automatically deploys to production when changes are pushed to the `main` branch via GitHub Actions. The workflow:
-
-1. Checks out the code
-2. Installs dependencies
-3. Compiles SCSS to minified CSS
-4. Deploys via FTP to easyname.eu hosting
+The site is configured for **Cloudflare Pages** static deployment with output directory `dist`.
 
 ### Manual Deployment
 
-If you need to deploy manually:
+If you need to validate production output locally:
 
 ```bash
-npm run prod
-# Then upload the files via FTP
+npm run build
+npm run serve
 ```
 
 ## 📁 Project Structure
 
 ```
 lsp-austria/
-├── index.html          # Main HTML file with SEO & Schema.org
-├── main.scss           # SCSS source styles with design system
-├── main.css            # Compiled CSS (auto-generated)
-├── Favicon.svg         # Site favicon
-├── favicons/           # Multi-platform favicons
-├── .github/workflows/  # GitHub Actions deployment
+├── src/                # Astro pages, layouts, components
+├── public/             # Static assets copied as-is
+├── astro.config.mjs    # Astro static site configuration
+├── llms.txt            # AI crawler access and citation policy
+├── favicons/           # Multi-platform favicons (source)
 └── package.json        # Dependencies and scripts
 ```
 
@@ -106,10 +103,11 @@ The site uses a modern design system with:
 
 - Meta descriptions and keywords
 - Open Graph tags for social sharing
-- Schema.org LocalBusiness markup
+- Schema.org graph markup (Organization, InsuranceAgency, LocalBusiness, FAQPage, Article)
 - Semantic HTML5 structure
 - Descriptive page title
 - Optimal keyword density
+- llms.txt for AI crawler discoverability policy
 
 ## 📝 License
 

@@ -133,3 +133,6 @@ dist
 # Compiled CSS (generated from SCSS)
 main.css
 main.css.map
+
+# Astro generated types
+.astro/
