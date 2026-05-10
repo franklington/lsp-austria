@@ -3,7 +3,6 @@ import { companyProfile } from '../data/site-content.js';
 
 const currentPath = Astro.url.pathname;
 const navLinks = [
-  { label: 'Start', href: '/' },
   { label: 'Leistungen', href: '/leistungen' },
   { label: 'Themen', href: '/themen' },
   { label: 'Kontakt', href: '/#contact' }
@@ -62,17 +61,19 @@ const isActive = (href) => {
   </div>
   <div class="fixed inset-0 z-[1190] hidden bg-black/50 backdrop-blur-sm lg:hidden" id="mobile-menu-overlay"></div>
   <div
-    class="bg-bgDark1/95 fixed inset-0 z-[1201] hidden w-full flex-col items-center justify-center gap-8 px-6 py-12 backdrop-blur-xl lg:hidden"
+    class="bg-bgDark1/95 fixed inset-0 z-[1201] hidden w-full flex-col items-center justify-start gap-8 px-6 pt-24 pb-12 backdrop-blur-xl lg:hidden"
     id="mobile-menu"
   >
-    <a href="/" class="mb-2">
+    <a href="/" class="mb-1">
       <img src="/logo.svg" alt="LSP Logo" width="140" height="36" />
     </a>
+    <div class="mobile-menu-links flex w-full max-w-xs flex-col items-center gap-2">
     {navLinks.map(({ label, href }) => (
       <a class="mobile-nav-link h-full cursor-pointer py-2 text-3xl leading-8 font-medium text-white transition duration-300 hover:text-gray-300" href={href}>
         {label}
       </a>
     ))}
+    </div>
     <a class="outlined-button flex items-center gap-2 pt-2 pr-6 pb-2 pl-6" href={`mailto:${companyProfile.contact.email}`} aria-label="Angebot per E-Mail">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg>
       Angebot per E-Mail

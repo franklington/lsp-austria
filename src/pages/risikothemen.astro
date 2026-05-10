@@ -50,7 +50,7 @@ import { monthlyTopics } from '../data/monthly-topics.js';
           <article class="service-card">
             <h3>{topic.month}: {topic.title}</h3>
             <p>{topic.description}</p>
-            <p><a href={`/risikothemen/${topic.slug}`}>Thema öffnen</a></p>
+            <p><a class="article-link" href={`/risikothemen/${topic.slug}`}>Thema öffnen</a></p>
           </article>
         ))}
       </div>
