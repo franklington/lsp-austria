@@ -1,8 +1,4 @@
 ---
-import '@fontsource/inter/400.css';
-import '@fontsource/inter/500.css';
-import '@fontsource/inter/600.css';
-import '@fontsource/inter/700.css';
 import Header from '../components/Header.astro';
 import '../styles/Theme.css';
 import '../styles/main.scss';
@@ -51,13 +47,5 @@ const { title, description, canonical, robots } = Astro.props;
     </footer>
     <script is:inline src="/main.js"></script>
     <slot name="scripts" />
-    <style is:global>
-      html {
-        font-family: Inter, system-ui, sans-serif;
-        background-color: var(--color-bgDark2);
-        overflow-x: hidden;
-        scroll-behavior: smooth !important;
-      }
-    </style>
   </body>
 </html>
