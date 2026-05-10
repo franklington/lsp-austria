@@ -36,7 +36,10 @@ export const companyProfile = {
     shareCapital: 'EUR 36.000',
     businessPurpose: 'Beratung und Vermittlung',
     managingDirectors: ['Franz Adolf Leitner', 'Thomas Sonntagbauer'],
-    shareholders: ['LEITNER Investments GmbH (65%)', 'SONNTAGBAUER Investments GmbH (35%)'],
+    shareholders: [
+      { name: 'LEITNER Investments GmbH', ownershipPercent: 65 },
+      { name: 'SONNTAGBAUER Investments GmbH', ownershipPercent: 35 }
+    ],
     representation:
       'Die Gesellschaft wird, wenn mehrere Geschäftsführer bestellt sind, durch zwei Geschäftsführer gemeinsam oder durch einen von ihnen gemeinsam mit einem Prokuristen vertreten, sofern nicht einzelnen Geschäftsführern Alleinvertretungsbefugnis eingeräumt wird.',
     supervisoryAuthority: {

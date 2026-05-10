@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { companyProfile } from '../data/site-content.js';
 
 const officeHourLines = companyProfile.openingHours.officeLines;
+const shareholders = companyProfile.legal.shareholders;
 ---
 
 <BaseLayout
@@ -67,8 +68,11 @@ const officeHourLines = companyProfile.openingHours.officeLines;
         <section>
           <h2>Gesellschafter</h2>
           <p>
-            {companyProfile.legal.shareholders[0]}<br />
-            {companyProfile.legal.shareholders[1]}
+            {shareholders.map((shareholder) => (
+              <>
+                {shareholder.name} ({shareholder.ownershipPercent}%)<br />
+              </>
+            ))}
           </p>
         </section>
 
