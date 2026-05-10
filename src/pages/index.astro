@@ -1,6 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { monthlyTopics } from '../data/monthly-topics.js';
+import { services } from '../data/services.js';
+import { companyProfile } from '../data/site-content.js';
+import ServiceCards from '../components/ServiceCards.astro';
+
+const officeHourLines = companyProfile.openingHours.office.split('\n');
 ---
 
 <BaseLayout
@@ -32,9 +37,9 @@ import { monthlyTopics } from '../data/monthly-topics.js';
             "@id": "https://lsp-gmunden.at/#organization",
             "name": "LSP Gmunden | Leitner • Sonntagbauer • Partner",
             "url": "https://lsp-gmunden.at/",
-            "email": "agentur.lsp@allianz.at",
+            "email": "agentur@lsp-austria.at",
             "telephone": "+4376126764600",
-            "sameAs": ["https://www.allianz.at/de_AT/beratung/lsp.html"]
+            "sameAs": ["https://www.evi.gv.at/f/276035i"]
           },
           {
             "@type": "InsuranceAgency",
@@ -43,7 +48,7 @@ import { monthlyTopics } from '../data/monthly-topics.js';
             "description": "Versicherungsagentur in Gmunden für KFZ, Hausrat, Lebensversicherung, Gewerbeversicherung und KFZ-Zulassung",
             "url": "https://lsp-gmunden.at/",
             "telephone": "+4376126764600",
-            "email": "agentur.lsp@allianz.at",
+            "email": "agentur@lsp-austria.at",
             "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "247" }
           }
         ]
@@ -54,13 +59,16 @@ import { monthlyTopics } from '../data/monthly-topics.js';
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <h1>Versicherung in Gmunden — persönlich, schnell, klar</h1>
-        <p class="hero-subtitle">Wir beraten Familien, Selbstständige und Unternehmen zu passenden Lösungen ohne komplizierte Umwege.</p>
+        <h1>Versicherung &amp; Vorsorge in Gmunden</h1>
+        <p class="hero-subtitle">Persönliche Beratung für KFZ, Vorsorge und alle Versicherungsthemen. Ihr verlässlicher Partner in der Region.</p>
         <div class="hero-cta">
-          <a href="#contact" class="btn btn-large btn-primary">Jetzt beraten lassen</a>
-          <a href="/themen" class="btn btn-large btn-secondary">Zu den Themen</a>
+          <a href={`tel:${companyProfile.contact.phoneHref}`} class="btn btn-large btn-primary">Jetzt anrufen</a>
+          <a href="#contact" class="btn btn-large btn-secondary">Termin vereinbaren</a>
         </div>
-        <p class="hero-note">Oder direkt anrufen: <a href="tel:+43761267646-0">07612/67646-0</a></p>
+        <div class="hero-rating">
+          <div class="rating-stars" aria-label="4.8 von 5 Sternen">★★★★★</div>
+          <span class="rating-text">4.8/5 - 247 Bewertungen</span>
+        </div>
       </div>
     </div>
   </section>
@@ -88,24 +96,7 @@ import { monthlyTopics } from '../data/monthly-topics.js';
   <section id="services" class="services">
     <div class="container">
       <h2 class="section-title">Leistungen im Überblick</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <h3>KFZ & Zulassung</h3>
-          <p>Haftpflicht, Kasko, Kennzeichen und Zulassung aus einer Hand.</p>
-        </div>
-        <div class="service-card">
-          <h3>Wohnen & Recht</h3>
-          <p>Haushalt, Eigenheim und Rechtsschutz für den Alltag.</p>
-        </div>
-        <div class="service-card">
-          <h3>Vorsorge & Gesundheit</h3>
-          <p>Unfall, Krankenversicherung und langfristige Absicherung.</p>
-        </div>
-        <div class="service-card">
-          <h3>Unternehmen</h3>
-          <p>Gewerbe, Haftpflicht und Cyber-Schutz für Betriebe.</p>
-        </div>
-      </div>
+      <ServiceCards items={services} />
       <div class="hero-cta">
         <a href="/leistungen" class="btn btn-secondary">Alle Leistungen ansehen</a>
       </div>
@@ -143,31 +134,31 @@ import { monthlyTopics } from '../data/monthly-topics.js';
           <div class="contact-item">
             <strong>Adresse</strong>
             <p>
-              Bahnhofstraße 46<br />
-              4810 Gmunden
+              {companyProfile.address.street}<br />
+              {companyProfile.address.postalCode} {companyProfile.address.city}
             </p>
-            <a href="https://maps.apple.com/?address=Bahnhofstra%C3%9Fe+46,+4810+Gmunden&ll=47.925358,13.787584&q=LSP+Gmunden" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm contact-route-link">
+            <a href={companyProfile.mapUrl} target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm contact-route-link">
               Route starten
             </a>
           </div>
           <div class="contact-item">
             <strong>Telefon</strong>
-            <p><a href="tel:+43761267646-0">07612/67646-0</a></p>
+            <p><a href={`tel:${companyProfile.contact.phoneHref}`}>{companyProfile.contact.phoneDisplay}</a></p>
           </div>
           <div class="contact-item">
             <strong>E-Mail</strong>
-            <p><a href="mailto:agentur.lsp@allianz.at">agentur.lsp@allianz.at</a></p>
+            <p><a href={`mailto:${companyProfile.contact.email}`}>{companyProfile.contact.email}</a></p>
           </div>
           <div class="contact-item">
             <strong>Öffnungszeiten</strong>
             <p>
-              Mo - Do: 07:30 - 12:30 &amp; 13:30 - 16:30<br />
-              Fr: 07:30 - 13:00
+              {officeHourLines[0]}<br />
+              {officeHourLines[1]}
             </p>
           </div>
           <div class="contact-item">
             <strong>Zulassungsstelle</strong>
-            <p>Mo - Fr: 08:00 - 12:00</p>
+            <p>{companyProfile.openingHours.registration}</p>
           </div>
         </div>
         <div class="contact-map">
@@ -180,7 +171,7 @@ import { monthlyTopics } from '../data/monthly-topics.js';
             ></iframe>
           </div>
           <div class="map-navigate is-visible">
-            <a href="https://maps.apple.com/?address=Bahnhofstra%C3%9Fe+46,+4810+Gmunden&ll=47.925358,13.787584&q=LSP+Gmunden" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Route öffnen</a>
+            <a href={companyProfile.mapUrl} target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Route öffnen</a>
           </div>
         </div>
       </div>

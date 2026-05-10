@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceCards from '../components/ServiceCards.astro';
+import { services } from '../data/services.js';
 ---
 
 <BaseLayout
@@ -10,32 +12,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="services">
     <div class="container">
       <h1 class="section-title">Unsere Leistungen</h1>
-      <div class="services-grid">
-        <div class="service-card">
-          <h3>KFZ & Fahrzeuge</h3>
-          <p>Kfz-Haftpflicht, Kasko, Insassenunfallversicherung. Optimal geschützt auf allen Straßen.</p>
-        </div>
-        <div class="service-card">
-          <h3>KFZ-Zulassung</h3>
-          <p>Schnelle An- und Abmeldung, Kennzeichen, Umschreibungen. Für GM, KI, VB, WL.</p>
-        </div>
-        <div class="service-card">
-          <h3>Wohnen & Recht</h3>
-          <p>Hausrat, Eigenheim, Rechtsschutz. Umfassender Schutz für Ihr Zuhause.</p>
-        </div>
-        <div class="service-card">
-          <h3>Sparen & Vorsorge</h3>
-          <p>Lebensversicherung, Pensionsvorsorge, Sparprodukte. Ihre finanzielle Zukunft.</p>
-        </div>
-        <div class="service-card">
-          <h3>Gesundheit & Freizeit</h3>
-          <p>Krankenversicherung, Unfallschutz, Reiseversicherung für sorglose Momente.</p>
-        </div>
-        <div class="service-card">
-          <h3>Unternehmen</h3>
-          <p>Gewerbeversicherungen, Betriebshaftpflicht. Maßgeschneidert für Ihr Business.</p>
-        </div>
-      </div>
+      <ServiceCards items={services} />
       <div class="hero-cta">
         <a href="/#contact" class="btn btn-large btn-primary">Jetzt beraten lassen</a>
       </div>

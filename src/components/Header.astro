@@ -1,4 +1,6 @@
 ---
+import { companyProfile } from '../data/site-content.js';
+
 const currentPath = Astro.url.pathname;
 const navLinks = [
   { label: 'Start', href: '/' },
@@ -40,8 +42,8 @@ const isActive = (href) => {
       ))}
     </div>
     <div class="hidden grow basis-0 justify-end lg:flex">
-      <a class="outlined-button flex pt-2 pr-6 pb-2 pl-6" href="tel:+43761267646-0" aria-label="Anrufen">
-        07612/67646-0
+      <a class="outlined-button flex pt-2 pr-6 pb-2 pl-6" href={`tel:${companyProfile.contact.phoneHref}`} aria-label="Anrufen">
+        {companyProfile.contact.phoneDisplay}
       </a>
     </div>
     <button
@@ -66,8 +68,8 @@ const isActive = (href) => {
         {label}
       </a>
     ))}
-    <a class="outlined-button flex pt-2 pr-6 pb-2 pl-6" href="tel:+43761267646-0" aria-label="Anrufen">
-      07612/67646-0
+    <a class="outlined-button flex pt-2 pr-6 pb-2 pl-6" href={`tel:${companyProfile.contact.phoneHref}`} aria-label="Anrufen">
+      {companyProfile.contact.phoneDisplay}
     </a>
   </div>
 </nav>

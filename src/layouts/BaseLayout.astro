@@ -1,5 +1,6 @@
 ---
 import Header from '../components/Header.astro';
+import { companyProfile } from '../data/site-content.js';
 import '../styles/Theme.css';
 import '../styles/main.scss';
 
@@ -36,7 +37,7 @@ const { title, description, canonical, robots } = Astro.props;
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
-          <p>&copy; 2026 LSP Gmunden | Leitner • Sonntagbauer • Partner</p>
+          <p>&copy; 2026 {companyProfile.legalName}</p>
           <div class="footer-links">
             <a href="/datenschutz">Datenschutz</a>
             <span>•</span>
