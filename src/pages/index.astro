@@ -1,0 +1,222 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="LSP Gmunden - Versicherung & Vorsorge | KFZ, Hausrat & Zulassung"
+  description="LSP Gmunden: Ihr Versicherungspartner für KFZ, Hausrat, Lebensversicherung und KFZ-Zulassung. ☎ 07612/67646-0 | Bahnhofstraße 46"
+  canonical="https://lsp-gmunden.at/"
+>
+  <Fragment slot="head">
+    <meta name="keywords" content="LSP Gmunden, Versicherung Gmunden, KFZ Versicherung, Zulassungsstelle, Hausratversicherung, Lebensversicherung" />
+    <meta property="og:title" content="LSP Gmunden - Versicherung & Vorsorge" />
+    <meta property="og:description" content="Ihr Versicherungspartner in Gmunden für KFZ, Vorsorge und Zulassung" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lsp-gmunden.at/" />
+    <meta property="og:locale" content="de_AT" />
+    <meta property="og:site_name" content="LSP Gmunden" />
+    <meta property="og:image" content="https://lsp-gmunden.at/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="LSP Gmunden - Versicherung & Vorsorge" />
+    <meta name="twitter:description" content="Ihr Versicherungspartner in Gmunden für KFZ, Vorsorge und Zulassung" />
+    <meta name="twitter:image" content="https://lsp-gmunden.at/og-image.png" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://lsp-gmunden.at/#organization",
+            "name": "LSP Gmunden | Leitner • Sonntagbauer • Partner",
+            "url": "https://lsp-gmunden.at/",
+            "email": "agentur.lsp@allianz.at",
+            "telephone": "+4376126764600",
+            "sameAs": ["https://www.allianz.at/de_AT/beratung/lsp.html"]
+          },
+          {
+            "@type": "InsuranceAgency",
+            "@id": "https://lsp-gmunden.at/#insuranceagency",
+            "name": "LSP Gmunden",
+            "description": "Versicherungsagentur in Gmunden für KFZ, Hausrat, Lebensversicherung, Gewerbeversicherung und KFZ-Zulassung",
+            "url": "https://lsp-gmunden.at/",
+            "telephone": "+4376126764600",
+            "email": "agentur.lsp@allianz.at",
+            "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "247" }
+          }
+        ]
+      }
+    </script>
+  </Fragment>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>In 2 Minuten zur passenden Versicherung in Gmunden</h1>
+        <p class="hero-subtitle">Schnelle, persönliche Beratung für Haushalt, Familie und Unternehmen – mit lokalem Fokus auf aktuelle Risiken in Oberösterreich.</p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-large btn-primary">Jetzt in 2 Minuten beraten lassen</a>
+        </div>
+        <p class="hero-note">Oder direkt anrufen: <a href="tel:+43761267646-0">07612/67646-0</a></p>
+        <div class="trust-badges" aria-label="Vertrauensmerkmale">
+          <span class="trust-badge">4.8/5 aus 247 Bewertungen</span>
+          <span class="trust-badge">Standort Gmunden</span>
+          <span class="trust-badge">Persönliche Beratung vor Ort</span>
+          <span class="trust-badge">Zulassungsstelle im Haus</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="container">
+      <h2 class="section-title">So läuft Ihre Beratung ab</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>1. Kurzbedarf klären</h3>
+          <p>In 2 Minuten erfassen wir Ihr Anliegen und priorisieren die wichtigsten Risiken für Ihre Situation.</p>
+        </div>
+        <div class="service-card">
+          <h3>2. Passende Optionen erhalten</h3>
+          <p>Sie erhalten klare, verständliche Vorschläge inklusive Kosten, Deckungen und sinnvollen Alternativen.</p>
+        </div>
+        <div class="service-card">
+          <h3>3. Mit Mensch final entscheiden</h3>
+          <p>Alle Empfehlungen werden persönlich mit Ihnen abgestimmt – ohne Blackbox, mit klarer Erklärung.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <div class="container">
+      <h2 class="section-title">Unsere Leistungen</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>KFZ & Fahrzeuge</h3>
+          <p>Kfz-Haftpflicht, Kasko, Insassen­unfallversicherung. Optimal geschützt auf allen Straßen.</p>
+        </div>
+        <div class="service-card">
+          <h3>KFZ-Zulassung</h3>
+          <p>Schnelle An- und Abmeldung, Kennzeichen, Umschreibungen. Für GM, KI, VB, WL.</p>
+        </div>
+        <div class="service-card">
+          <h3>Wohnen & Recht</h3>
+          <p>Hausrat, Eigenheim, Rechtsschutz. Umfassender Schutz für Ihr Zuhause.</p>
+        </div>
+        <div class="service-card">
+          <h3>Sparen & Vorsorge</h3>
+          <p>Lebensversicherung, Pensionsvorsorge, Sparprodukte. Ihre finanzielle Zukunft.</p>
+        </div>
+        <div class="service-card">
+          <h3>Gesundheit & Freizeit</h3>
+          <p>Krankenversicherung, Unfallschutz, Reiseversicherung für sorglose Momente.</p>
+        </div>
+        <div class="service-card">
+          <h3>Unternehmen</h3>
+          <p>Gewerbe­versicherungen, Betriebshaftpflicht. Maßgeschneidert für Ihr Business.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="trends" class="services">
+    <div class="container">
+      <h2 class="section-title">Risikothemen 2026 in Gmunden & Österreich</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Hochwasser & Sturm</h3>
+          <p>Absicherung gegen Extremwetter, Präventionsmaßnahmen und sinnvolle Selbstbehalt-Strategien.</p>
+        </div>
+        <div class="service-card">
+          <h3>Cyberrisiken für KMU</h3>
+          <p>Schutz vor Ransomware, Phishing und Betriebsunterbrechung inklusive Notfallunterstützung.</p>
+        </div>
+        <div class="service-card">
+          <h3>Prämienentwicklung im Haushalt</h3>
+          <p>Wie Inflation und Schadenslagen Prämien beeinflussen – und wo Optimierung möglich ist.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2>Besuchen Sie uns</h2>
+          <div class="contact-item">
+            <strong>Adresse</strong>
+            <p>
+              Bahnhofstraße 46<br />
+              4810 Gmunden
+            </p>
+            <a href="https://maps.apple.com/?address=Bahnhofstra%C3%9Fe+46,+4810+Gmunden&ll=47.925358,13.787584&q=LSP+Gmunden" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm contact-route-link">
+              Route starten
+            </a>
+          </div>
+          <div class="contact-item">
+            <strong>Telefon</strong>
+            <p><a href="tel:+43761267646-0">07612/67646-0</a></p>
+          </div>
+          <div class="contact-item">
+            <strong>E-Mail</strong>
+            <p><a href="mailto:agentur.lsp@allianz.at">agentur.lsp@allianz.at</a></p>
+          </div>
+          <div class="contact-item">
+            <strong>Öffnungszeiten</strong>
+            <p>
+              Mo - Do: 07:30 - 12:30 &amp; 13:30 - 16:30<br />
+              Fr: 07:30 - 13:00
+            </p>
+          </div>
+          <div class="contact-item">
+            <strong>Zulassungsstelle</strong>
+            <p>Mo - Fr: 08:00 - 12:00</p>
+          </div>
+        </div>
+        <div class="contact-map">
+          <div id="map-consent" class="map-consent">
+            <h3>Karte anzeigen</h3>
+            <p>Um die Karte anzuzeigen, müssen Sie der Verwendung von OpenStreetMap zustimmen. Dabei wird Ihre IP-Adresse an OpenStreetMap übertragen.</p>
+            <div class="map-consent-buttons">
+              <button onclick="loadMap()" class="btn btn-primary">Karte laden & zustimmen</button>
+            </div>
+          </div>
+          <div id="map-container" style="display: none;"></div>
+          <div id="map-navigate" class="map-navigate">
+            <a href="https://maps.apple.com/?address=Bahnhofstra%C3%9Fe+46,+4810+Gmunden&ll=47.925358,13.787584&q=LSP+Gmunden" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Route öffnen</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Fragment slot="scripts">
+    <script is:inline>
+      function loadMap() {
+        const mapContainer = document.getElementById('map-container');
+        const mapConsent = document.getElementById('map-consent');
+        if (!mapContainer || !mapConsent) return;
+        mapContainer.style.display = 'block';
+        const map = L.map(mapContainer).setView([47.925358, 13.787584], 16);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '© OpenStreetMap contributors',
+          maxZoom: 19
+        }).addTo(map);
+        L.marker([47.925358, 13.787584]).addTo(map).bindPopup('LSP Gmunden<br>Bahnhofstraße 46<br>4810 Gmunden').openPopup();
+        setTimeout(() => {
+          map.invalidateSize();
+          map.setView([47.9247, 13.787584], 16);
+        }, 100);
+        mapConsent.style.display = 'none';
+        const navigate = document.getElementById('map-navigate');
+        if (navigate) navigate.style.display = 'flex';
+      }
+      window.loadMap = loadMap;
+    </script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  </Fragment>
+</BaseLayout>

@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /impressum
+Disallow: /datenschutz
+
+# AI usage policy:
+# See https://lsp-gmunden.at/llms.txt
+
+Sitemap: https://lsp-gmunden.at/sitemap.xml

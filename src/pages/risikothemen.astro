@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { monthlyTopics } from '../data/monthly-topics.js';
+---
+
+<BaseLayout
+  title="Risikothemen 2026 – LSP Gmunden"
+  description="Risikothemen 2026 in Gmunden: Hochwasser, Cyberrisiken, E-Mobilität, Vorsorge und Präventionsmaßnahmen."
+  canonical="https://lsp-gmunden.at/risikothemen"
+>
+  <section class="services">
+    <div class="container">
+      <h1 class="section-title">Risikothemen 2026 in Gmunden & Österreich</h1>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Hochwasser & Sturm</h3>
+          <p>Absicherung gegen Extremwetter, Präventionsmaßnahmen und sinnvolle Selbstbehalt-Strategien.</p>
+        </div>
+        <div class="service-card">
+          <h3>Cyberrisiken für KMU</h3>
+          <p>Schutz vor Ransomware, Phishing und Betriebsunterbrechung inklusive Notfallunterstützung.</p>
+        </div>
+        <div class="service-card">
+          <h3>Prämienentwicklung im Haushalt</h3>
+          <p>Wie Inflation und Schadenslagen Prämien beeinflussen – und wo Optimierung möglich ist.</p>
+        </div>
+        <div class="service-card">
+          <h3>E-Bike & E-Mobilität</h3>
+          <p>Deckung für E-Bikes, Wallboxen und Haftungsfragen rund um neue Mobilität.</p>
+        </div>
+        <div class="service-card">
+          <h3>Vorsorge für Selbstständige</h3>
+          <p>Berufsunfähigkeit, Gesundheit und finanzielle Stabilität bei Krankheit oder Ausfall.</p>
+        </div>
+        <div class="service-card">
+          <h3>Klimaanpassung & Prävention</h3>
+          <p>Praktische Checklisten zur Risikoreduktion für Haushalt und Unternehmen in der Region.</p>
+        </div>
+      </div>
+
+      <h2 class="section-title">Monatliche Themen</h2>
+      <div class="services-grid">
+        {monthlyTopics.map((topic) => (
+          <article class="service-card">
+            <h3>{topic.month}: {topic.title}</h3>
+            <p>{topic.description}</p>
+            <p><a href={`/risikothemen/${topic.slug}`}>Thema öffnen</a></p>
+          </article>
+        ))}
+      </div>
+
+      <div class="faq-list">
+        <article class="service-card">
+          <h3>Wie schnell erhalten wir ein erstes Angebot?</h3>
+          <p>Meist innerhalb eines kurzen Erstgesprächs. Für komplexere Fälle erhalten Sie eine strukturierte Nachreichung.</p>
+        </article>
+        <article class="service-card">
+          <h3>Ist die Beratung rein digital oder auch persönlich?</h3>
+          <p>Beides: digital für schnelle Orientierung und persönlich vor Ort in Gmunden für die finale Entscheidung.</p>
+        </article>
+        <article class="service-card">
+          <h3>Welche Risiken werden lokal zuerst geprüft?</h3>
+          <p>Wir priorisieren regionale Wetterrisiken, Mobilität, Haushaltsrisiken sowie Cyber- und Haftungsfragen bei Unternehmen.</p>
+        </article>
+      </div>
+      <div class="hero-cta">
+        <a href="/#contact" class="btn btn-large btn-primary">Jetzt in 2 Minuten beraten lassen</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

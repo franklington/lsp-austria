@@ -1,0 +1,34 @@
+---
+import { monthlyTopics } from '../data/monthly-topics.js';
+---
+
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <div class="logo">
+        <a href="/"><img src="/logo.svg" alt="LSP Logo" width="120" height="32" /></a>
+      </div>
+      <div class="nav-component" data-nav-component>
+        <button class="nav-toggle" type="button" aria-expanded="false" data-nav-toggle>
+          <span class="sr-only">Menü öffnen</span>
+          <span class="nav-toggle-icon" aria-hidden="true"></span>
+        </button>
+        <nav class="nav" aria-label="Hauptnavigation" data-nav-panel>
+          <a href="/leistungen" class="nav-link">Leistungen</a>
+          <div class="nav-item nav-item--has-submenu">
+            <a href="/risikothemen" class="nav-link">Risikothemen 2026</a>
+            <div class="submenu" aria-label="Monatliche Risikothemen">
+              {monthlyTopics.map((topic) => (
+                <a href={`/risikothemen/${topic.slug}`} class="submenu-link">
+                  {topic.month}: {topic.title}
+                </a>
+              ))}
+            </div>
+          </div>
+          <a href="/#contact" class="nav-link">Kontakt</a>
+          <a href="tel:+43761267646-0" class="btn btn-primary">07612/67646-0</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
