@@ -777,11 +777,14 @@ h1 {
     font-size: var(--font-size-xs);
     border-top: 1px solid var(--border-subtle);
     letter-spacing: 0.02em;
+    position: relative;
+    z-index: 1;
     
     a {
         color: var(--text-secondary);
         text-decoration: none;
         transition: color var(--transition-base);
+        pointer-events: auto;
         
         &:hover {
             color: var(--text-primary);
