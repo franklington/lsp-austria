@@ -2,6 +2,7 @@
 
 @theme {
   --color-primaryColor: rgb(99, 102, 241);
+  --color-primaryColorHover: rgb(114, 116, 243);
   --color-secondaryColor: rgb(161, 163, 247);
   --color-primaryText: rgb(255, 255, 255);
   --color-heroText: rgb(230, 230, 230);
@@ -33,7 +34,7 @@
 }
 
 .contained-button {
-  @apply bg-primaryColor text-primaryText flex cursor-pointer items-center justify-center rounded-lg font-bold transition hover:bg-[#7274f3];
+  @apply bg-primaryColor text-primaryText flex cursor-pointer items-center justify-center rounded-lg font-bold transition hover:bg-primaryColorHover;
 }
 
 .outlined-button {
