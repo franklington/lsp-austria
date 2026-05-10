@@ -65,6 +65,7 @@ import { companyProfile } from '../data/site-content.js';
         const form = document.getElementById('offer-form');
         if (!(form instanceof HTMLFormElement) || form.dataset.initialized === 'true') return;
         form.dataset.initialized = 'true';
+        const contactEmail = {JSON.stringify(companyProfile.contact.email)};
 
         form.addEventListener('submit', (event) => {
           event.preventDefault();
@@ -84,7 +85,7 @@ import { companyProfile } from '../data/site-content.js';
             'Nachricht:',
             message
           ];
-          const mailto = `mailto:agentur@lsp-austria.at?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+          const mailto = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
           window.location.href = mailto;
         });
       };

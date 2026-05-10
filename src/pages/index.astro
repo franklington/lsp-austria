@@ -49,7 +49,7 @@ const officeHourLines = companyProfile.openingHours.officeLines;
             "url": "https://lsp-gmunden.at/",
             "telephone": "+4376126764600",
             "email": "agentur@lsp-austria.at",
-            "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "247" }
+            "aggregateRating": { "@type": "AggregateRating", "ratingValue": 4.8, "reviewCount": 247 }
           }
         ]
       }
@@ -174,13 +174,16 @@ const officeHourLines = companyProfile.openingHours.officeLines;
           </div>
         </div>
         <div class="contact-map">
-          <div class="map-embed">
-            <iframe
-              title="Karte: LSP Gmunden"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=13.7817%2C47.9228%2C13.7939%2C47.9285&amp;layer=mapnik&amp;marker=47.925358%2C13.787584"
-            ></iframe>
+          <div class="map-embed" data-map-container data-map-src="https://www.openstreetmap.org/export/embed.html?bbox=13.7817%2C47.9228%2C13.7939%2C47.9285&amp;layer=mapnik&amp;marker=47.925358%2C13.787584">
+            <div class="map-consent" data-map-consent-panel>
+              <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19l-5 2V5l5-2m0 16l6-2m-6 2V3m6 14l5 2V3l-5-2m0 16V1"></path></svg>
+              <h3>Karte laden?</h3>
+              <p>Für die Kartenansicht wird OpenStreetMap geladen. Dabei wird Ihre IP-Adresse an OpenStreetMap übermittelt.</p>
+              <div class="map-consent-buttons">
+                <button type="button" class="btn btn-primary btn-sm" data-map-consent-accept>OpenStreetMap laden</button>
+                <a class="btn btn-secondary btn-sm" href="/datenschutz">Datenschutz</a>
+              </div>
+            </div>
           </div>
           <div class="map-navigate is-visible">
             <a href={companyProfile.mapUrl} target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
@@ -210,8 +213,46 @@ const officeHourLines = companyProfile.openingHours.officeLines;
         });
       };
 
+      const initMapConsent = () => {
+        const mapContainer = document.querySelector('[data-map-container]');
+        if (!(mapContainer instanceof HTMLElement) || mapContainer.dataset.initialized === 'true') return;
+        mapContainer.dataset.initialized = 'true';
+
+        const consentPanel = mapContainer.querySelector('[data-map-consent-panel]');
+        const consentButton = mapContainer.querySelector('[data-map-consent-accept]');
+        const mapSrc = mapContainer.dataset.mapSrc;
+        const consentCookieName = 'lsp_map_consent';
+        const oneYearInSeconds = 60 * 60 * 24 * 365;
+
+        const hasConsent = document.cookie.split(';').some((cookie) => cookie.trim().startsWith(`${consentCookieName}=true`));
+        const renderMap = () => {
+          if (!mapSrc || mapContainer.querySelector('iframe')) return;
+          const iframe = document.createElement('iframe');
+          iframe.title = 'Karte: LSP Gmunden';
+          iframe.loading = 'lazy';
+          iframe.referrerPolicy = 'no-referrer-when-downgrade';
+          iframe.src = mapSrc;
+          mapContainer.appendChild(iframe);
+          if (consentPanel instanceof HTMLElement) consentPanel.remove();
+        };
+
+        if (hasConsent) {
+          renderMap();
+          return;
+        }
+
+        if (consentButton instanceof HTMLElement) {
+          consentButton.addEventListener('click', () => {
+            document.cookie = `${consentCookieName}=true; Max-Age=${oneYearInSeconds}; Path=/; SameSite=Lax`;
+            renderMap();
+          });
+        }
+      };
+
       document.addEventListener('DOMContentLoaded', initThemenCarousel);
       document.addEventListener('astro:page-load', initThemenCarousel);
+      document.addEventListener('DOMContentLoaded', initMapConsent);
+      document.addEventListener('astro:page-load', initMapConsent);
     </script>
   </Fragment>
 </BaseLayout>

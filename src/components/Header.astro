@@ -125,7 +125,7 @@ const isActive = (href) => {
       if (firstLink instanceof HTMLElement) firstLink.focus();
     };
 
-    const closeMenu = () => {
+    const closeMenu = ({ returnFocus = false } = {}) => {
       menu.classList.add('hidden');
       menu.classList.remove('flex');
       overlay.classList.add('hidden');
@@ -134,6 +134,7 @@ const isActive = (href) => {
       document.body.classList.remove('overflow-hidden');
       toggle.setAttribute('aria-expanded', 'false');
       toggle.setAttribute('aria-label', 'Menü öffnen');
+      if (returnFocus) toggle.focus();
     };
 
     toggle.addEventListener('click', () => {
@@ -142,9 +143,9 @@ const isActive = (href) => {
       else openMenu();
     }, { signal });
 
-    overlay.addEventListener('click', closeMenu, { signal });
+    overlay.addEventListener('click', () => closeMenu({ returnFocus: true }), { signal });
     window.addEventListener('resize', () => {
-      if (window.innerWidth >= 1024) closeMenu();
+      if (window.innerWidth >= 1024) closeMenu({ returnFocus: true });
     }, { signal });
 
     menu.querySelectorAll('a').forEach((link) => {
@@ -153,8 +154,7 @@ const isActive = (href) => {
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && menu.classList.contains('flex')) {
-        closeMenu();
-        toggle.focus();
+        closeMenu({ returnFocus: true });
       }
     }, { signal });
   };

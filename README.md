@@ -62,6 +62,12 @@ Then open the local Astro URL shown in the terminal.
 
 The site is configured for **Cloudflare Pages** static deployment with output directory `dist`.
 
+### Source of truth for deploys
+
+- **Deployed app source:** `src/**` and `public/**` (built by Astro into `dist/`)
+- **Single sitemap source:** `public/sitemap.xml`
+- Legacy root-level static files (for historical reference) are **not** emitted by Astro and should not be used as deployment source.
+
 ### Manual Deployment
 
 If you need to validate production output locally:
