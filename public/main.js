@@ -88,9 +88,6 @@
 
             if (event.key !== 'Tab') return;
 
-            if (!focusableElements.length) {
-                focusableElements = getFocusableElements();
-            }
             if (!focusableElements.length) return;
 
             const first = focusableElements[0];

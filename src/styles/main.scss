@@ -91,6 +91,7 @@
     --radius-md: 8px;
     --radius-lg: 12px;
     --radius-xl: 16px;
+    --nav-overlay-top-offset: 5rem;
 }
 
 // === Intro Animation ===
@@ -448,7 +449,7 @@ a {
         align-items: stretch;
         gap: 0.35rem;
         background: var(--bg-overlay);
-        padding: calc(env(safe-area-inset-top, 0px) + 5rem) var(--spacing-md) calc(env(safe-area-inset-bottom, 0px) + var(--spacing-md));
+        padding: calc(env(safe-area-inset-top, 0px) + var(--nav-overlay-top-offset)) var(--spacing-md) calc(env(safe-area-inset-bottom, 0px) + var(--spacing-md));
         z-index: 1100;
         overflow-y: auto;
         opacity: 0;
