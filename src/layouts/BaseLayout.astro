@@ -1,5 +1,10 @@
 ---
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/600.css';
+import '@fontsource/inter/700.css';
 import Header from '../components/Header.astro';
+import '../styles/Theme.css';
 import '../styles/main.scss';
 
 interface Props {
@@ -13,7 +18,7 @@ const { title, description, canonical, robots } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="de">
+<html lang="de" class="bg-bgDark2">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -26,10 +31,10 @@ const { title, description, canonical, robots } = Astro.props;
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
     <link rel="manifest" href="/favicons/site.webmanifest" />
     <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
-    <meta name="theme-color" content="#0F0F0F" />
+    <meta name="theme-color" content="#1e1f23" />
     <slot name="head" />
   </head>
-  <body>
+  <body class="bg-bgDark2 overflow-x-hidden">
     <Header />
     <slot />
     <footer class="footer">
@@ -46,5 +51,13 @@ const { title, description, canonical, robots } = Astro.props;
     </footer>
     <script is:inline src="/main.js"></script>
     <slot name="scripts" />
+    <style is:global>
+      html {
+        font-family: Inter, system-ui, sans-serif;
+        background-color: #1e1f23;
+        overflow-x: hidden;
+        scroll-behavior: smooth !important;
+      }
+    </style>
   </body>
 </html>

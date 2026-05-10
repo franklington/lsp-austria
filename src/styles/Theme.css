@@ -1,0 +1,45 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-primaryColor: rgb(99, 102, 241);
+  --color-secondaryColor: rgb(161, 163, 247);
+  --color-primaryText: rgb(255, 255, 255);
+  --color-heroText: rgb(230, 230, 230);
+  --color-secondaryText: rgb(174, 178, 183);
+  --color-bgDark1: rgb(23, 24, 27);
+  --color-bgDark2: rgb(30, 31, 35);
+  --color-bgDark3: rgb(40, 41, 46);
+  --color-bgDark3Hover: rgb(47, 48, 54);
+  --color-bgDark3HoverLight: rgb(43, 44, 50);
+  --color-bgDarkTransparent: rgb(23 24 27 / 0.7);
+  --color-bgDarkTransparentDarker: rgb(0 0 0 / 0.5);
+  --color-mainBorder: rgb(255 255 255 / 0.15);
+  --color-mainBorderDarker: rgb(255 255 255 / 0.07);
+  --color-mainBorderSubtler: rgb(255 255 255 / 0.1);
+  --color-mainBorderFaintest: rgb(255 255 255 / 0.05);
+  --font-Inter: 'Inter';
+}
+
+.content-container {
+  @apply mx-auto w-11/12 px-4 md:w-4/5 lg:w-[62.5rem] xl:w-[68.75rem] 2xl:w-[75rem];
+}
+
+.main-border-gray {
+  @apply border-mainBorder border border-solid;
+}
+
+.main-border-gray-darker {
+  @apply border-mainBorderDarker border border-solid;
+}
+
+.contained-button {
+  @apply bg-primaryColor text-primaryText flex cursor-pointer items-center justify-center rounded-lg font-bold transition hover:bg-[#7274f3];
+}
+
+.outlined-button {
+  @apply text-primaryText border-mainBorder bg-bgDark2 hover:bg-bgDark3 cursor-pointer rounded-xl border border-solid text-sm;
+}
+
+.card {
+  @apply bg-bgDark3/40 border-mainBorderFaintest hover:border-mainBorderSubtler hover:bg-bgDark3HoverLight/70 rounded-2xl border transition-all duration-500;
+}
