@@ -66,7 +66,7 @@ The site is configured for **Cloudflare Pages** static deployment with output di
 
 - **Deployed app source:** `src/**` and `public/**` (built by Astro into `dist/`)
 - **Single sitemap source:** `public/sitemap.xml`
-- Legacy root-level static files (for historical reference) are **not** emitted by Astro and should not be used as deployment source.
+- Legacy root-level static files were removed to prevent drift; keep all deployable assets in `src/**` and `public/**`.
 
 ### Manual Deployment
 
@@ -84,8 +84,6 @@ lsp-austria/
 ├── src/                # Astro pages, layouts, components
 ├── public/             # Static assets copied as-is
 ├── astro.config.mjs    # Astro static site configuration
-├── llms.txt            # AI crawler access and citation policy
-├── favicons/           # Multi-platform favicons (source)
 └── package.json        # Dependencies and scripts
 ```
 

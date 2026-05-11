@@ -16,6 +16,7 @@ User-agent: PerplexityBot
 Allow: /
 
 # Keep legal pages out of training/citation context
+User-agent: *
 Disallow: /impressum
 Disallow: /datenschutz
 
