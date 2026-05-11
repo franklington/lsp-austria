@@ -1,34 +1,65 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+const basics = [
+  {
+    title: 'Ransomware',
+    text: 'Angreifer verschlüsseln Daten und fordern Lösegeld. Ohne funktionierende Backups und Incident Response dauert die Wiederherstellung oft Wochen.'
+  },
+  {
+    title: 'Betriebsunterbrechung',
+    text: 'Ein Systemausfall durch Cyberangriff kann Produktion, Buchführung oder Kundenkommunikation lahmlegen – ohne Versicherung trägt das Unternehmen den Schaden allein.'
+  },
+  {
+    title: 'Haftpflicht bei Datenverlust',
+    text: 'Werden Kundendaten kompromittiert, drohen Schadenersatzansprüche und Bußgelder gemäß DSGVO.'
+  },
+  {
+    title: 'IT-Forensik & Krisenmanagement',
+    text: 'Die Analyse eines Angriffs und die professionelle Kommunikation nach außen kosten erheblich. Viele Cyber-Policen decken diese Kosten mit ab.'
+  },
+  {
+    title: 'Mindestanforderungen',
+    text: 'Versicherer prüfen organisatorische Standards: regelmäßige Backups, Mehrfaktorauthentifizierung und Mitarbeitersensibilisierung sind oft Pflichtvoraussetzung.'
+  }
+];
+
+const faqs = [
+  {
+    question: 'Welche Schäden treten am häufigsten auf?',
+    answer: 'Ransomware, Phishing und Systemausfälle führen oft zu Umsatzeinbußen, Wiederherstellungskosten und Haftungsrisiken.',
+    open: true
+  },
+  {
+    question: 'Was prüfen wir bei der Absicherung?',
+    answer: 'Deckung bei Betriebsunterbrechung, IT-Forensik, Krisenkommunikation, Haftpflichtbausteine und organisatorische Mindeststandards.'
+  },
+  {
+    question: 'Wie starten wir konkret?',
+    answer: 'Gemeinsam definieren wir ein praktikables Schutzpaket aus Prävention und finanzieller Absicherung, passend zur Unternehmensgröße.'
+  },
+  {
+    question: 'Ab welcher Unternehmensgröße ist Cyber-Versicherung sinnvoll?',
+    answer: 'Bereits ab Einzelunternehmen mit digitaler Infrastruktur und Kundendaten. Die Prämien sind für KMU sehr überschaubar – der potenzielle Schaden dagegen kann existenzbedrohend sein.'
+  },
+  {
+    question: 'Was ist beim Abschluss zu beachten?',
+    answer: 'Versicherer stellen immer häufiger technische und organisatorische Anforderungen vor Vertragsabschluss. Wir helfen Ihnen, diese Anforderungen realistisch einzuschätzen und vorzubereiten.'
+  }
+];
 ---
 
-<BaseLayout
+<ArticleLayout
   title="Februar 2026: Cyberrisiken für KMU – LSP Gmunden"
   description="Monatliches Risikothema Februar 2026: Cyber-Schutz für KMU mit Fokus auf Ransomware, Betriebsunterbrechung und Incident Response."
   canonical="https://lsp-gmunden.at/risikothemen/februar-2026-cyberrisiken-kmu"
->
-  <section class="services">
-    <div class="container">
-      <h1 class="section-title">Februar 2026: Cyberrisiken für KMU</h1>
-      <p class="hero-subtitle">Kurze FAQ für KMU: Welche Cyber-Schäden wirklich häufig sind, welche Bausteine fehlen und wie ein pragmatischer Schutzplan aussieht.</p>
-      <div class="faq-accordion">
-        <details class="faq-item" open>
-          <summary>Welche Schäden treten am häufigsten auf?<span class="faq-icon">+</span></summary>
-          <p>Ransomware, Phishing und Systemausfälle führen oft zu Umsatzeinbußen, Wiederherstellungskosten und Haftungsrisiken.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Was prüfen wir bei der Absicherung?<span class="faq-icon">+</span></summary>
-          <p>Deckung bei Betriebsunterbrechung, IT-Forensik, Krisenkommunikation, Haftpflichtbausteine und organisatorische Mindeststandards.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Wie starten wir konkret?<span class="faq-icon">+</span></summary>
-          <p>Gemeinsam definieren wir ein praktikables Schutzpaket aus Prävention und finanzieller Absicherung, passend zur Unternehmensgröße.</p>
-        </details>
-      </div>
-      <div class="hero-cta topics-cta">
-        <a href="/angebot" class="btn btn-large btn-primary">Angebot per E-Mail</a>
-        <a href="/#contact" class="btn btn-large btn-secondary">Cyber-Risiko besprechen</a>
-      </div>
-    </div>
-  </section>
-</BaseLayout>
+  month="Februar 2026"
+  readTime="4 Min. Lesezeit"
+  articleTitle="Cyberrisiken für KMU"
+  subtitle="Kurze FAQ für KMU: Welche Cyber-Schäden wirklich häufig sind, welche Bausteine fehlen und wie ein pragmatischer Schutzplan aussieht."
+  regionIntro="Oberösterreich zählt zu den bedeutendsten Industriestandorten Österreichs. Besonders im Raum Gmunden, Wels und Linz sind viele kleine und mittlere Betriebe – von Handwerk über Tourismus bis hin zu Maschinenbau – digital vernetzt, aber oft ohne dediziertes IT-Sicherheitskonzept. Genau diese Unternehmen sind bevorzugte Ziele für Cyberangriffe, weil sie wertvolle Daten besitzen, aber seltener in professionelle Abwehrsysteme investieren."
+  {basics}
+  {faqs}
+  cta2={{ href: '/#contact', label: 'Cyber-Risiko besprechen' }}
+/>
+

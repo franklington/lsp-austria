@@ -1,34 +1,65 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+const basics = [
+  {
+    title: 'Pedelec vs. S-Pedelec',
+    text: 'Pedelecs bis 25 km/h gelten versicherungsrechtlich als Fahrräder. S-Pedelecs über 25 km/h benötigen Kennzeichen, Versicherungspflicht und Führerschein.'
+  },
+  {
+    title: 'Diebstahl & Beschädigung',
+    text: 'Standard-Haushaltsversicherungen decken Fahrraddiebstahl nur eingeschränkt – bei E-Bikes mit hohem Zeitwert ist ein separater Baustein wichtig.'
+  },
+  {
+    title: 'Haftpflicht beim E-Bike',
+    text: 'Bei Unfällen mit Dritten im Straßenverkehr oder auf Radwegen greift die private Haftpflicht, falls kein spezifischer Ausschluss besteht.'
+  },
+  {
+    title: 'Wallbox & Ladeinfrastruktur',
+    text: 'Schäden durch Überspannung, Kurzschluss oder Feuer an der Wallbox können sowohl Haushalts- als auch Gebäudeversicherung betreffen. Die Deckung ist oft unklar definiert.'
+  },
+  {
+    title: 'Betriebliche E-Mobilität',
+    text: 'Für Unternehmen mit Firmenfahrzeugen und Ladeinfrastruktur entstehen eigene Risiken, die in einer Flottenversicherung oder Betriebsversicherung zu berücksichtigen sind.'
+  }
+];
+
+const faqs = [
+  {
+    question: 'Warum braucht E-Mobilität eine eigene Prüfung?',
+    answer: 'Mit E-Bike, E-Auto und Wallbox entstehen zusätzliche Haftungs- und Sachrisiken, die in Standarddeckungen oft nicht vollständig enthalten sind.',
+    open: true
+  },
+  {
+    question: 'Welche Bausteine sind besonders wichtig?',
+    answer: 'Diebstahl und Teileschutz beim E-Bike, Ladeequipment, Überspannungsschäden, Haftungsfälle und die tatsächliche Nutzung im Alltag oder Betrieb.'
+  },
+  {
+    question: 'Was ist der nächste sinnvolle Schritt?',
+    answer: 'Wir vergleichen bestehende Polizzen und ergänzen gezielt dort, wo für Ihre Nutzung echte Lücken bestehen.'
+  },
+  {
+    question: 'Ist mein E-Bike über die Haushaltsversicherung abgedeckt?',
+    answer: 'Viele Haushaltsversicherungen schließen E-Bikes über einem bestimmten Wert aus dem Standard-Fahrradschutz aus. Klären Sie Ihren Zeitwert und fragen Sie gezielt nach einem E-Bike-Zusatzbaustein.'
+  },
+  {
+    question: 'Was gilt bei der Wallbox in Mietwohnungen oder WEGs?',
+    answer: 'In Mehrparteienhäusern ist die Installation einer Wallbox genehmigungspflichtig. Versicherungsrechtlich ist zu klären, ob Schäden unter die Gebäude- oder Haushaltsversicherung fallen – eine individuelle Prüfung ist hier besonders wichtig.'
+  }
+];
 ---
 
-<BaseLayout
+<ArticleLayout
   title="März 2026: E-Bike & E-Mobilität – LSP Gmunden"
   description="Monatliches Risikothema März 2026: Versicherung rund um E-Bike, Wallbox und E-Mobilität für Privat- und Firmenkund:innen."
   canonical="https://lsp-gmunden.at/risikothemen/maerz-2026-e-bike-e-mobilitaet"
->
-  <section class="services">
-    <div class="container">
-      <h1 class="section-title">März 2026: E-Bike &amp; E-Mobilität</h1>
-      <p class="hero-subtitle">FAQ zur E-Mobilität: von E-Bike bis Wallbox – welche Deckungen wichtig sind und wie Sie Lücken ohne unnötige Mehrkosten schließen.</p>
-      <div class="faq-accordion">
-        <details class="faq-item" open>
-          <summary>Warum braucht E-Mobilität eine eigene Prüfung?<span class="faq-icon">+</span></summary>
-          <p>Mit E-Bike, E-Auto und Wallbox entstehen zusätzliche Haftungs- und Sachrisiken, die in Standarddeckungen oft nicht vollständig enthalten sind.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Welche Bausteine sind besonders wichtig?<span class="faq-icon">+</span></summary>
-          <p>Diebstahl und Teileschutz beim E-Bike, Ladeequipment, Überspannungsschäden, Haftungsfälle und die tatsächliche Nutzung im Alltag oder Betrieb.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Was ist der nächste sinnvolle Schritt?<span class="faq-icon">+</span></summary>
-          <p>Wir vergleichen bestehende Polizzen und ergänzen gezielt dort, wo für Ihre Nutzung echte Lücken bestehen.</p>
-        </details>
-      </div>
-      <div class="hero-cta topics-cta">
-        <a href="/angebot" class="btn btn-large btn-primary">Angebot per E-Mail</a>
-        <a href="/#contact" class="btn btn-large btn-secondary">E-Mobilität absichern</a>
-      </div>
-    </div>
-  </section>
-</BaseLayout>
+  month="März 2026"
+  readTime="4 Min. Lesezeit"
+  articleTitle="E-Bike & E-Mobilität"
+  subtitle="FAQ zur E-Mobilität: von E-Bike bis Wallbox – welche Deckungen wichtig sind und wie Sie Lücken ohne unnötige Mehrkosten schließen."
+  regionIntro="Die Region Salzkammergut gehört zu den beliebtesten Radfahrgebieten Österreichs. Mit der wachsenden Beliebtheit von E-Bikes – vom Alltags-Pedelec bis zum schnellen S-Pedelec – entstehen neue Versicherungsfragen. Dazu kommen Wallboxen in Einfamilienhäusern und Firmenparkplätzen sowie die damit verbundenen Haftungs- und Sachrisiken, die in klassischen Polizzen oft noch nicht berücksichtigt sind."
+  {basics}
+  {faqs}
+  cta2={{ href: '/#contact', label: 'E-Mobilität absichern' }}
+/>
+

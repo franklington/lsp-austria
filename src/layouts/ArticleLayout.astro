@@ -1,0 +1,105 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface BasicsItem {
+  title: string;
+  text: string;
+}
+
+interface FaqItem {
+  question: string;
+  answer: string;
+  open?: boolean;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  month: string;
+  readTime?: string;
+  articleTitle: string;
+  subtitle: string;
+  regionIntro: string;
+  basics: BasicsItem[];
+  faqs: FaqItem[];
+  cta1?: { href: string; label: string };
+  cta2?: { href: string; label: string };
+}
+
+const {
+  title,
+  description,
+  canonical,
+  month,
+  readTime = '3 Min. Lesezeit',
+  articleTitle,
+  subtitle,
+  regionIntro,
+  basics,
+  faqs,
+  cta1 = { href: '/angebot', label: 'Angebot per E-Mail' },
+  cta2 = { href: '/#contact', label: 'Persönlich beraten lassen' },
+} = Astro.props;
+---
+
+<BaseLayout {title} {description} {canonical}>
+  <section class="article-hero">
+    <div class="container">
+      <div class="article-hero-inner">
+        <div class="article-meta">
+          <span class="article-badge">{month}</span>
+          <span class="article-read-time">{readTime}</span>
+        </div>
+        <h1>{articleTitle}</h1>
+        <p class="hero-subtitle">{subtitle}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="article-region">
+    <div class="container">
+      <div class="article-region-inner">
+        <p class="article-eyebrow">Warum das in unserer Region wichtig ist</p>
+        <p class="article-region-text">{regionIntro}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="article-basics">
+    <div class="container">
+      <h2 class="article-basics-title">Das Wichtigste auf einen Blick</h2>
+      <div class="article-basics-grid">
+        {basics.map((item) => (
+          <div class="article-basics-card">
+            <h4>{item.title}</h4>
+            <p>{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="article-faq">
+    <div class="container">
+      <h2 class="article-faq-title">Häufige Fragen</h2>
+      <div class="faq-accordion">
+        {faqs.map((faq) => (
+          <details class="faq-item" open={faq.open || undefined}>
+            <summary>{faq.question}<span class="faq-icon">+</span></summary>
+            <p>{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="article-cta">
+    <div class="container">
+      <div class="hero-cta topics-cta">
+        <a href={cta1.href} class="btn btn-large btn-primary">{cta1.label}</a>
+        <a href={cta2.href} class="btn btn-large btn-secondary">{cta2.label}</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

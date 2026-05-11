@@ -1,34 +1,65 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+const basics = [
+  {
+    title: 'Elementarschäden',
+    text: 'Hochwasser und Sturm gelten als Elementarschäden. Sie sind in vielen Standard-Polizzen nicht automatisch enthalten oder nur teilweise abgedeckt.'
+  },
+  {
+    title: 'Häufige Lücken',
+    text: 'Schäden an Kellerräumen, Nebengebäuden und Außenanlagen sind oft ausgeschlossen oder stark limitiert.'
+  },
+  {
+    title: 'Unterversicherung',
+    text: 'Viele Gebäudeversicherungen wurden seit Jahren nicht angepasst. Mit gestiegenen Baukosten können Unterversicherungsklauseln greifen.'
+  },
+  {
+    title: 'Selbstbehalt & Wartezeit',
+    text: 'Elementarversicherungen haben oft höhere Selbstbehalte und können Wartezeiten von 14 bis 30 Tagen enthalten.'
+  },
+  {
+    title: 'Prävention',
+    text: 'Einfache Maßnahmen – Rückstauventile, Hochwasserschutzbarrieren, gesicherte Kelleröffnungen – können Schäden erheblich reduzieren.'
+  }
+];
+
+const faqs = [
+  {
+    question: 'Warum ist das Thema aktuell besonders wichtig?',
+    answer: 'Extremwetterlagen treten häufiger auf und verursachen hohe Sachschäden. Eine aktuelle Deckungsprüfung hilft, Unterversicherung rechtzeitig zu vermeiden.',
+    open: true
+  },
+  {
+    question: 'Welche Punkte prüfen wir gemeinsam?',
+    answer: 'Gebäude- und Haushaltsdeckung, Selbstbehalt, Elementarschäden, Nebengebäude sowie sinnvolle Präventionsmaßnahmen für Ihr Objekt.'
+  },
+  {
+    question: 'Wie schnell kommen wir zu einem Angebot?',
+    answer: 'Nach einem kurzen Gespräch priorisieren wir die größten Risiken und senden ein klares Angebot mit verständlichen Deckungen und Kosten.'
+  },
+  {
+    question: 'Was passiert im Schadensfall?',
+    answer: 'Wichtig ist eine sofortige Schadensmeldung an die Versicherung und eine Fotodokumentation des Schadens vor Aufräumarbeiten. Wir begleiten Sie dabei und koordinieren die Schadensabwicklung.'
+  },
+  {
+    question: 'Gilt meine Haushaltsversicherung auch für Unwetterschäden?',
+    answer: 'Eine Haushaltsversicherung deckt typischerweise Schäden am Hausrat durch Sturm – jedoch nicht durch Hochwasser, sofern kein Elementarschaden-Baustein vereinbart ist. Prüfen Sie Ihre Polizze auf diesen Zusatzbaustein.'
+  }
+];
 ---
 
-<BaseLayout
+<ArticleLayout
   title="Januar 2026: Hochwasser & Sturm – LSP Gmunden"
   description="Monatliches Risikothema Januar 2026: Hochwasser- und Sturmschutz für Haushalte, Familien und Unternehmen in Gmunden."
   canonical="https://lsp-gmunden.at/risikothemen/januar-2026-hochwasser-sturm"
->
-  <section class="services">
-    <div class="container">
-      <h1 class="section-title">Januar 2026: Hochwasser &amp; Sturm</h1>
-      <p class="hero-subtitle">Kurz erklärt: Welche Schäden derzeit am häufigsten auftreten, was in der Polizze oft fehlt und wie Sie mit einfachen Maßnahmen Risiko reduzieren.</p>
-      <div class="faq-accordion">
-        <details class="faq-item" open>
-          <summary>Warum ist das Thema aktuell besonders wichtig?<span class="faq-icon">+</span></summary>
-          <p>Extremwetterlagen treten häufiger auf und verursachen hohe Sachschäden. Eine aktuelle Deckungsprüfung hilft, Unterversicherung rechtzeitig zu vermeiden.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Welche Punkte prüfen wir gemeinsam?<span class="faq-icon">+</span></summary>
-          <p>Gebäude- und Haushaltsdeckung, Selbstbehalt, Elementarschäden, Nebengebäude sowie sinnvolle Präventionsmaßnahmen für Ihr Objekt.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Wie schnell kommen wir zu einem Angebot?<span class="faq-icon">+</span></summary>
-          <p>Nach einem kurzen Gespräch priorisieren wir die größten Risiken und senden ein klares Angebot mit verständlichen Deckungen und Kosten.</p>
-        </details>
-      </div>
-      <div class="hero-cta topics-cta">
-        <a href="/angebot" class="btn btn-large btn-primary">Angebot per E-Mail</a>
-        <a href="/#contact" class="btn btn-large btn-secondary">Persönlich beraten lassen</a>
-      </div>
-    </div>
-  </section>
-</BaseLayout>
+  month="Januar 2026"
+  readTime="4 Min. Lesezeit"
+  articleTitle="Hochwasser & Sturm"
+  subtitle="Kurz erklärt: Welche Schäden derzeit am häufigsten auftreten, was in der Polizze oft fehlt und wie Sie mit einfachen Maßnahmen Risiko reduzieren."
+  regionIntro="Das Salzkammergut und der Raum Gmunden gehören zu den am stärksten von Hochwasser und Sturm betroffenen Gebieten in Oberösterreich. Traunfluss und Traunsee können bei Starkniederschlägen und Schneeschmelze rasch zu Überschwemmungen führen. Kombiniert mit häufiger werdenden Stürmen steigt das Schadenspotenzial – und damit die Notwendigkeit, bestehende Versicherungsdeckungen regelmäßig zu überprüfen."
+  {basics}
+  {faqs}
+  cta2={{ href: '/#contact', label: 'Persönlich beraten lassen' }}
+/>
+
