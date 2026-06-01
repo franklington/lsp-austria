@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import Image from 'next/image'
 import { Check } from 'lucide-react'
 import { services, getServiceBySlug } from '@/content/services'
 import { Section } from '@/components/ui/Section'
@@ -57,7 +58,17 @@ export default async function ServiceDetailPage({ params }: Props) {
       />
 
       {/* Hero */}
-      <div className="bg-base-dark pt-32 pb-16 lg:pt-40 lg:pb-20">
+      <div className="relative bg-base-dark pt-32 pb-16 lg:pt-40 lg:pb-20 overflow-hidden">
+        <Image
+          src={service.image}
+          alt=""
+          fill
+          unoptimized
+          priority
+          aria-hidden
+          className="object-cover opacity-15"
+          style={{ filter: 'grayscale(0.7) brightness(0.5)' }}
+        />
         <div className="container-page">
           <div className="max-w-3xl">
             <div className="w-14 h-14 rounded-[var(--radius-lg)] bg-accent-subtle flex items-center justify-center mb-6">

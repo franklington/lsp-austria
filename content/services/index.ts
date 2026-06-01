@@ -7,6 +7,7 @@ export interface Service {
   longDescription: string
   features: string[]
   icon: LucideIcon
+  image: string
   heroHeadline: string
   metaTitle: string
   metaDescription: string
@@ -29,6 +30,7 @@ export const services: Service[] = [
       'Günstige Prämien durch Vergleich führender Anbieter',
     ],
     icon: Car,
+    image: '/images/service-kfz-fahrzeuge.jpg',
     heroHeadline: 'KFZ-Versicherung, die zu Ihnen passt.',
     metaTitle: 'KFZ-Versicherung Gmunden – LSP Austria',
     metaDescription:
@@ -50,6 +52,7 @@ export const services: Service[] = [
       'Schnelle Abwicklung – meist am selben Tag',
     ],
     icon: FileText,
+    image: '/images/service-kfz-zulassung.jpg',
     heroHeadline: 'KFZ-Zulassung direkt in Gmunden.',
     metaTitle: 'KFZ-Zulassung Gmunden (GM, KI, VB, WL) – LSP Austria',
     metaDescription:
@@ -71,6 +74,7 @@ export const services: Service[] = [
       'Glasbruchversicherung',
     ],
     icon: Home,
+    image: '/images/service-wohnen-recht.jpg',
     heroHeadline: 'Ihr Zuhause – rundum abgesichert.',
     metaTitle: 'Haushalts- & Eigenheimversicherung Gmunden – LSP Austria',
     metaDescription:
@@ -92,6 +96,7 @@ export const services: Service[] = [
       'Prämiengeförderte Zukunftsvorsorge',
     ],
     icon: TrendingUp,
+    image: '/images/service-sparen-vorsorge.jpg',
     heroHeadline: 'Vorsorgen – mit Plan und Weitblick.',
     metaTitle: 'Pensionsvorsorge & Lebensversicherung Gmunden – LSP Austria',
     metaDescription:
@@ -113,6 +118,7 @@ export const services: Service[] = [
       'Sport- & Freizeitversicherung',
     ],
     icon: Heart,
+    image: '/images/service-gesundheit-freizeit.jpg',
     heroHeadline: 'Gesund & sicher – in jedem Moment.',
     metaTitle: 'Kranken- & Unfallversicherung Gmunden – LSP Austria',
     metaDescription:
@@ -134,6 +140,7 @@ export const services: Service[] = [
       'Mitarbeiter-Unfallversicherung',
     ],
     icon: Building2,
+    image: '/images/service-unternehmen.jpg',
     heroHeadline: 'Ihr Unternehmen – professionell versichert.',
     metaTitle: 'Gewerbeversicherung Gmunden – LSP Austria',
     metaDescription:

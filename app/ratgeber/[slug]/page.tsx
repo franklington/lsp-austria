@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import path from 'path'
+import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import remarkGfm from 'remark-gfm'
 import { getPost, getPostSlugs } from '@/lib/mdx'
@@ -66,7 +67,19 @@ export default async function BlogPostPage({ params }: Props) {
       />
 
       {/* Hero */}
-      <div className="bg-base-dark pt-32 pb-12 lg:pt-40 lg:pb-16">
+      <div className="relative bg-base-dark pt-32 pb-12 lg:pt-40 lg:pb-16 overflow-hidden">
+        {post.image && (
+          <Image
+            src={post.image}
+            alt=""
+            fill
+            unoptimized
+            priority
+            aria-hidden
+            className="object-cover opacity-15"
+            style={{ filter: 'grayscale(0.6) brightness(0.5)' }}
+          />
+        )}
         <div className="container-page">
           <div className="max-w-2xl">
             {post.category && (

@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { Phone, ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
@@ -7,6 +8,17 @@ import { motion } from 'framer-motion'
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-base-dark">
+      {/* Background photo */}
+      <Image
+        src="/images/hero-bg.jpg"
+        alt=""
+        fill
+        unoptimized
+        priority
+        aria-hidden
+        className="object-cover opacity-20"
+        style={{ filter: 'grayscale(0.6) brightness(0.5)' }}
+      />
       {/* Background glow */}
       <div
         aria-hidden

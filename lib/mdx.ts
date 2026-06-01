@@ -9,6 +9,7 @@ export interface PostMeta {
   date: string
   category?: string
   readingTime?: string
+  image?: string
 }
 
 export interface Post extends PostMeta {
@@ -41,6 +42,7 @@ export async function getPost(dir: string, slug: string): Promise<Post | null> {
         date: data.date ?? '',
         category: data.category,
         readingTime: data.readingTime,
+        image: data.image,
       }
     } catch {
       continue
