@@ -159,8 +159,13 @@ description: "Kurzbeschreibung (max 160 Zeichen)"
 date: "2024-MM-DD"
 category: "Kategorie"
 readingTime: "X Min."
+image: "/images/blog-mein-foto.jpg"
 ---
 ```
+
+> **Bilder:** Lokal in `public/images/` ablegen (kein Unsplash-Hotlink – DSGVO). Credits in `lib/image-credits.ts` eintragen. Dateinamen-Konvention: `blog-{slug}.jpg`.
+
+> **Tabellen in MDX:** `remark-gfm` ist in beiden MDX-Seiten (`ratgeber/[slug]` und `themen/[slug]`) eingebunden – GFM-Pipe-Tabellen funktionieren automatisch.
 
 Für SEO-Themen-Seiten: `.mdx`-Datei in `content/themen/` anlegen. Diese Seiten haben keinen Navlink – nur Sitemap und Google.
 
@@ -168,6 +173,7 @@ Für SEO-Themen-Seiten: `.mdx`-Datei in `content/themen/` anlegen. Diese Seiten 
 
 - [ ] `generateMetadata()` mit title, description, canonical
 - [ ] Hero-Sektion mit bg-base-dark und pt-32/pt-40 für Header-Abstand
+- [ ] Bei Hero-Sektion: optionales Hintergrundbild mit `<Image fill unoptimized aria-hidden className="object-cover opacity-15" style={{ filter: 'grayscale(0.6) brightness(0.5)' }} />`
 - [ ] `<Section>` für Hauptinhalt
 - [ ] `<CallToAction />` am Ende
 - [ ] JSON-LD Schema (bei Service- und Blog-Seiten)

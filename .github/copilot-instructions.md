@@ -160,6 +160,7 @@ Alle Tokens sind in `app/globals.css` unter `@theme` definiert.
 3. **`params` immer `await`en** — in Next.js 16 ist `params` ein Promise
 4. **Client Components** nur wenn nötig (useState, useEffect, Event-Handler)
 5. **`generateStaticParams()`** in allen dynamischen Routen zwingend erforderlich
-6. **MDX-Inhalte** immer mit gray-matter Frontmatter (title, description, date, category)
+6. **MDX-Inhalte** immer mit gray-matter Frontmatter (title, description, date, category, image)
 7. **Framer Motion sparsam** — nur für Hero und erste Screen-Elemente
 8. **Keine externen Scripts** ohne Consent (Maps, Analytics)
+9. **Bilder lokal** — alle Bilder in `public/images/`, kein Hotlinking (DSGVO). Credits in `lib/image-credits.ts`. Keine US-Motive (Skylines, US-Kennzeichen). `remark-gfm` ist in MDX-Renderern aktiv — Pipe-Tabellen funktionieren.

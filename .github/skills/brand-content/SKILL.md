@@ -109,8 +109,11 @@ description: "Meta-Description (160 Zeichen): Was, Wo (Gmunden), Wer (LSP Austri
 date: "2024-MM-DD"
 category: "KFZ & Fahrzeuge | Wohnen & Recht | Sparen & Vorsorge | Gesundheit & Freizeit | Unternehmen | KFZ-Zulassung"
 readingTime: "X Min."
+image: "/images/blog-{slug}.jpg"
 ---
 ```
+
+> **Bildauswahl:** Nur lokal gespeicherte Bilder verwenden (`public/images/`). Keine US-amerikanischen Motive (Skylines, US-Kennzeichen). Bevorzugt: Alpine Landschaften, europäische Straßen, neutrale Büro-/Alltagsszenen. Credits immer in `lib/image-credits.ts` eintragen.
 
 ## Häufige Versicherungsbegriffe (Deutsch)
 
