@@ -4,6 +4,11 @@ import Footer from '@/components/layout/Footer'
 import SchemaOrg from '@/components/sections/SchemaOrg'
 import '../styles/globals.css'
 import '../styles/theme.css'
+import './globals.css'
+import { Geist } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
   title: {
@@ -17,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="de" className="bg-bgDark2">
+    <html lang="de" className={cn("bg-bgDark2", "font-sans", geist.variable)}>
       <head>
         <link
           rel="preload"
