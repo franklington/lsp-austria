@@ -29,11 +29,11 @@ export function Footer() {
           {/* Brand column */}
           <div>
             <Link href="/" className="flex items-center gap-3 mb-4">
-              <Image src="/logo.svg" alt="LSP Austria" width={36} height={36} className="w-9 h-9" />
-              <span className="text-foreground font-semibold text-base">LSP Austria</span>
+              <Image src="/logo.svg" alt="LSP Austria" width={80} height={80} className="w-20 h-20" />
+              <span className="sr-only">LSP Austria</span>
             </Link>
             <p className="text-foreground-subtle text-sm leading-relaxed">
-              LSP Consulting GmbH – Ihr persönlicher Versicherungspartner in Gmunden seit 2006.
+              Leitner Sonntagbauer Partner – Ihr persönlicher Versicherungspartner in Gmunden seit 2006.
             </p>
             <div className="mt-5 flex items-center gap-1">
               {[1, 2, 3, 4, 5].map((i) => (

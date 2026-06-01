@@ -1,6 +1,4 @@
-'use client'
-
-import { useState } from 'react'
+import Image from 'next/image'
 import { Phone, Mail, MapPin, Clock, ExternalLink } from 'lucide-react'
 
 const hours = [
@@ -10,42 +8,38 @@ const hours = [
 ]
 
 export function ContactMap() {
-  const [mapConsent, setMapConsent] = useState(false)
-
   return (
     <section id="kontakt" className="bg-base-dark py-20 lg:py-28">
       <div className="container-page">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           {/* Map */}
-          <div className="order-2 lg:order-1">
-            <div className="rounded-[var(--radius-xl)] overflow-hidden border border-border aspect-[4/3] bg-surface flex items-center justify-center">
-              {mapConsent ? (
-                <iframe
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=13.78%2C47.92%2C13.80%2C47.93&layer=mapnik&marker=47.9254%2C13.7876"
-                  title="LSP Austria Standort – Bahnhofstraße 46, Gmunden"
-                  className="w-full h-full"
-                  loading="lazy"
+          <div className="order-2 lg:order-2">
+            <a
+              href="https://maps.google.com/?q=Bahnhofstra%C3%9Fe+46,+4810+Gmunden"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block group"
+            >
+              <div className="relative rounded-[var(--radius-xl)] overflow-hidden border border-border aspect-[4/3] bg-surface">
+                <Image
+                  src="/map.jpg"
+                  alt="Standort LSP Austria – Bahnhofstraße 46, 4810 Gmunden"
+                  fill
+                  unoptimized
+                  className="object-cover"
+                  style={{ filter: 'grayscale(1) brightness(0.7) sepia(0.4) hue-rotate(190deg) saturate(1.5)' }}
                 />
-              ) : (
-                <div className="flex flex-col items-center text-center p-8 gap-4">
-                  <MapPin className="w-10 h-10 text-accent" />
-                  <div>
-                    <p className="text-foreground font-semibold text-base mb-1">
-                      Karte anzeigen
-                    </p>
-                    <p className="text-foreground-subtle text-sm mb-4 max-w-xs">
-                      Beim Laden der Karte werden Daten an OpenStreetMap übertragen.
-                    </p>
-                    <button
-                      onClick={() => setMapConsent(true)}
-                      className="bg-accent hover:bg-accent-light text-accent-fg text-sm font-medium px-4 py-2 rounded-[var(--radius-md)] transition-colors focus-ring cursor-pointer"
-                    >
-                      Karte laden
-                    </button>
-                  </div>
+                {/* Accent pin — exact coords: lat 47.9254 / lng 13.7876 → 65.9%, 59.0% in 768×768 image */}
+                <div className="absolute pointer-events-none" style={{ left: '65.9%', top: '59.0%', transform: 'translate(-50%, -100%)' }}>
+                  <svg viewBox="0 0 24 32" className="w-8 h-10 drop-shadow-lg" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 0C5.373 0 0 5.373 0 12c0 7.5 12 20 12 20S24 19.5 24 12C24 5.373 18.627 0 12 0z" fill="#2563eb"/>
+                    <circle cx="12" cy="12" r="5" fill="white"/>
+                  </svg>
                 </div>
-              )}
-            </div>
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/5 transition-colors duration-200" />
+              </div>
+            </a>
             <a
               href="https://maps.google.com/?q=Bahnhofstra%C3%9Fe+46,+4810+Gmunden"
               target="_blank"
@@ -58,7 +52,7 @@ export function ContactMap() {
           </div>
 
           {/* Contact info */}
-          <div className="order-1 lg:order-2">
+          <div className="order-1 lg:order-1">
             <p className="text-accent text-sm font-semibold uppercase tracking-widest mb-3">
               So erreichen Sie uns
             </p>

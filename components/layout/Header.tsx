@@ -65,14 +65,12 @@ export function Header() {
             <Image
               src="/logo.svg"
               alt="LSP Austria"
-              width={36}
-              height={36}
-              className="w-9 h-9"
+              width={80}
+              height={80}
+              className="w-20 h-20"
               priority
             />
-            <span className="text-foreground font-semibold text-base hidden sm:block">
-              LSP Austria
-            </span>
+            <span className="sr-only">LSP Austria</span>
           </Link>
 
           {/* Desktop Nav */}

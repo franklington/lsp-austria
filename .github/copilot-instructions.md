@@ -11,7 +11,7 @@ applyTo: "**"
 | | |
 |---|---|
 | **Name** | LSP Consulting GmbH |
-| **Marke** | LSP Austria |
+| **Marke** | LSP Austria (LSP = Leitner Sonntagbauer Partner) |
 | **Adresse** | Bahnhofstraße 46, 4810 Gmunden, Österreich |
 | **Telefon** | +43 (0)761 267646-0 |
 | **E-Mail** | agentur@lsp-austria.at |
