@@ -48,6 +48,7 @@
 @layer base {
   :root {
     color-scheme: dark;
+    --gradient-cta: linear-gradient(135deg, var(--color-accent-subtle) 0%, var(--color-accent-dark) 50%, var(--color-accent) 100%);
   }
 
   *,
@@ -161,6 +162,78 @@
   .focus-ring:focus-visible {
     outline-color: var(--color-accent);
   }
+}
+
+/* === Accent Theme Overrides (testing) === */
+:root[data-accent="emerald"] {
+  --color-accent: #059669;
+  --color-accent-light: #10b981;
+  --color-accent-dark: #047857;
+  --color-accent-subtle: #064e3b;
+  --shadow-glow: 0 0 24px rgba(5, 150, 105, 0.15);
+}
+
+:root[data-accent="gold"] {
+  --color-accent: #d97706;
+  --color-accent-light: #f59e0b;
+  --color-accent-dark: #b45309;
+  --color-accent-subtle: #451a03;
+  --shadow-glow: 0 0 24px rgba(217, 119, 6, 0.15);
+}
+
+:root[data-accent="mono"] {
+  --color-accent: #e5e5e5;
+  --color-accent-light: #ffffff;
+  --color-accent-dark: #a3a3a3;
+  --color-accent-subtle: #1f1f1f;
+  --color-accent-fg: #0a0a0a;
+  --shadow-glow: 0 0 24px rgba(255, 255, 255, 0.08);
+  --gradient-cta: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 50%, #252525 100%);
+}
+
+.map-img {
+  filter: grayscale(1) brightness(0.7) sepia(0.4) hue-rotate(190deg) saturate(1.5);
+}
+
+:root[data-accent="emerald"] .map-img {
+  filter: grayscale(1) brightness(0.7) sepia(0.4) hue-rotate(100deg) saturate(1.6);
+}
+
+:root[data-accent="rose"] .map-img {
+  filter: grayscale(1) brightness(0.7) sepia(0.5) hue-rotate(330deg) saturate(1.6);
+}
+
+:root[data-accent="gold"] .map-img {
+  filter: grayscale(1) brightness(0.7) sepia(0.5) hue-rotate(15deg) saturate(1.4);
+}
+
+:root[data-accent="mono"] .map-img {
+  filter: grayscale(1) brightness(0.75);
+}
+
+:root[data-accent="mono"] .map-pin-body {
+  fill: #1a1a1a;
+}
+
+:root[data-accent="mono"] .map-pin-dot {
+  fill: #e5e5e5;
+}
+
+:root[data-accent="mono"] .cta-primary-btn {
+  color: #0a0a0a;
+  background-color: #e5e5e5;
+}
+
+:root[data-accent="mono"] .cta-primary-btn:hover {
+  background-color: #ffffff;
+}
+
+:root[data-accent="rose"] {
+  --color-accent: #e11d48;
+  --color-accent-light: #fb7185;
+  --color-accent-dark: #be123c;
+  --color-accent-subtle: #4c0519;
+  --shadow-glow: 0 0 24px rgba(225, 29, 72, 0.15);
 }
 
 /* === MDX Prose Styles (prose-lsp) === */

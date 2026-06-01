@@ -26,14 +26,13 @@ export function ContactMap() {
                   alt="Standort LSP Austria – Bahnhofstraße 46, 4810 Gmunden"
                   fill
                   unoptimized
-                  className="object-cover"
-                  style={{ filter: 'grayscale(1) brightness(0.7) sepia(0.4) hue-rotate(190deg) saturate(1.5)' }}
+                  className="object-cover map-img"
                 />
                 {/* Accent pin — exact coords: lat 47.9254 / lng 13.7876 → 65.9%, 59.0% in 768×768 image */}
                 <div className="absolute pointer-events-none" style={{ left: '65.9%', top: '59.0%', transform: 'translate(-50%, -100%)' }}>
-                  <svg viewBox="0 0 24 32" className="w-8 h-10 drop-shadow-lg" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 0C5.373 0 0 5.373 0 12c0 7.5 12 20 12 20S24 19.5 24 12C24 5.373 18.627 0 12 0z" fill="#2563eb"/>
-                    <circle cx="12" cy="12" r="5" fill="white"/>
+                  <svg viewBox="0 0 24 32" className="map-pin w-8 h-10 drop-shadow-lg" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path className="map-pin-body" d="M12 0C5.373 0 0 5.373 0 12c0 7.5 12 20 12 20S24 19.5 24 12C24 5.373 18.627 0 12 0z" fill="var(--color-accent)"/>
+                    <circle className="map-pin-dot" cx="12" cy="12" r="5" fill="white"/>
                   </svg>
                 </div>
                 {/* Hover overlay */}
