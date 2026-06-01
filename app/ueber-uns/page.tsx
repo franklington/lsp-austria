@@ -31,7 +31,7 @@ export default function UeberUnsPage() {
               Persönliche Beratung seit 2006.
             </h1>
             <p className="text-foreground-muted text-lg text-balance leading-relaxed">
-              Wir sind LSP Consulting GmbH – ein unabhängiger Versicherungsmakler aus Gmunden im
+              Wir sind LSP Consulting GmbH – eine Mehrfachagentur aus Gmunden im
               Herzen des Salzkammerguts. Was uns von anderen unterscheidet: Bei uns beraten echte
               Menschen, keine Call-Center.
             </p>
@@ -58,8 +58,8 @@ export default function UeberUnsPage() {
                 Sprache, keine versteckten Provisionen zulasten Ihrer Interessen.
               </p>
               <p>
-                Als unabhängiger Makler vertreten wir ausschließlich <em>Ihre</em> Interessen –
-                nicht die der Versicherer. Das bedeutet: Wir vergleichen Angebote, erklären
+                Als Mehrfachagentur arbeiten wir mit den führenden Versicherungsgesellschaften
+                zusammen und vergleichen deren Angebote für Sie. Das bedeutet: Wir erklären
                 Unterschiede und finden die Lösung, die wirklich zu Ihnen passt.
               </p>
             </div>
@@ -68,7 +68,7 @@ export default function UeberUnsPage() {
           {/* Values */}
           <div className="space-y-4">
             {[
-              { title: 'Unabhängig', desc: 'Als Makler sind wir an keine Versicherungsgesellschaft gebunden. Wir vertreten Ihre Interessen.' },
+              { title: 'Mehrfachagentur', desc: 'Wir arbeiten mit den führenden Versicherungsgesellschaften zusammen und vergleichen deren Angebote für Sie.' },
               { title: 'Regional', desc: 'Wir kennen die Region, die Menschen und die besonderen Bedürfnisse im Salzkammergut.' },
               { title: 'Persönlich', desc: 'Kein Call-Center, kein Chatbot. Bei uns haben Sie immer einen festen Ansprechpartner.' },
               { title: 'Transparent', desc: 'Keine versteckten Kosten, keine Überraschungen. Klare Kommunikation auf Augenhöhe.' },

@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     'KFZ-Versicherung',
     'Vorsorge',
     'LSP Austria',
-    'Versicherungsmakler',
+    'Mehrfachagentur',
     'Österreich',
     'Salzkammergut',
   ],

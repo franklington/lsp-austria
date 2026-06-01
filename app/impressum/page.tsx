@@ -38,7 +38,7 @@ export default function ImpressumPage() {
 
           <div>
             <h2 className="text-foreground font-semibold text-base mb-3">Unternehmensgegenstand</h2>
-            <p>Versicherungsmakler und Berater in Versicherungsangelegenheiten</p>
+            <p>Mehrfachagent und Berater in Versicherungsangelegenheiten</p>
           </div>
 
           <div>

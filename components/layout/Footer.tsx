@@ -33,7 +33,7 @@ export function Footer() {
               <span className="sr-only">LSP Austria</span>
             </Link>
             <p className="text-foreground-subtle text-sm leading-relaxed">
-              Leitner Sonntagbauer Partner – Ihr persönlicher Versicherungspartner in Gmunden seit 2006.
+              LSP Consulting GmbH – Ihr persönlicher Versicherungspartner in Gmunden seit 2006.
             </p>
             <div className="mt-5 flex items-center gap-1">
               {[1, 2, 3, 4, 5].map((i) => (

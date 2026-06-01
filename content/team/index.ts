@@ -8,7 +8,7 @@ export interface TeamMember {
 export const team: TeamMember[] = [
   {
     name: 'Franz Adolf Leitner',
-    role: 'Geschäftsführer & Versicherungsmakler',
+    role: 'Geschäftsführer & Mehrfachagent',
     bio: 'Seit der Gründung im Jahr 2006 ist Franz Adolf Leitner das Gesicht von LSP Austria. Mit jahrzehntelanger Erfahrung in der Versicherungsbranche berät er Privat- und Unternehmenskunden mit Leidenschaft und Weitblick.',
     initials: 'FL',
   },
