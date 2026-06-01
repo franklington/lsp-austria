@@ -12,7 +12,8 @@
       "Bash(curl -sL \"https://images.unsplash.com/photo-1604275689235-fdc521556c16?w=1600&q=80&fit=crop\" -o /Users/franz/Projects/lsp-austria/public/images/blog-naturkatastrophen-hochwasser-versicherung.jpg)",
       "Bash(curl -sL \"https://images.unsplash.com/photo-1639302610362-4c86747e8680?w=1600&q=80&fit=crop\" -o /Users/franz/Projects/lsp-austria/public/images/blog-e-auto-versicherung-oesterreich.jpg)",
       "Bash(curl -sL \"https://images.unsplash.com/photo-1647964366344-bc680baf64e2?w=1600&q=80&fit=crop\" -o /Users/franz/Projects/lsp-austria/public/images/blog-berufsunfaehigkeitsversicherung-oesterreich.jpg)",
-      "Bash(wait)"
+      "Bash(wait)",
+      "Bash(brew install *)"
     ]
   }
 }

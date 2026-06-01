@@ -1,20 +1,18 @@
-'use client'
-
 import Image from 'next/image'
 import Link from 'next/link'
 import { Phone, ArrowRight } from 'lucide-react'
-import { motion } from 'framer-motion'
 
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-base-dark">
       {/* Background photo */}
       <Image
-        src="/images/hero-bg.jpg"
+        src="/images/hero-bg.webp"
         alt=""
         fill
         unoptimized
         priority
+        fetchPriority="high"
         aria-hidden
         className="object-cover opacity-20"
         style={{ filter: 'grayscale(0.6) brightness(0.5)' }}
@@ -41,43 +39,34 @@ export function Hero() {
 
       <div className="container-page relative pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="max-w-3xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+          <p
+            className="text-accent text-sm font-semibold uppercase tracking-widest mb-6"
+            style={{ animation: 'fade-up 0.5s ease both' }}
           >
-            <p className="text-accent text-sm font-semibold uppercase tracking-widest mb-6">
-              Versicherung & Vorsorge · Gmunden seit 2006
-            </p>
-          </motion.div>
+            Versicherung & Vorsorge · Gmunden seit 2006
+          </p>
 
-          <motion.h1
+          <h1
             className="text-2xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight text-balance hyphens-auto"
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.08 }}
+            style={{ animation: 'fade-up 0.55s 0.08s ease both' }}
           >
             Ihr Versicherungspartner
             <br />
             <span className="text-accent">in Gmunden.</span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
+          <p
             className="mt-6 text-lg lg:text-xl text-foreground-muted leading-relaxed max-w-2xl text-balance"
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.16 }}
+            style={{ animation: 'fade-up 0.55s 0.16s ease both' }}
           >
             Persönliche Beratung für KFZ, Eigenheim, Vorsorge und alle Versicherungsthemen –
             ohne Call-Center, ohne Warteband. Einfach ehrlich gut beraten.
-          </motion.p>
+          </p>
 
           {/* Social proof */}
-          <motion.div
+          <div
             className="mt-6 flex items-center gap-3"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.28 }}
+            style={{ animation: 'fade-up 0.4s 0.28s ease both' }}
           >
             <div className="flex items-center gap-0.5">
               {[1, 2, 3, 4, 5].map((i) => (
@@ -89,14 +78,12 @@ export function Hero() {
             <span className="text-foreground-muted text-sm">
               <strong className="text-foreground">4,8 / 5</strong> · 247 Google-Bewertungen
             </span>
-          </motion.div>
+          </div>
 
           {/* CTAs */}
-          <motion.div
+          <div
             className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-3"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45, delay: 0.35 }}
+            style={{ animation: 'fade-up 0.45s 0.35s ease both' }}
           >
             <Link
               href="/leistungen/"
@@ -112,7 +99,7 @@ export function Hero() {
               <Phone className="w-4 h-4" />
               +43 (0)761 267646-0
             </a>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
