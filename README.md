@@ -1,133 +1,36 @@
-# lsp-austria
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Modern, SEO-optimized static Astro website for LSP Austria - Allianz Insurance Agency in Gmunden.
+## Getting Started
 
-## 📋 About
-
-Professional landing page for LSP Austria featuring:
-- **Ultra-fast performance** (49ms load time, 10KB total)
-- **Full SEO optimization** with Schema.org graph markup (Organization, InsuranceAgency, LocalBusiness, FAQPage, Article)
-- **Mobile-first responsive design**
-- **Accessibility compliant** (WCAG 2.1)
-- **Modern UI/UX** with smooth animations
-
-### Key Features
-
-✅ 4.8/5 rating display (247 reviews)  
-✅ Complete service overview (KFZ, Vorsorge, Wohnen, etc.)  
-✅ KFZ registration office information  
-✅ Interactive contact section with hours  
-✅ Conversion-first hero with 2-minute advisory CTA  
-✅ Local risk topics for Gmunden/Austria (2026)  
-✅ Structured data for search and AI systems  
-✅ `llms.txt` policy for AI crawler guidance  
-✅ One- click call & email actions
-
-## 🛠️ Tech Stack
-
-- **Astro** - Static site generation
-- **SCSS/CSS** - Modern CSS with design system
-- **Cloudflare Pages** - Static hosting and global edge delivery
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js 18+ and npm
-
-### Installation
+First, run the development server:
 
 ```bash
-# Install dependencies
-npm install
-
-# Run Astro development server
 npm run dev
-
-# Build static output in dist/
-npm run build
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-### Development Server
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-For local development:
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-```bash
-npm run serve
-```
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-Then open the local Astro URL shown in the terminal.
+## Learn More
 
-## 📦 Deployment
+To learn more about Next.js, take a look at the following resources:
 
-The site is configured for **Cloudflare Pages** static deployment with output directory `dist`.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-### Source of truth for deploys
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-- **Deployed app source:** `src/**` and `public/**` (built by Astro into `dist/`)
-- **Single sitemap source:** `public/sitemap.xml`
-- Legacy root-level static files were removed to prevent drift; keep all deployable assets in `src/**` and `public/**`.
+## Deploy on Vercel
 
-### Manual Deployment
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-If you need to validate production output locally:
-
-```bash
-npm run build
-npm run serve
-```
-
-## 📁 Project Structure
-
-```
-lsp-austria/
-├── src/                # Astro pages, layouts, components
-├── public/             # Static assets copied as-is
-├── astro.config.mjs    # Astro static site configuration
-└── package.json        # Dependencies and scripts
-```
-
-## 🎨 Design System
-
-The site uses a modern design system with:
-- Allianz brand colors (#0066b2 primary)
-- Responsive typography (fluid scaling)
-- Consistent spacing scale
-- Accessible color contrasts
-- Mobile-first breakpoints
-
-## ⚡ Performance
-
-- **Load time**: 49ms
-- **Total size**: 10KB
-- **Mobile-optimized**: < 13KB
-- **No external dependencies**: Faster, more reliable
-
-## 🔍 SEO Features
-
-- Meta descriptions and keywords
-- Open Graph tags for social sharing
-- Schema.org graph markup (Organization, InsuranceAgency, LocalBusiness, FAQPage, Article)
-- Semantic HTML5 structure
-- Descriptive page title
-- Optimal keyword density
-- llms.txt for AI crawler discoverability policy
-
-## 📝 License
-
-ISC
-
-## 👥 Contact
-
-**Allianz Agentur LSP GmbH**  
-Bahnhofstraße 46, 4810 Gmunden  
-☎ 07612/67646-0  
-✉ agentur.lsp@allianz.at  
-🌐 https://www.allianz.at/de_AT/beratung/lsp.html
-
-**Opening Hours:**  
-Mo - Do: 07:30 - 12:30 & 13:30 - 16:30  
-Fr: 07:30 - 13:00
-
-**Registration Office:**  
-Mo - Fr: 08:00 - 12:00
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
