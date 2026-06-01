@@ -8,7 +8,7 @@ applyTo: "**"
 
 ## Unternehmen
 
-| | |
+| Feld | Wert |
 |---|---|
 | **Name** | LSP Consulting GmbH |
 | **Marke** | LSP Austria (LSP = Leitner Sonntagbauer Partner) |
@@ -32,7 +32,7 @@ applyTo: "**"
 
 ## Tech Stack
 
-| | |
+| Technologie | Details |
 |---|---|
 | **Framework** | Next.js 16 (App Router, `output: 'export'`) |
 | **React** | 19 |
