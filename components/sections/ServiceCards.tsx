@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import type { Service } from '@/data/services'
 
 const serviceIcons: Record<string, React.ReactNode> = {
@@ -51,16 +52,22 @@ export default function ServiceCards({ items, cardHref = '/angebot' }: ServiceCa
   return (
     <div className="services-grid">
       {items.map((service) => (
-        <Link key={service.title} href={cardHref} className="service-card">
-          <div className="service-icon" aria-hidden="true">
-            {serviceIcons[service.title] ?? (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-              </svg>
-            )}
-          </div>
-          <h3>{service.title}</h3>
-          <p>{service.description}</p>
+        <Link key={service.title} href={cardHref} className="block">
+          <Card className="h-full cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:ring-white/20">
+            <CardHeader className="pb-2">
+              <div className="service-icon" aria-hidden="true">
+                {serviceIcons[service.title] ?? (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  </svg>
+                )}
+              </div>
+              <CardTitle className="text-xl">{service.title}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground text-sm leading-relaxed">{service.description}</p>
+            </CardContent>
+          </Card>
         </Link>
       ))}
     </div>

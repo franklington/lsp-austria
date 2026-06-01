@@ -1,4 +1,7 @@
 import { companyProfile } from '@/data/site-content'
+import { cn } from '@/lib/utils'
+import { buttonVariants } from '@/components/ui/button'
+import { Separator } from '@/components/ui/separator'
 import OfferForm from '@/components/sections/OfferForm'
 
 export default function AngebotPage() {
@@ -24,7 +27,7 @@ export default function AngebotPage() {
               <p className="angebot-sidebar-label">Lieber anrufen?</p>
               <a
                 href={`tel:${companyProfile.contact.phoneHref}`}
-                className="btn btn-primary btn-large angebot-call-btn"
+                className={cn(buttonVariants({ size: 'lg' }), 'h-12 px-8 text-base w-full gap-2 angebot-call-btn')}
               >
                 <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.64a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
@@ -33,7 +36,9 @@ export default function AngebotPage() {
               </a>
             </div>
 
-            <div className="angebot-sidebar-divider" />
+            <div className="my-4">
+              <Separator className="bg-white/10" />
+            </div>
 
             <dl className="angebot-sidebar-details">
               <div className="angebot-sidebar-row">
@@ -75,7 +80,9 @@ export default function AngebotPage() {
               </div>
             </dl>
 
-            <div className="angebot-sidebar-divider" />
+            <div className="my-4">
+              <Separator className="bg-white/10" />
+            </div>
 
             <ul className="angebot-trust-list" aria-label="Unsere Versprechen">
               <li>

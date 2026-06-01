@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import { cn } from '@/lib/utils'
+import { buttonVariants } from '@/components/ui/button'
 import { companyProfile } from '@/data/site-content'
 
 export default function Hero() {
@@ -12,12 +14,15 @@ export default function Hero() {
             Partner in der Region.
           </p>
           <div className="hero-cta">
-            <Link href="/angebot" className="btn btn-large btn-primary">
+            <Link
+              href="/angebot"
+              className={cn(buttonVariants({ size: 'lg' }), 'h-12 px-8 text-base font-medium')}
+            >
               Angebot per E-Mail
             </Link>
             <a
               href={`tel:${companyProfile.contact.phoneHref}`}
-              className="btn btn-large btn-secondary"
+              className={cn(buttonVariants({ variant: 'outline', size: 'lg' }), 'h-12 px-8 text-base font-medium')}
             >
               Jetzt anrufen
             </a>

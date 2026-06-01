@@ -1,6 +1,8 @@
 'use client'
 
 import Link from 'next/link'
+import { cn } from '@/lib/utils'
+import { buttonVariants } from '@/components/ui/button'
 import { companyProfile } from '@/data/site-content'
 
 export default function ContactSection() {
@@ -25,7 +27,7 @@ export default function ContactSection() {
                   href={companyProfile.mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-secondary btn-sm"
+                  className={cn(buttonVariants({ variant: 'outline', size: 'sm' }), 'px-4')}
                 >
                   Route starten
                 </a>
@@ -41,7 +43,7 @@ export default function ContactSection() {
               <p className="contact-route-link">
                 <a
                   href={`tel:${companyProfile.contact.phoneHref}`}
-                  className="btn btn-primary btn-sm"
+                  className={cn(buttonVariants({ size: 'sm' }), 'px-4')}
                 >
                   Jetzt anrufen
                 </a>
@@ -55,7 +57,7 @@ export default function ContactSection() {
                 </a>
               </p>
               <p className="contact-route-link">
-                <Link href="/angebot" className="btn btn-secondary btn-sm">
+                <Link href="/angebot" className={cn(buttonVariants({ variant: 'outline', size: 'sm' }), 'px-4')}>
                   Angebot per E-Mail
                 </Link>
               </p>

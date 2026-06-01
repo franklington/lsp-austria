@@ -1,5 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { cn } from '@/lib/utils'
+import { buttonVariants } from '@/components/ui/button'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { monthlyTopics } from '@/data/monthly-topics'
 import FaqAccordion from '@/components/sections/FaqAccordion'
 
@@ -95,27 +98,29 @@ export default function RisikothemenPage() {
         <h2 className="section-title" style={{ marginTop: '4rem' }}>Monatliche Themen</h2>
         <div className="services-grid">
           {monthlyTopics.map((topic) => (
-            <article key={topic.slug} className="service-card">
-              <h3>
-                {topic.month}: {topic.title}
-              </h3>
-              <p>{topic.description}</p>
-              <p>
-                <Link className="article-link" href={`/risikothemen/${topic.slug}`}>
+            <Card key={topic.slug}>
+              <CardHeader>
+                <CardTitle className="text-base">
+                  {topic.month}: {topic.title}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="flex flex-col gap-3">
+                <p className="text-muted-foreground text-sm leading-relaxed">{topic.description}</p>
+                <Link className="text-sm font-medium underline underline-offset-4 hover:text-foreground text-muted-foreground" href={`/risikothemen/${topic.slug}`}>
                   Thema öffnen
                 </Link>
-              </p>
-            </article>
+              </CardContent>
+            </Card>
           ))}
         </div>
 
         <FaqAccordion items={faqItems} />
 
         <div className="hero-cta topics-cta">
-          <Link href="/angebot" className="btn btn-large btn-primary">
+          <Link href="/angebot" className={cn(buttonVariants({ size: 'lg' }), 'h-12 px-8 text-base')}>
             Angebot per E-Mail
           </Link>
-          <Link href="/#contact" className="btn btn-large btn-secondary">
+          <Link href="/#contact" className={cn(buttonVariants({ variant: 'outline', size: 'lg' }), 'h-12 px-8 text-base')}>
             Kontakt ansehen
           </Link>
         </div>

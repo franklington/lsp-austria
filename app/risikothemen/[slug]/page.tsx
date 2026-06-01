@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { cn } from '@/lib/utils'
+import { buttonVariants } from '@/components/ui/button'
 import { getAllSlugs, getRisikothema } from '@/lib/risikothemen'
 import FaqAccordion from '@/components/sections/FaqAccordion'
 
@@ -37,10 +39,10 @@ export default async function RisikothemaPage({ params }: Props) {
         />
         <FaqAccordion items={article.faqs} />
         <div className="hero-cta topics-cta">
-          <Link href="/angebot" className="btn btn-large btn-primary">
+          <Link href="/angebot" className={cn(buttonVariants({ size: 'lg' }), 'h-12 px-8 text-base')}>
             Angebot per E-Mail
           </Link>
-          <Link href="/#contact" className="btn btn-large btn-secondary">
+          <Link href="/#contact" className={cn(buttonVariants({ variant: 'outline', size: 'lg' }), 'h-12 px-8 text-base')}>
             {article.ctaSecondary}
           </Link>
         </div>

@@ -1,5 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { cn } from '@/lib/utils'
+import { buttonVariants } from '@/components/ui/button'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import Hero from '@/components/sections/Hero'
 import ServiceCards from '@/components/sections/ServiceCards'
 import MonthlyTopics from '@/components/sections/MonthlyTopics'
@@ -39,33 +42,45 @@ export default function HomePage() {
         <div className="container">
           <h2 className="section-title">So starten wir</h2>
           <div className="services-grid">
-            <div className="service-card">
-              <div className="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M3 12h18M12 3v18" />
-                </svg>
-              </div>
-              <h3>1. Bedarf klären</h3>
-              <p>Kurzes Erstgespräch, klare Prioritäten und ein strukturierter Überblick über Ihre Risiken.</p>
-            </div>
-            <div className="service-card">
-              <div className="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12l4 4L19 6" />
-                </svg>
-              </div>
-              <h3>2. Optionen vergleichen</h3>
-              <p>Sie erhalten nachvollziehbare Vorschläge mit verständlichen Deckungen und Kosten.</p>
-            </div>
-            <div className="service-card">
-              <div className="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z" />
-                </svg>
-              </div>
-              <h3>3. Sicher entscheiden</h3>
-              <p>Wir finalisieren gemeinsam mit persönlicher Beratung vor Ort in Gmunden.</p>
-            </div>
+            <Card>
+              <CardHeader>
+                <div className="service-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 12h18M12 3v18" />
+                  </svg>
+                </div>
+                <CardTitle className="text-xl">1. Bedarf klären</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-sm leading-relaxed">Kurzes Erstgespräch, klare Prioritäten und ein strukturierter Überblick über Ihre Risiken.</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <div className="service-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12l4 4L19 6" />
+                  </svg>
+                </div>
+                <CardTitle className="text-xl">2. Optionen vergleichen</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-sm leading-relaxed">Sie erhalten nachvollziehbare Vorschläge mit verständlichen Deckungen und Kosten.</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <div className="service-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z" />
+                  </svg>
+                </div>
+                <CardTitle className="text-xl">3. Sicher entscheiden</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-sm leading-relaxed">Wir finalisieren gemeinsam mit persönlicher Beratung vor Ort in Gmunden.</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -75,7 +90,7 @@ export default function HomePage() {
           <h2 className="section-title">Leistungen im Überblick</h2>
           <ServiceCards items={services} />
           <div className="hero-cta">
-            <Link href="/angebot" className="btn btn-primary">Angebot anfragen</Link>
+            <Link href="/angebot" className={cn(buttonVariants(), 'h-10 px-6')}>Angebot anfragen</Link>
           </div>
         </div>
       </section>

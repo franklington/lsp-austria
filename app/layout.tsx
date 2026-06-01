@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="de" className={cn("bg-bgDark2", "font-sans", geist.variable)}>
+    <html lang="de" className={cn("dark bg-bgDark2", "font-sans", geist.variable)}>
       <head>
         <link
           rel="preload"

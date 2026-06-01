@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { companyProfile } from '@/data/site-content'
+import { Separator } from '@/components/ui/separator'
 
 export default function Footer() {
   return (
@@ -7,9 +8,9 @@ export default function Footer() {
       <div className="container">
         <div className="footer-content">
           <p>&copy; 2026 {companyProfile.legalName}</p>
-          <div className="footer-links">
+          <div className="footer-links flex items-center">
             <Link href="/datenschutz">Datenschutz</Link>
-            <span>•</span>
+            <Separator orientation="vertical" className="mx-3 h-3.5 bg-white/25" />
             <Link href="/impressum">Impressum</Link>
           </div>
         </div>
