@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import path from 'path'
 import { MDXRemote } from 'next-mdx-remote/rsc'
+import remarkGfm from 'remark-gfm'
 import { getPost, getPostSlugs } from '@/lib/mdx'
 import { Section } from '@/components/ui/Section'
 import { CallToAction } from '@/components/sections/CallToAction'
@@ -86,7 +87,7 @@ export default async function BlogPostPage({ params }: Props) {
       {/* Content */}
       <Section>
         <div className="max-w-2xl prose-lsp">
-          <MDXRemote source={post.content} />
+          <MDXRemote source={post.content} options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }} />
         </div>
       </Section>
 
