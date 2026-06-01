@@ -87,6 +87,34 @@ export const imageCredits: ImageCredit[] = [
     photoUrl: 'https://unsplash.com/photos/1554224155-6726b3ff858f',
     unsplashId: '1554224155-6726b3ff858f',
   },
+  {
+    file: '/images/blog-cyberversicherung-kmu.jpg',
+    photographer: 'Philipp Katzenberger',
+    photographerUrl: 'https://unsplash.com/@fantasyflip',
+    photoUrl: 'https://unsplash.com/photos/iIJrUoeRoCQ',
+    unsplashId: '1548092372-0d1bd40894a3',
+  },
+  {
+    file: '/images/blog-naturkatastrophen-hochwasser-versicherung.jpg',
+    photographer: 'Chris Gallagher',
+    photographerUrl: 'https://unsplash.com/@chriswebdog',
+    photoUrl: 'https://unsplash.com/photos/1604275689235-fdc521556c16',
+    unsplashId: '1604275689235-fdc521556c16',
+  },
+  {
+    file: '/images/blog-e-auto-versicherung-oesterreich.jpg',
+    photographer: 'Eren Goldman',
+    photographerUrl: 'https://unsplash.com/@erengoldman',
+    photoUrl: 'https://unsplash.com/photos/mfqj3ZSs_h0',
+    unsplashId: '1639302610362-4c86747e8680',
+  },
+  {
+    file: '/images/blog-berufsunfaehigkeitsversicherung-oesterreich.jpg',
+    photographer: 'Vasilis Caravitis',
+    photographerUrl: 'https://unsplash.com/@vasiliscaravitis',
+    photoUrl: 'https://unsplash.com/photos/WGOpvIKwq3Y',
+    unsplashId: '1647964366344-bc680baf64e2',
+  },
 ]
 
 /** Look up credit info by file path */
