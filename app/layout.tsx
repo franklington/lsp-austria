@@ -72,6 +72,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="de" className={inter.variable}>
+      <head>
+        <link rel="preload" href="/logo.svg" as="image" type="image/svg+xml" fetchPriority="high" />
+        <link rel="preload" href="/images/hero-bg.webp" as="image" type="image/webp" fetchPriority="high" />
+      </head>
       <body>
         <Header />
         <main>{children}</main>

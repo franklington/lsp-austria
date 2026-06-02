@@ -61,6 +61,9 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <>
+      {post.image && (
+        <link rel="preload" as="image" href={post.image} fetchPriority="high" />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
