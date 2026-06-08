@@ -15,7 +15,7 @@ export const team: TeamMember[] = [
   {
     name: 'Thomas Sonntagbauer',
     role: 'Geschäftsführer & Versicherungsberater',
-    bio: 'Thomas Sonntagbauer ist Experte für KFZ-Versicherungen und Unternehmensberatung. Als Mitgründer bringt er tiefes Fachwissen und ein starkes regionales Netzwerk im Salzkammergut ein.',
+    bio: 'Thomas Sonntagbauer ist Experte für Private Vorsorge, private und betriebliche Krankenversicherung sowie landwirtschaftliche Versicherungen. Als Mitgründer bringt er tiefes Fachwissen und ein starkes regionales Netzwerk im Salzkammergut ein.',
     initials: 'TS',
   },
 ]
