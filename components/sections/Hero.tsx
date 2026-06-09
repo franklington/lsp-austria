@@ -47,7 +47,7 @@ export function Hero() {
           </p>
 
           <h1
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight text-balance hyphens-auto"
+            className="text-4xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight text-balance hyphens-auto"
             style={{ animation: 'fade-up 0.55s 0.08s ease both' }}
           >
             Ihr Versicherungspartner
