@@ -11,6 +11,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/impressum/', '/datenschutz/'],
       },
     ],
-    sitemap: 'https://lsp-gmunden.at/sitemap.xml',
+    sitemap: 'https://lsp-austria.at/sitemap.xml',
   }
 }

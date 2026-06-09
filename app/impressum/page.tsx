@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Impressum',
   description: 'Impressum der LSP Consulting GmbH, Bahnhofstraße 46, 4810 Gmunden.',
   robots: { index: false, follow: false },
-  alternates: { canonical: 'https://lsp-gmunden.at/impressum/' },
+  alternates: { canonical: 'https://lsp-austria.at/impressum/' },
 }
 
 export default function ImpressumPage() {

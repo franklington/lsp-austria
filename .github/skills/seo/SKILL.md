@@ -19,12 +19,12 @@ export const metadata: Metadata = {
   description: 'Kurzbeschreibung (max. 160 Zeichen). Lokale Keywords + Benefit + CTA.',
   keywords: ['Versicherung', 'Gmunden', 'Österreich'],  // optional
   alternates: {
-    canonical: 'https://lsp-gmunden.at/route/',
+    canonical: 'https://lsp-austria.at/route/',
   },
   openGraph: {
     title: 'OG-Titel (kann von title abweichen)',
     description: 'OG-Beschreibung',
-    url: 'https://lsp-gmunden.at/route/',
+    url: 'https://lsp-austria.at/route/',
     images: [{ url: '/og/og-seite.png', width: 1200, height: 630 }],  // optional
   },
 }
@@ -48,7 +48,7 @@ const jsonLd = {
   '@type': 'InsuranceAgency',
   name: 'LSP Consulting GmbH',
   alternateName: 'LSP Austria',
-  url: 'https://lsp-gmunden.at',
+  url: 'https://lsp-austria.at',
   telephone: '+43076126764600',
   email: 'agentur@lsp-austria.at',
   address: {
@@ -81,7 +81,7 @@ const jsonLd = {
   provider: {
     '@type': 'InsuranceAgency',
     name: 'LSP Consulting GmbH',
-    url: 'https://lsp-gmunden.at',
+    url: 'https://lsp-austria.at',
   },
   areaServed: { '@type': 'City', name: 'Gmunden' },
 }
@@ -96,8 +96,8 @@ const jsonLd = {
   headline: post.title,
   description: post.description,
   datePublished: post.date,
-  author: { '@type': 'Organization', name: 'LSP Consulting GmbH', url: 'https://lsp-gmunden.at' },
-  publisher: { '@type': 'Organization', name: 'LSP Consulting GmbH', url: 'https://lsp-gmunden.at' },
+  author: { '@type': 'Organization', name: 'LSP Consulting GmbH', url: 'https://lsp-austria.at' },
+  publisher: { '@type': 'Organization', name: 'LSP Consulting GmbH', url: 'https://lsp-austria.at' },
 }
 ```
 
@@ -108,9 +108,9 @@ const breadcrumb = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Startseite', item: 'https://lsp-gmunden.at/' },
-    { '@type': 'ListItem', position: 2, name: 'Leistungen', item: 'https://lsp-gmunden.at/leistungen/' },
-    { '@type': 'ListItem', position: 3, name: service.title, item: `https://lsp-gmunden.at/leistungen/${service.slug}/` },
+    { '@type': 'ListItem', position: 1, name: 'Startseite', item: 'https://lsp-austria.at/' },
+    { '@type': 'ListItem', position: 2, name: 'Leistungen', item: 'https://lsp-austria.at/leistungen/' },
+    { '@type': 'ListItem', position: 3, name: service.title, item: `https://lsp-austria.at/leistungen/${service.slug}/` },
   ],
 }
 ```

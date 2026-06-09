@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   description:
     'Ihr persönlicher Versicherungspartner in Gmunden seit 2006. KFZ, Eigenheim, Pensionsvorsorge, Gesundheit – persönliche Beratung ohne Call-Center. 4,8 Sterne auf Google.',
   alternates: {
-    canonical: 'https://lsp-gmunden.at/',
+    canonical: 'https://lsp-austria.at/',
   },
   openGraph: {
     title: 'LSP Austria – Versicherung & Vorsorge Gmunden',
     description:
       'Ihr persönlicher Versicherungspartner in Gmunden seit 2006. Persönliche Beratung – 4,8 Sterne Google-Bewertung.',
-    url: 'https://lsp-gmunden.at/',
+    url: 'https://lsp-austria.at/',
   },
 }
 
@@ -25,7 +25,7 @@ const jsonLd = {
   '@type': 'InsuranceAgency',
   name: 'LSP Consulting GmbH',
   alternateName: 'LSP Austria',
-  url: 'https://lsp-gmunden.at',
+  url: 'https://lsp-austria.at',
   telephone: '+43076126764600',
   email: 'agentur@lsp-austria.at',
   address: {

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Ratgeber – Versicherungswissen für Österreich',
   description:
     'Kostenlose Ratgeber zu KFZ-Versicherung, Haushaltsversicherung, Pensionsvorsorge und mehr. LSP Austria – Ihr Versicherungsexperte aus Gmunden.',
-  alternates: { canonical: 'https://lsp-gmunden.at/ratgeber/' },
+  alternates: { canonical: 'https://lsp-austria.at/ratgeber/' },
 }
 
 const BLOG_DIR = path.join(process.cwd(), 'content/blog')

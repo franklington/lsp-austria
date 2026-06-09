@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Unsere Leistungen',
   description:
     'KFZ-Versicherung, Eigenheim, Vorsorge, Gesundheit und Unternehmensversicherung in Gmunden. Persönliche Beratung seit 2006 – LSP Austria.',
-  alternates: { canonical: 'https://lsp-gmunden.at/leistungen/' },
+  alternates: { canonical: 'https://lsp-austria.at/leistungen/' },
 }
 
 export default function LeistungenPage() {

@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: service.metaTitle,
     description: service.metaDescription,
-    alternates: { canonical: `https://lsp-gmunden.at/leistungen/${slug}/` },
+    alternates: { canonical: `https://lsp-austria.at/leistungen/${slug}/` },
   }
 }
 
@@ -42,7 +42,7 @@ export default async function ServiceDetailPage({ params }: Props) {
     provider: {
       '@type': 'InsuranceAgency',
       name: 'LSP Consulting GmbH',
-      url: 'https://lsp-gmunden.at',
+      url: 'https://lsp-austria.at',
     },
     areaServed: {
       '@type': 'City',

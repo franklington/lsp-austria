@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.title,
     description: post.description,
-    alternates: { canonical: `https://lsp-gmunden.at/themen/${slug}/` },
+    alternates: { canonical: `https://lsp-austria.at/themen/${slug}/` },
   }
 }
 

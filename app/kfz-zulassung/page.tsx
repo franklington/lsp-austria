@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'KFZ-Zulassung Gmunden – An- & Abmeldung',
   description:
     'KFZ-Zulassung in Gmunden: Anmeldung, Abmeldung und Umschreibung für die Bezirke GM, KI, VB und WL. Mo–Fr 8–12 Uhr. LSP Consulting GmbH.',
-  alternates: { canonical: 'https://lsp-gmunden.at/kfz-zulassung/' },
+  alternates: { canonical: 'https://lsp-austria.at/kfz-zulassung/' },
 }
 
 const steps = [
@@ -35,7 +35,7 @@ const jsonLd = {
   provider: {
     '@type': 'InsuranceAgency',
     name: 'LSP Consulting GmbH',
-    url: 'https://lsp-gmunden.at',
+    url: 'https://lsp-austria.at',
   },
   areaServed: [
     { '@type': 'AdministrativeArea', name: 'Bezirk Gmunden' },
