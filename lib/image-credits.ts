@@ -115,6 +115,13 @@ export const imageCredits: ImageCredit[] = [
     photoUrl: 'https://unsplash.com/photos/WGOpvIKwq3Y',
     unsplashId: '1647964366344-bc680baf64e2',
   },
+  {
+    file: '/images/blog-gemeindeversicherungen.jpg',
+    photographer: 'Austrian National Library',
+    photographerUrl: 'https://unsplash.com/@austriannationallibrary',
+    photoUrl: 'https://unsplash.com/photos/1558618666-fcd25c85cd64',
+    unsplashId: 'placeholder-gemeindeversicherungen',
+  },
 ]
 
 /** Look up credit info by file path */
