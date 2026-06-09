@@ -67,7 +67,7 @@ Generiert deutschen Inhalt für alle Seiten und Komponenten der LSP Austria Webs
 |---|---|
 | Persönlich | "Kein Call-Center. Kein Chatbot. Ein echter Ansprechpartner." |
 | Lokal | "Seit 2006 in Gmunden – Ihr Partner vor Ort." |
-| Unabhängig | "Als Makler vertreten wir Ihre Interessen – nicht die der Versicherer." |
+| Mehrfachagent | "Als Mehrfachagent arbeiten wir mit mehreren Versicherern zusammen und finden die Lösung, die zu Ihnen passt." |
 | Vertrauenswürdig | "4,8 von 5 Sternen – 247 Google-Bewertungen." |
 | Einfach | "Versicherung, die man versteht." |
 

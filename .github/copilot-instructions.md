@@ -17,7 +17,7 @@ applyTo: "**"
 | **E-Mail** | agentur@lsp-austria.at |
 | **Domain** | lsp-gmunden.at |
 | **Gegründet** | 2006 |
-| **Tätigkeitsbereich** | Versicherungsmakler & KFZ-Zulassungsstelle |
+| **Tätigkeitsbereich** | Mehrfachagent & Berater in Versicherungsangelegenheiten & KFZ-Zulassungsstelle |
 | **Bezirke (KFZ-Zulassung)** | GM, KI, VB, WL |
 | **Geschäftsführer** | Franz Adolf Leitner (65%), Thomas Sonntagbauer (35%) |
 
