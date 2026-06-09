@@ -78,7 +78,7 @@ image: "/images/blog-{slug}.jpg"
 
 ## Unser Tipp
 
-Als Versicherungsmakler sind wir an keinen Anbieter gebunden. [1–2 Sätze zur Unabhängigkeit und persönlichen Beratung.]
+Als Berater in Versicherungsangelegenheiten arbeiten wir mit mehreren Versicherern zusammen. [1–2 Sätze zur persönlichen Beratung und langjährigen Erfahrung.]
 
 **Sprechen Sie uns an – persönlich in Gmunden.**
 ```
