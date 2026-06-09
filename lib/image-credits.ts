@@ -117,10 +117,10 @@ export const imageCredits: ImageCredit[] = [
   },
   {
     file: '/images/blog-gemeindeversicherungen.jpg',
-    photographer: 'Austrian National Library',
-    photographerUrl: 'https://unsplash.com/@austriannationallibrary',
-    photoUrl: 'https://unsplash.com/photos/1558618666-fcd25c85cd64',
-    unsplashId: 'placeholder-gemeindeversicherungen',
+    photographer: 'Sebastian Herrmann',
+    photographerUrl: 'https://unsplash.com/@officestock',
+    photoUrl: 'https://unsplash.com/photos/1521791136064-7986c2920216',
+    unsplashId: '1521791136064-7986c2920216',
   },
 ]
 
