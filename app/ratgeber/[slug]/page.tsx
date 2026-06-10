@@ -26,12 +26,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.title,
     description: post.description,
-    alternates: { canonical: `https://lsp-gmunden.at/ratgeber/${slug}/` },
+    alternates: { canonical: `https://lsp-austria.at/ratgeber/${slug}/` },
     openGraph: {
       title: post.title,
       description: post.description,
       type: 'article',
       publishedTime: post.date,
+      images: post.image ? [{ url: post.image, alt: post.title }] : undefined,
     },
   }
 }
@@ -50,12 +51,12 @@ export default async function BlogPostPage({ params }: Props) {
     author: {
       '@type': 'Organization',
       name: 'LSP Consulting GmbH',
-      url: 'https://lsp-gmunden.at',
+      url: 'https://lsp-austria.at',
     },
     publisher: {
       '@type': 'Organization',
       name: 'LSP Consulting GmbH',
-      url: 'https://lsp-gmunden.at',
+      url: 'https://lsp-austria.at',
     },
   }
 

@@ -15,7 +15,7 @@ applyTo: "**"
 | **Adresse** | Bahnhofstraße 46, 4810 Gmunden, Österreich |
 | **Telefon** | +43 (0)761 267646-0 |
 | **E-Mail** | agentur@lsp-austria.at |
-| **Domain** | lsp-gmunden.at |
+| **Domain** | lsp-austria.at |
 | **Gegründet** | 2006 |
 | **Tätigkeitsbereich** | Mehrfachagent & Berater in Versicherungsangelegenheiten & KFZ-Zulassungsstelle |
 | **Bezirke (KFZ-Zulassung)** | GM, KI, VB, WL |
@@ -148,7 +148,7 @@ Alle Tokens sind in `app/globals.css` unter `@theme` definiert.
 
 - `generateMetadata()` auf jeder Seite mit `title`, `description`, `alternates.canonical`
 - JSON-LD Schema auf: Home (InsuranceAgency), Service-Seiten (Service), Blog (Article)
-- `metadataBase: new URL('https://lsp-gmunden.at')` im Root-Layout
+- `metadataBase: new URL('https://lsp-austria.at')` im Root-Layout
 - Keine `index: false` außer auf `/impressum/` und `/datenschutz/`
 - Sitemap in `app/sitemap.ts` (automatisch generiert)
 - Robots in `app/robots.ts`

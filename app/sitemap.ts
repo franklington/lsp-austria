@@ -5,7 +5,7 @@ export const dynamic = 'force-static'
 import { getPostSlugs } from '@/lib/mdx'
 import { services } from '@/content/services'
 
-const BASE = 'https://lsp-gmunden.at'
+const BASE = 'https://lsp-austria.at'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const blogSlugs = await getPostSlugs(path.join(process.cwd(), 'content/blog'))

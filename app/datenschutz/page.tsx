@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Datenschutzerklärung',
   description: 'Datenschutzerklärung der LSP Consulting GmbH gemäß DSGVO.',
   robots: { index: false, follow: false },
-  alternates: { canonical: 'https://lsp-gmunden.at/datenschutz/' },
+  alternates: { canonical: 'https://lsp-austria.at/datenschutz/' },
 }
 
 export default function DatenschutzPage() {

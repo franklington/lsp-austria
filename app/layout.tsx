@@ -22,7 +22,7 @@ const inter = localFont({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://lsp-gmunden.at'),
+  metadataBase: new URL('https://lsp-austria.at'),
   title: {
     default: 'LSP Austria – Versicherung & Vorsorge Gmunden',
     template: '%s | LSP Austria',
@@ -44,16 +44,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'de_AT',
-    url: 'https://lsp-gmunden.at',
+    url: 'https://lsp-austria.at',
     siteName: 'LSP Austria – Versicherung & Vorsorge Gmunden',
-    images: [
-      {
-        url: '/og/og-home.png',
-        width: 1200,
-        height: 630,
-        alt: 'LSP Austria – Versicherung & Vorsorge Gmunden',
-      },
-    ],
   },
   robots: {
     index: true,

@@ -31,7 +31,7 @@ import { CallToAction } from '@/components/sections/CallToAction'
 export const metadata: Metadata = {
   title: 'Seitenname',   // wird zu "Seitenname | LSP Austria"
   description: 'Meta-Description (max. 160 Zeichen).',
-  alternates: { canonical: 'https://lsp-gmunden.at/route/' },
+  alternates: { canonical: 'https://lsp-austria.at/route/' },
 }
 
 export default function MeinePage() {
@@ -92,7 +92,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: 'Seitenname',
     description: 'Beschreibung',
-    alternates: { canonical: `https://lsp-gmunden.at/route/${slug}/` },
+    alternates: { canonical: `https://lsp-austria.at/route/${slug}/` },
   }
 }
 
@@ -127,7 +127,7 @@ const jsonLd = {
   provider: {
     '@type': 'InsuranceAgency',
     name: 'LSP Consulting GmbH',
-    url: 'https://lsp-gmunden.at',
+    url: 'https://lsp-austria.at',
   },
   areaServed: { '@type': 'City', name: 'Gmunden' },
 }

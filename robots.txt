@@ -3,4 +3,4 @@ Allow: /
 Disallow: /impressum
 Disallow: /datenschutz
 
-Sitemap: https://lsp-gmunden.at/sitemap.xml
+Sitemap: https://lsp-austria.at/sitemap.xml

@@ -7,7 +7,13 @@ export const metadata: Metadata = {
   title: 'Über uns – LSP Consulting GmbH',
   description:
     'Seit 2006 Ihr verlässlicher Versicherungspartner in Gmunden. Lernen Sie Franz Leitner und Thomas Sonntagbauer kennen – persönliche Beratung statt Call-Center.',
-  alternates: { canonical: 'https://lsp-gmunden.at/ueber-uns/' },
+  alternates: { canonical: 'https://lsp-austria.at/ueber-uns/' },
+  openGraph: {
+    title: 'Über uns – LSP Consulting GmbH',
+    description:
+      'Seit 2006 Ihr verlässlicher Versicherungspartner in Gmunden. Lernen Sie Franz Leitner und Thomas Sonntagbauer kennen – persönliche Beratung statt Call-Center.',
+    url: 'https://lsp-austria.at/ueber-uns/',
+  },
 }
 
 const milestones = [
