@@ -46,14 +46,6 @@ export const metadata: Metadata = {
     locale: 'de_AT',
     url: 'https://lsp-austria.at',
     siteName: 'LSP Austria – Versicherung & Vorsorge Gmunden',
-    images: [
-      {
-        url: '/og/og-home.png',
-        width: 1200,
-        height: 630,
-        alt: 'LSP Austria – Versicherung & Vorsorge Gmunden',
-      },
-    ],
   },
   robots: {
     index: true,

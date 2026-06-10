@@ -24,6 +24,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: service.metaTitle,
     description: service.metaDescription,
     alternates: { canonical: `https://lsp-austria.at/leistungen/${slug}/` },
+    openGraph: {
+      title: service.metaTitle,
+      description: service.metaDescription,
+      url: `https://lsp-austria.at/leistungen/${slug}/`,
+      images: [{ url: service.image, alt: service.title }],
+    },
   }
 }
 

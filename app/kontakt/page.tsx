@@ -6,6 +6,12 @@ export const metadata: Metadata = {
   description:
     'Kontaktieren Sie LSP Consulting GmbH in Gmunden. Telefon, E-Mail oder persönlich vor Ort. Öffnungszeiten Mo–Do 7:30–16:30, Fr 7:30–13:00.',
   alternates: { canonical: 'https://lsp-austria.at/kontakt/' },
+  openGraph: {
+    title: 'Kontakt – LSP Austria Gmunden',
+    description:
+      'Kontaktieren Sie LSP Consulting GmbH in Gmunden. Telefon, E-Mail oder persönlich vor Ort. Öffnungszeiten Mo–Do 7:30–16:30, Fr 7:30–13:00.',
+    url: 'https://lsp-austria.at/kontakt/',
+  },
 }
 
 export default function KontaktPage() {
