@@ -21,6 +21,7 @@ const navLinks = [
   },
   { label: 'KFZ-Zulassung', href: '/kfz-zulassung/' },
   { label: 'Ratgeber', href: '/ratgeber/' },
+  { label: 'Regionale Themen', href: '/themen/' },
   { label: 'Über uns', href: '/ueber-uns/' },
   { label: 'Kontakt', href: '/kontakt/' },
 ]

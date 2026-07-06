@@ -5,6 +5,7 @@ import { Check } from 'lucide-react'
 import { services, getServiceBySlug } from '@/content/services'
 import { Section } from '@/components/ui/Section'
 import { CallToAction } from '@/components/sections/CallToAction'
+import { RelatedThemen } from '@/components/sections/RelatedThemen'
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -137,6 +138,8 @@ export default async function ServiceDetailPage({ params }: Props) {
           </div>
         </div>
       </Section>
+
+      <RelatedThemen category={service.title} />
 
       <CallToAction
         title={`Fragen zu ${service.title}?`}

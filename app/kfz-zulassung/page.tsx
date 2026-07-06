@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Check, Clock, MapPin, Phone } from 'lucide-react'
 import { Section } from '@/components/ui/Section'
 import { CallToAction } from '@/components/sections/CallToAction'
+import { RelatedThemen } from '@/components/sections/RelatedThemen'
 
 export const metadata: Metadata = {
   title: 'KFZ-Zulassung Gmunden – An- & Abmeldung',
@@ -159,6 +160,8 @@ export default function KfzZulassungPage() {
           </div>
         </div>
       </Section>
+
+      <RelatedThemen category="KFZ-Zulassung" />
 
       <CallToAction
         title="Fragen zur KFZ-Zulassung?"
