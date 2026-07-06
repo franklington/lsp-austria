@@ -13,6 +13,7 @@ const serviceLinks = [
 
 const infoLinks = [
   { label: 'Ratgeber', href: '/ratgeber/' },
+  { label: 'Regionale Themen', href: '/themen/' },
   { label: 'Über uns', href: '/ueber-uns/' },
   { label: 'Kontakt', href: '/kontakt/' },
   { label: 'Impressum', href: '/impressum/' },
