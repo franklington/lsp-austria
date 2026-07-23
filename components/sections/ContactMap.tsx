@@ -15,7 +15,7 @@ export function ContactMap() {
           {/* Map */}
           <div className="order-2 lg:order-2">
             <a
-              href="https://maps.google.com/?q=Bahnhofstra%C3%9Fe+46,+4810+Gmunden"
+              href="https://maps.app.goo.gl/TDhwBDRrNtp9utccA?g_st=ic"
               target="_blank"
               rel="noopener noreferrer"
               className="block group"
@@ -40,7 +40,7 @@ export function ContactMap() {
               </div>
             </a>
             <a
-              href="https://maps.google.com/?q=Bahnhofstra%C3%9Fe+46,+4810+Gmunden"
+              href="https://maps.app.goo.gl/TDhwBDRrNtp9utccA?g_st=ic"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-accent text-sm mt-3 hover:text-accent-light transition-colors"
